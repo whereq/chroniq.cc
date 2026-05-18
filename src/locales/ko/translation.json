@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "product": "제품",
+    "solutions": "솔루션",
+    "resources": "리소스",
+    "enterprise": "엔터프라이즈",
+    "pricing": "요금제",
+    "about": "회사 소개",
+    "features": "기능",
+    "integrations": "통합",
+    "login": "로그인",
+    "getStarted": "시작하기"
+  },
+  "cta": {
+    "signin": "로그인",
+    "signup": "시작하기"
+  },
+  "panel": {
+    "filters": "필터",
+    "view": "보기",
+    "timezone": "시간대",
+    "jumpTo": "날짜로 이동",
+    "localHolidays": "지역 공휴일",
+    "globalHolidays": "세계 기념일",
+    "events": "내 일정",
+    "meetings": "회의",
+    "birthdays": "생일",
+    "weather": "날씨",
+    "fortune": "오늘의 운세",
+    "lunar": "중국 음력",
+    "weekStart": "주 시작일",
+    "weekNumbers": "주 번호 표시",
+    "upcoming": "다가오는 일정",
+    "region": "지역",
+    "search": "국가 검색…"
+  },
+  "scope": {
+    "year": "년",
+    "month": "월",
+    "week": "주",
+    "day": "일"
+  },
+  "cal": {
+    "today": "오늘",
+    "week": "주",
+    "noEvents": "일정 없음",
+    "more": "+{{count}}개 더"
+  },
+  "days": {
+    "full": ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"],
+    "short": ["일","월","화","수","목","금","토"],
+    "min": ["일","월","화","수","목","금","토"]
+  },
+  "months": {
+    "full": ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+    "short": ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"]
+  },
+  "footer": {
+    "tag": "캘린더를 존중하는 팀을 위한 차분하고 빠른 스케줄링 환경.",
+    "copyright": "© 2026 chroniq.cc",
+    "statusOp": "모든 시스템 정상",
+    "tagline": "일정 관리, 단순하게."
+  },
+  "weather": {
+    "noData": "이 지역의 날씨 데이터가 없습니다.",
+    "low": "최저",
+    "conditions": {
+      "sun": "맑음",
+      "partly": "구름 조금",
+      "cloud": "흐림",
+      "rain": "비",
+      "storm": "뇌우",
+      "snow": "눈",
+      "fog": "안개"
+    }
+  },
+  "fortune": {
+    "western": "오늘의 운세",
+    "cnHeader": "오늘의 의기",
+    "yi": "마땅함",
+    "ji": "피할 일",
+    "year": "년",
+    "day": "일"
+  },
+  "resources": {
+    "title": "리소스",
+    "sub": "chroniq.cc로 만들고, 배우고, 신뢰하는 데 필요한 모든 것.",
+    "open": "열기",
+    "items": {
+      "api": { "title": "API", "desc": "REST 엔드포인트, 웹훅, SDK.", "tag": "v3.2" },
+      "docs": { "title": "문서", "desc": "제품 전반에 대한 가이드와 레퍼런스.", "tag": "428페이지" },
+      "blog": { "title": "블로그", "desc": "디자인 노트, 릴리스 요약, 에세이.", "tag": "매주" },
+      "help": { "title": "도움말 센터", "desc": "사용 안내, 문제 해결, 지원팀 답변.", "tag": "24/7" },
+      "terms": { "title": "약관", "desc": "서비스 약관, 개인정보 보호, 보안.", "tag": "v2026.4" }
+    }
+  },
+  "booking": {
+    "select_date": "날짜 선택",
+    "select_time": "시간 선택",
+    "your_info": "귀하의 정보",
+    "name": "이름",
+    "email": "이메일 주소",
+    "notes": "추가 메모 (선택)",
+    "confirm": "예약 확인",
+    "confirmed_title": "예약이 완료되었습니다!",
+    "confirmed_subtitle": "캘린더 초대장이 이메일로 발송되었습니다.",
+    "no_slots": "이 날짜에 이용 가능한 슬롯이 없습니다.",
+    "timezone": "시간대"
+  },
+  "common": {
+    "learnMore": "자세히 알아보기",
+    "comingSoon": "출시 예정",
+    "dark": "다크",
+    "light": "라이트",
+    "language": "언어"
+  }
+}

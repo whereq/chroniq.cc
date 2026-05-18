@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "product": "製品",
+    "solutions": "ソリューション",
+    "resources": "リソース",
+    "enterprise": "エンタープライズ",
+    "pricing": "料金",
+    "about": "会社情報",
+    "features": "機能",
+    "integrations": "連携",
+    "login": "ログイン",
+    "getStarted": "始める"
+  },
+  "cta": {
+    "signin": "ログイン",
+    "signup": "始める"
+  },
+  "panel": {
+    "filters": "フィルター",
+    "view": "表示",
+    "timezone": "タイムゾーン",
+    "jumpTo": "日付へ移動",
+    "localHolidays": "地域の祝日",
+    "globalHolidays": "世界の記念日",
+    "events": "マイイベント",
+    "meetings": "会議",
+    "birthdays": "誕生日",
+    "weather": "天気",
+    "fortune": "今日の運勢",
+    "lunar": "旧暦",
+    "weekStart": "週の始まり",
+    "weekNumbers": "週番号を表示",
+    "upcoming": "予定",
+    "region": "地域",
+    "search": "国を検索…"
+  },
+  "scope": {
+    "year": "年",
+    "month": "月",
+    "week": "週",
+    "day": "日"
+  },
+  "cal": {
+    "today": "今日",
+    "week": "週",
+    "noEvents": "予定なし",
+    "more": "+{{count}}件"
+  },
+  "days": {
+    "full": ["日曜日","月曜日","火曜日","水曜日","木曜日","金曜日","土曜日"],
+    "short": ["日","月","火","水","木","金","土"],
+    "min": ["日","月","火","水","木","金","土"]
+  },
+  "months": {
+    "full": ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],
+    "short": ["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"]
+  },
+  "footer": {
+    "tag": "カレンダーを尊重するチームのための、静かで速いスケジューリング。",
+    "copyright": "© 2026 chroniq.cc",
+    "statusOp": "すべてのシステムが正常",
+    "tagline": "スケジューリングをシンプルに。"
+  },
+  "weather": {
+    "noData": "この地域の天気データはありません。",
+    "low": "最低",
+    "conditions": {
+      "sun": "晴れ",
+      "partly": "晴れ時々曇り",
+      "cloud": "曇り",
+      "rain": "雨",
+      "storm": "雷雨",
+      "snow": "雪",
+      "fog": "霧"
+    }
+  },
+  "fortune": {
+    "western": "今日の運勢",
+    "cnHeader": "今日の宜忌",
+    "yi": "宜",
+    "ji": "忌",
+    "year": "年",
+    "day": "日"
+  },
+  "resources": {
+    "title": "リソース",
+    "sub": "chroniq.cc で構築、学習、依存するために必要なすべて。",
+    "open": "開く",
+    "items": {
+      "api": { "title": "API", "desc": "REST、Webhook、JS・Python・Go の SDK。", "tag": "v3.2" },
+      "docs": { "title": "ドキュメント", "desc": "製品の全機能に関するガイドとリファレンス。", "tag": "428ページ" },
+      "blog": { "title": "ブログ", "desc": "設計ノート、リリース、考察。", "tag": "毎週" },
+      "help": { "title": "ヘルプセンター", "desc": "ハウツー、トラブルシューティング。", "tag": "24/7" },
+      "terms": { "title": "規約", "desc": "サービス規約、プライバシー、セキュリティ。", "tag": "v2026.4" }
+    }
+  },
+  "booking": {
+    "select_date": "日付を選択",
+    "select_time": "時間を選択",
+    "your_info": "お客様情報",
+    "name": "お名前",
+    "email": "メールアドレス",
+    "notes": "備考（任意）",
+    "confirm": "予約を確定",
+    "confirmed_title": "予約完了！",
+    "confirmed_subtitle": "カレンダーの招待状がメールで送信されました。",
+    "no_slots": "この日時のご予約可能な枠はありません。",
+    "timezone": "タイムゾーン"
+  },
+  "common": {
+    "learnMore": "詳細を見る",
+    "comingSoon": "近日公開",
+    "dark": "ダーク",
+    "light": "ライト",
+    "language": "言語"
+  }
+}

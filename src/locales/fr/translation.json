@@ -1,0 +1,149 @@
+{
+  "nav": {
+    "product": "Produit",
+    "solutions": "Solutions",
+    "resources": "Ressources",
+    "enterprise": "Entreprise",
+    "pricing": "Tarifs",
+    "about": "À propos",
+    "features": "Fonctionnalités",
+    "integrations": "Intégrations",
+    "login": "Connexion",
+    "getStarted": "Commencer gratuitement"
+  },
+  "cta": {
+    "signin": "Connexion",
+    "signup": "Commencer"
+  },
+  "panel": {
+    "filters": "Filtres",
+    "view": "Vue",
+    "timezone": "Fuseau horaire",
+    "jumpTo": "Aller à la date",
+    "localHolidays": "Jours fériés locaux",
+    "globalHolidays": "Observances mondiales",
+    "events": "Mes événements",
+    "meetings": "Réunions",
+    "birthdays": "Anniversaires",
+    "weather": "Météo",
+    "fortune": "Lecture du jour",
+    "lunar": "Calendrier lunaire chinois",
+    "weekStart": "Début de semaine",
+    "weekNumbers": "Numéros de semaine",
+    "upcoming": "À venir",
+    "region": "Région",
+    "search": "Rechercher un pays…"
+  },
+  "scope": {
+    "year": "Année",
+    "month": "Mois",
+    "week": "Semaine",
+    "day": "Jour"
+  },
+  "cal": {
+    "today": "Aujourd'hui",
+    "week": "Sem.",
+    "noEvents": "Aucun événement",
+    "more": "+{{count}} de plus"
+  },
+  "days": {
+    "full": ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"],
+    "short": ["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"],
+    "min": ["D","L","M","M","J","V","S"]
+  },
+  "months": {
+    "full": ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"],
+    "short": ["Jan","Fév","Mar","Avr","Mai","Juin","Juil","Août","Sep","Oct","Nov","Déc"]
+  },
+  "footer": {
+    "tag": "Une surface de planification calme et rapide pour les équipes.",
+    "copyright": "© 2026 chroniq.cc",
+    "statusOp": "Tous les systèmes opérationnels",
+    "tagline": "La planification, simplifiée.",
+    "product": "Produit",
+    "company": "Entreprise",
+    "resources": "Ressources",
+    "legal": "Légal",
+    "links": {
+      "features": "Fonctionnalités",
+      "pricing": "Tarifs",
+      "integrations": "Intégrations",
+      "enterprise": "Entreprise",
+      "security": "Sécurité",
+      "about": "À propos",
+      "blog": "Blog",
+      "careers": "Carrières",
+      "press": "Presse",
+      "contact": "Contact",
+      "help": "Centre d'aide",
+      "developers": "Développeurs",
+      "status": "État du système",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
+      "cookies": "Politique de cookies",
+      "gdpr": "RGPD"
+    },
+    "copyright_old": "© 2026 chroniq.cc. Tous droits réservés."
+  },
+  "weather": {
+    "noData": "Pas de données météo pour cette région.",
+    "low": "Min",
+    "conditions": {
+      "sun": "Ensoleillé",
+      "partly": "Partiellement nuageux",
+      "cloud": "Nuageux",
+      "rain": "Pluie",
+      "storm": "Orage",
+      "snow": "Neige",
+      "fog": "Brouillard"
+    }
+  },
+  "fortune": {
+    "western": "Lecture du jour",
+    "cnHeader": "Lecture du jour",
+    "yi": "Propice",
+    "ji": "À éviter",
+    "year": "Année",
+    "day": "Jour"
+  },
+  "resources": {
+    "title": "Ressources",
+    "sub": "Tout ce dont vous avez besoin pour chroniq.cc.",
+    "open": "Ouvrir",
+    "items": {
+      "api": { "title": "API", "desc": "Endpoints REST, webhooks et SDK.", "tag": "v3.2" },
+      "docs": { "title": "Docs", "desc": "Guides et références pour le produit.", "tag": "428 pages" },
+      "blog": { "title": "Blog", "desc": "Notes de design et essais.", "tag": "Hebdo" },
+      "help": { "title": "Centre d'aide", "desc": "Dépannage et réponses du support.", "tag": "24/7" },
+      "terms": { "title": "Conditions", "desc": "Conditions d'utilisation et confidentialité.", "tag": "v2026.4" }
+    }
+  },
+  "hero": {
+    "badge": "Maintenant avec planification IA",
+    "headline": "La planification,\nsimplifiée.",
+    "subheadline": "Partagez votre lien chroniq.cc. Laissez n'importe qui réserver du temps avec vous.",
+    "cta_primary": "Commencer gratuitement",
+    "cta_secondary": "Voir la démo",
+    "social_proof": "Fait confiance par plus de 50 000 équipes dans le monde"
+  },
+  "booking": {
+    "select_date": "Sélectionner une date",
+    "select_time": "Sélectionner un horaire",
+    "your_info": "Vos informations",
+    "name": "Votre nom",
+    "email": "Adresse email",
+    "notes": "Notes supplémentaires (optionnel)",
+    "confirm": "Confirmer la réservation",
+    "confirmed_title": "Vous êtes réservé !",
+    "confirmed_subtitle": "Une invitation de calendrier a été envoyée à votre email.",
+    "no_slots": "Aucun créneau disponible pour cette date.",
+    "timezone": "Fuseau horaire"
+  },
+  "common": {
+    "learnMore": "En savoir plus",
+    "comingSoon": "Bientôt disponible",
+    "dark": "Sombre",
+    "light": "Clair",
+    "language": "Langue"
+  }
+}
