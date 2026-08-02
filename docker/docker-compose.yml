@@ -4,6 +4,11 @@
 # Prereqs: whereq-db running on whereq-network, "chroniq" database created.
 #   docker compose -f docker/docker-compose.yml up -d --build
 # =============================================================================
+# NOTE: every whereq app keeps its compose file under a docker/ directory, so
+# Compose would otherwise default them all to the project name "docker" and a
+# `down` in one repo would tear down the others. The explicit top-level name
+# scopes all chroniq compose operations to the "chroniq" project.
+name: chroniq
 
 networks:
   whereq-network:

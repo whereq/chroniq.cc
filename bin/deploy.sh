@@ -273,6 +273,22 @@ preflight() {
             exit 1
         fi
 
+        # Guard against the shared-project footgun: every whereq app keeps its
+        # compose file under a docker/ dir, so without an explicit name they all
+        # default to project "docker" and a `down` here would tear down sibling
+        # apps. The compose file declares `name: chroniq`; refuse to run if the
+        # effective project is anything else.
+        local proj
+        proj=$(docker compose -f "$COMPOSE_FILE" config 2>/dev/null \
+                | grep -E '^name:' | awk '{print $2}' | head -1)
+        if [[ "$proj" != "chroniq" ]]; then
+            error "Compose project resolved to '${proj:-<none>}', expected 'chroniq'."
+            error "Refusing to run — this would risk sibling apps sharing project 'docker'."
+            dim "Ensure docker/docker-compose.yml has a top-level 'name: chroniq' (and no COMPOSE_PROJECT_NAME override)."
+            exit 1
+        fi
+        success "compose project = chroniq (isolated)"
+
         # DB must be up — it's shared infrastructure, never started by this script
         local db_status
         db_status=$(docker inspect "$DB_CONTAINER" \
