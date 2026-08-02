@@ -1,0 +1,100 @@
+# =============================================================================
+# chroniq.cc — Development Docker Compose
+# =============================================================================
+# Prerequisites:
+#   - The shared PostgreSQL (whereq-db) must be running on whereq-network.
+#     (owned by flowdesk's docker-compose.postgres.yml)
+#   - A "chroniq" database must exist in whereq-db. Create it once with:
+#       docker exec -it whereq-db createdb -U ${POSTGRES_USER:-flowdesk} chroniq
+#
+# Usage:
+#   docker compose -f docker/docker-compose.dev.yml up -d --build
+#   docker compose -f docker/docker-compose.dev.yml logs -f api
+#   docker compose -f docker/docker-compose.dev.yml down
+# =============================================================================
+
+networks:
+  whereq-network:
+    external: true
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/api/Dockerfile.dev
+    container_name: chroniq-api-dev
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-flowdesk}:${POSTGRES_PASSWORD:-flowdesk}@whereq-db:5432/${CHRONIQ_DB:-chroniq}
+      DATABASE_URL_SYNC: postgresql://${POSTGRES_USER:-flowdesk}:${POSTGRES_PASSWORD:-flowdesk}@whereq-db:5432/${CHRONIQ_DB:-chroniq}
+      CORS_ORIGINS: '["http://localhost:5173", "http://localhost:3000"]'
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:5173}
+      KEYCLOAK_URL: ${KEYCLOAK_URL:-https://www.keytomarvel.com}
+      KEYCLOAK_REALM: ${KEYCLOAK_REALM:-chroniq.cc}
+      KEYCLOAK_CLIENT_ID: ${KEYCLOAK_CLIENT_ID:-chroniq-spa}
+      KEYCLOAK_ADMIN_CLIENT_ID: ${KEYCLOAK_ADMIN_CLIENT_ID:-chroniq-backend}
+      KEYCLOAK_ADMIN_CLIENT_SECRET: ${KEYCLOAK_ADMIN_CLIENT_SECRET:-}
+      # Email (fill in later — empty = log-only mode)
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      EMAIL_FROM: ${EMAIL_FROM:-chroniq.cc <no-reply@chroniq.cc>}
+      # Calendar OAuth
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      MS_CLIENT_ID: ${MS_CLIENT_ID:-}
+      MS_CLIENT_SECRET: ${MS_CLIENT_SECRET:-}
+      # Stripe
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      TOKEN_ENCRYPTION_KEY: ${TOKEN_ENCRYPTION_KEY:-}
+    volumes:
+      - ../backend/api:/app/api:cached
+      - ../backend/chroniq:/app/chroniq:cached
+      - ../backend/alembic:/app/alembic:cached
+      - ../backend/alembic.ini:/app/alembic.ini:cached
+    ports:
+      - "8000:8000"
+    networks:
+      - whereq-network
+
+  scheduler:
+    build:
+      context: ..
+      dockerfile: docker/api/Dockerfile.dev
+    container_name: chroniq-scheduler-dev
+    command: python -m scheduler.main
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-flowdesk}:${POSTGRES_PASSWORD:-flowdesk}@whereq-db:5432/${CHRONIQ_DB:-chroniq}
+      DATABASE_URL_SYNC: postgresql://${POSTGRES_USER:-flowdesk}:${POSTGRES_PASSWORD:-flowdesk}@whereq-db:5432/${CHRONIQ_DB:-chroniq}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:5173}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      EMAIL_FROM: ${EMAIL_FROM:-chroniq.cc <no-reply@chroniq.cc>}
+    volumes:
+      - ../backend/api:/app/api:cached
+      - ../backend/chroniq:/app/chroniq:cached
+      - ../backend/scheduler:/app/scheduler:cached
+    networks:
+      - whereq-network
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/frontend/Dockerfile.dev
+    container_name: chroniq-frontend-dev
+    environment:
+      VITE_KEYCLOAK_URL: ${KEYCLOAK_URL:-https://www.keytomarvel.com}
+      VITE_KEYCLOAK_REALM: ${KEYCLOAK_REALM:-chroniq.cc}
+      VITE_KEYCLOAK_CLIENT_ID: ${KEYCLOAK_CLIENT_ID:-chroniq-spa}
+    volumes:
+      - ../frontend/src:/app/src:cached
+      - ../frontend/public:/app/public:cached
+      - ../frontend/index.html:/app/index.html:cached
+      - ../frontend/vite.config.ts:/app/vite.config.ts:cached
+    ports:
+      - "5173:5173"
+    networks:
+      - whereq-network

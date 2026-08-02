@@ -1,0 +1,95 @@
+{
+  "realm": "chroniq.cc",
+  "enabled": true,
+  "displayName": "chroniq.cc",
+  "displayNameHtml": "<b>chroniq.cc</b>",
+
+  "sslRequired": "external",
+  "registrationAllowed": true,
+  "registrationEmailAsUsername": false,
+  "rememberMe": true,
+  "verifyEmail": true,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": true,
+  "editUsernameAllowed": false,
+
+  "loginTheme": "k2m-theme-chroniq",
+  "accountTheme": "k2m-theme-vegeta",
+  "adminTheme": "k2m-theme-vegeta",
+  "emailTheme": "k2m-theme-vegeta",
+
+  "internationalizationEnabled": true,
+  "supportedLocales": ["en", "zh", "fr", "ja", "ko", "de", "es", "it"],
+  "defaultLocale": "en",
+
+  "accessTokenLifespan": 300,
+  "ssoSessionIdleTimeout": 1800,
+  "ssoSessionMaxLifespan": 36000,
+
+  "roles": {
+    "realm": [
+      { "name": "ch-admin", "description": "Full admin — bypasses all tier limits" },
+      { "name": "ch-tier-1", "description": "Basic paid tier" },
+      { "name": "ch-tier-2", "description": "Pro paid tier" },
+      { "name": "ch-tier-unlimited", "description": "Unlimited / gifted access" }
+    ]
+  },
+
+  "clients": [
+    {
+      "clientId": "chroniq-spa",
+      "name": "chroniq.cc",
+      "description": "Public SPA client (Authorization Code + PKCE).",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": false,
+      "frontchannelLogout": true,
+      "fullScopeAllowed": true,
+      "rootUrl": "https://chroniq.cc",
+      "baseUrl": "https://chroniq.cc",
+      "redirectUris": [
+        "https://chroniq.cc/*",
+        "http://localhost:5173/*"
+      ],
+      "webOrigins": [
+        "https://chroniq.cc",
+        "http://localhost:5173"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "https://chroniq.cc/*##http://localhost:5173/*"
+      }
+    },
+    {
+      "clientId": "chroniq-backend",
+      "name": "chroniq backend service account",
+      "description": "Confidential client. Client-credentials grant used by the backend to assign ch-tier-* roles after a Stripe payment. REGENERATE the secret in the Credentials tab after import and put it in KEYCLOAK_ADMIN_CLIENT_SECRET.",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "CHANGE_ME_REGENERATE_AFTER_IMPORT",
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "implicitFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "authorizationServicesEnabled": false,
+      "fullScopeAllowed": true
+    }
+  ],
+
+  "users": [
+    {
+      "username": "service-account-chroniq-backend",
+      "enabled": true,
+      "serviceAccountClientId": "chroniq-backend",
+      "clientRoles": {
+        "realm-management": ["manage-users", "view-realm"]
+      }
+    }
+  ]
+}

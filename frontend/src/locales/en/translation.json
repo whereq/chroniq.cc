@@ -1,0 +1,320 @@
+{
+  "nav": {
+    "product": "Product",
+    "solutions": "Solutions",
+    "resources": "Resources",
+    "enterprise": "Enterprise",
+    "pricing": "Pricing",
+    "about": "About",
+    "features": "Features",
+    "integrations": "Integrations",
+    "login": "Log in",
+    "getStarted": "Get started free"
+  },
+  "cta": {
+    "signin": "Sign in",
+    "signup": "Get started",
+    "signout": "Sign out",
+    "guest": "Guest",
+    "account": "My account"
+  },
+  "panel": {
+    "filters": "Filters",
+    "view": "View",
+    "timezone": "Time zone",
+    "jumpTo": "Jump to date",
+    "localHolidays": "Local holidays",
+    "globalHolidays": "Global observances",
+    "events": "My events",
+    "meetings": "Meetings",
+    "birthdays": "Birthdays",
+    "weather": "Weather",
+    "fortune": "Daily fortune",
+    "lunar": "Chinese lunar (阴历)",
+    "weekStart": "Week starts on",
+    "weekNumbers": "Show week numbers",
+    "upcoming": "Upcoming",
+    "region": "Region",
+    "search": "Search country…"
+  },
+  "scope": {
+    "year": "Year",
+    "month": "Month",
+    "week": "Week",
+    "day": "Day"
+  },
+  "cal": {
+    "today": "Today",
+    "week": "Wk",
+    "noEvents": "No events",
+    "more": "+{{count}} more"
+  },
+  "days": {
+    "full": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "short": [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
+    ],
+    "min": [
+      "S",
+      "M",
+      "T",
+      "W",
+      "T",
+      "F",
+      "S"
+    ]
+  },
+  "months": {
+    "full": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "short": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ]
+  },
+  "footer": {
+    "tag": "A calm, fast scheduling surface for teams that respect calendars.",
+    "copyright": "© 2026 chroniq.cc — A scheduling calendar.",
+    "statusOp": "All systems operational",
+    "tagline": "Scheduling, simplified.",
+    "product": "Product",
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "integrations": "Integrations",
+      "enterprise": "Enterprise",
+      "security": "Security",
+      "about": "About us",
+      "blog": "Blog",
+      "careers": "Careers",
+      "press": "Press",
+      "contact": "Contact",
+      "help": "Help center",
+      "developers": "Developers",
+      "status": "System status",
+      "privacy": "Privacy policy",
+      "terms": "Terms of service",
+      "cookies": "Cookie policy",
+      "gdpr": "GDPR"
+    },
+    "copyright_old": "© 2026 chroniq.cc. All rights reserved."
+  },
+  "weather": {
+    "noData": "No weather data for this region.",
+    "low": "Low",
+    "conditions": {
+      "sun": "Sunny",
+      "partly": "Partly cloudy",
+      "cloud": "Cloudy",
+      "rain": "Rain",
+      "storm": "Storm",
+      "snow": "Snow",
+      "fog": "Fog"
+    }
+  },
+  "fortune": {
+    "western": "Today's reading",
+    "cnHeader": "Daily reading",
+    "yi": "Suitable",
+    "ji": "Avoid",
+    "year": "Year",
+    "day": "Day"
+  },
+  "resources": {
+    "title": "Resources",
+    "sub": "Everything you need to build with, learn from, and rely on chroniq.cc.",
+    "open": "Open",
+    "items": {
+      "api": {
+        "title": "API",
+        "desc": "REST endpoints, webhooks, and SDKs for JavaScript, Python, and Go.",
+        "tag": "v3.2"
+      },
+      "docs": {
+        "title": "Docs",
+        "desc": "Guides, references, and recipes for every part of the product.",
+        "tag": "428 pages"
+      },
+      "blog": {
+        "title": "Blog",
+        "desc": "Design notes, release recaps, and short essays on calendar science.",
+        "tag": "Weekly"
+      },
+      "help": {
+        "title": "Help center",
+        "desc": "How-tos, troubleshooting, and answers from the support team.",
+        "tag": "24/7"
+      },
+      "terms": {
+        "title": "Terms",
+        "desc": "Service terms, privacy policy, security posture, and acceptable use.",
+        "tag": "v2026.4"
+      }
+    }
+  },
+  "hero": {
+    "badge": "Now with AI scheduling",
+    "headline": "Scheduling,\nsimplified.",
+    "subheadline": "Share your chroniq.cc link. Let anyone book time with you—automatically.",
+    "cta_primary": "Get started free",
+    "cta_secondary": "View live demo",
+    "social_proof": "Trusted by 50,000+ teams worldwide"
+  },
+  "booking": {
+    "select_date": "Select a date",
+    "select_time": "Select a time",
+    "your_info": "Your information",
+    "name": "Your name",
+    "email": "Email address",
+    "notes": "Additional notes (optional)",
+    "confirm": "Confirm booking",
+    "confirmed_title": "You're booked!",
+    "confirmed_subtitle": "A calendar invitation has been sent to your email.",
+    "no_slots": "No available slots for this date.",
+    "timezone": "Timezone",
+    "min": "min",
+    "selected_time": "Selected time",
+    "secure": "Secure & encrypted",
+    "host_not_found": "This scheduling page was not found.",
+    "event_not_found": "This event type is not available.",
+    "book_another": "Book another meeting",
+    "next": "Next",
+    "no_times": "No available times on this day.",
+    "error": "That time is no longer available. Please pick another slot.",
+    "with_host": "{{title}} with {{host}}"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "comingSoon": "Coming soon",
+    "dark": "Dark",
+    "light": "Light",
+    "language": "Language",
+    "loading": "Loading…",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Saved",
+    "cancel": "Cancel",
+    "back": "Back",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+  "manage": {
+    "invalid": "This booking link is invalid or has expired.",
+    "reschedule": "Reschedule",
+    "cancel_meeting": "Cancel meeting",
+    "cancelling": "Cancelling…",
+    "pick_new_time": "Pick a new time",
+    "confirm_new_time": "Confirm new time",
+    "no_times": "No times available that day.",
+    "slot_taken": "That time is no longer available.",
+    "cancelled_notice": "This meeting has been cancelled.",
+    "status": {
+      "confirmed": "confirmed",
+      "cancelled": "cancelled"
+    }
+  },
+  "dashboard": {
+    "signin_title": "Sign in",
+    "signin_subtitle": "Sign in to manage your event types, availability, and bookings.",
+    "tabs": {
+      "event_types": "Event Types",
+      "bookings": "Bookings",
+      "availability": "Availability",
+      "integrations": "Integrations",
+      "settings": "Settings",
+      "calendar": "Calendar"
+    },
+    "event_types": {
+      "title": "Event Types",
+      "new": "+ New event type",
+      "none": "No event types yet. Create your first one.",
+      "inactive": "inactive",
+      "modal_new": "New event type",
+      "modal_edit": "Edit event type",
+      "f_title": "Title",
+      "f_slug": "slug (e.g. 30-min)",
+      "f_description": "Description",
+      "f_minutes": "Minutes",
+      "f_active": "Active (bookable)",
+      "save_error": "Could not save — check the slug is unique."
+    },
+    "location": {
+      "video": "Video",
+      "phone": "Phone",
+      "in_person": "In person",
+      "custom": "Custom"
+    },
+    "bookings": {
+      "title": "Bookings",
+      "none": "No bookings to show.",
+      "cancel": "Cancel",
+      "filter_upcoming": "Upcoming",
+      "filter_past": "Past",
+      "filter_cancelled": "Cancelled"
+    },
+    "availability": {
+      "title": "Availability",
+      "timezone": "Timezone",
+      "unavailable": "Unavailable",
+      "save": "Save availability"
+    },
+    "integrations": {
+      "title": "Integrations",
+      "subtitle": "Connect a calendar so chroniq checks your real availability and adds bookings automatically.",
+      "connected": "Connected",
+      "not_connected": "Not connected",
+      "connect": "Connect",
+      "disconnect": "Disconnect",
+      "google": "Google Calendar",
+      "microsoft": "Microsoft Outlook"
+    },
+    "settings": {
+      "title": "Settings",
+      "username": "Public username (your booking link)",
+      "display_name": "Display name",
+      "timezone": "Timezone",
+      "brand_color": "Brand color",
+      "bio": "Bio",
+      "save_error": "Could not save — the username may be taken or reserved."
+    }
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "nav": {
+    "product": "Produkt",
+    "solutions": "Lösungen",
+    "resources": "Ressourcen",
+    "enterprise": "Enterprise",
+    "pricing": "Preise",
+    "about": "Über uns",
+    "features": "Funktionen",
+    "integrations": "Integrationen",
+    "login": "Anmelden",
+    "getStarted": "Loslegen"
+  },
+  "cta": {
+    "signin": "Anmelden",
+    "signup": "Loslegen",
+    "signout": "Abmelden",
+    "guest": "Gast",
+    "account": "Mein Konto"
+  },
+  "panel": {
+    "filters": "Filter",
+    "view": "Ansicht",
+    "timezone": "Zeitzone",
+    "jumpTo": "Datum aufrufen",
+    "localHolidays": "Lokale Feiertage",
+    "globalHolidays": "Globale Gedenktage",
+    "events": "Meine Ereignisse",
+    "meetings": "Meetings",
+    "birthdays": "Geburtstage",
+    "weather": "Wetter",
+    "fortune": "Tagesdeutung",
+    "lunar": "Chinesischer Mondkalender",
+    "weekStart": "Wochenstart",
+    "weekNumbers": "Wochennummern",
+    "upcoming": "Bevorstehend",
+    "region": "Region",
+    "search": "Land suchen…"
+  },
+  "scope": {
+    "year": "Jahr",
+    "month": "Monat",
+    "week": "Woche",
+    "day": "Tag"
+  },
+  "cal": {
+    "today": "Heute",
+    "week": "KW",
+    "noEvents": "Keine Ereignisse",
+    "more": "+{{count}} weitere"
+  },
+  "days": {
+    "full": [
+      "Sonntag",
+      "Montag",
+      "Dienstag",
+      "Mittwoch",
+      "Donnerstag",
+      "Freitag",
+      "Samstag"
+    ],
+    "short": [
+      "So",
+      "Mo",
+      "Di",
+      "Mi",
+      "Do",
+      "Fr",
+      "Sa"
+    ],
+    "min": [
+      "S",
+      "M",
+      "D",
+      "M",
+      "D",
+      "F",
+      "S"
+    ]
+  },
+  "months": {
+    "full": [
+      "Januar",
+      "Februar",
+      "März",
+      "April",
+      "Mai",
+      "Juni",
+      "Juli",
+      "August",
+      "September",
+      "Oktober",
+      "November",
+      "Dezember"
+    ],
+    "short": [
+      "Jan",
+      "Feb",
+      "Mär",
+      "Apr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Okt",
+      "Nov",
+      "Dez"
+    ]
+  },
+  "footer": {
+    "tag": "Eine ruhige, schnelle Planungsoberfläche für Teams, die Kalender respektieren.",
+    "copyright": "© 2026 chroniq.cc",
+    "statusOp": "Alle Systeme betriebsbereit",
+    "tagline": "Terminplanung, vereinfacht.",
+    "product": "Produkt",
+    "company": "Unternehmen",
+    "resources": "Ressourcen",
+    "legal": "Rechtliches",
+    "copyright_old": "© 2026 chroniq.cc. Alle Rechte vorbehalten.",
+    "links": {
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "integrations": "Integrationen",
+      "enterprise": "Enterprise",
+      "security": "Sicherheit",
+      "about": "Über uns",
+      "blog": "Blog",
+      "careers": "Karriere",
+      "press": "Presse",
+      "contact": "Kontakt",
+      "help": "Hilfecenter",
+      "developers": "Entwickler",
+      "status": "Systemstatus",
+      "privacy": "Datenschutz",
+      "terms": "Nutzungsbedingungen",
+      "cookies": "Cookie-Richtlinie",
+      "gdpr": "DSGVO"
+    }
+  },
+  "weather": {
+    "noData": "Keine Wetterdaten für diese Region.",
+    "low": "Tief",
+    "conditions": {
+      "sun": "Sonnig",
+      "partly": "Heiter",
+      "cloud": "Bewölkt",
+      "rain": "Regen",
+      "storm": "Gewitter",
+      "snow": "Schnee",
+      "fog": "Nebel"
+    }
+  },
+  "fortune": {
+    "western": "Tagesdeutung",
+    "cnHeader": "Tagesdeutung",
+    "yi": "Geeignet",
+    "ji": "Vermeiden",
+    "year": "Jahr",
+    "day": "Tag"
+  },
+  "resources": {
+    "title": "Ressourcen",
+    "sub": "Alles, was Sie für chroniq.cc brauchen.",
+    "open": "Öffnen",
+    "items": {
+      "api": {
+        "title": "API",
+        "desc": "REST-Endpunkte, Webhooks und SDKs.",
+        "tag": "v3.2"
+      },
+      "docs": {
+        "title": "Docs",
+        "desc": "Anleitungen und Referenzen.",
+        "tag": "428 Seiten"
+      },
+      "blog": {
+        "title": "Blog",
+        "desc": "Designnotizen und Essays.",
+        "tag": "Wöchentlich"
+      },
+      "help": {
+        "title": "Hilfe-Center",
+        "desc": "Fehlerbehebung und Support.",
+        "tag": "24/7"
+      },
+      "terms": {
+        "title": "AGB",
+        "desc": "Servicebedingungen und Datenschutz.",
+        "tag": "v2026.4"
+      }
+    }
+  },
+  "booking": {
+    "select_date": "Datum auswählen",
+    "select_time": "Uhrzeit auswählen",
+    "your_info": "Ihre Informationen",
+    "name": "Ihr Name",
+    "email": "E-Mail-Adresse",
+    "notes": "Zusätzliche Anmerkungen (optional)",
+    "confirm": "Buchung bestätigen",
+    "confirmed_title": "Sie sind gebucht!",
+    "confirmed_subtitle": "Eine Kalendereinladung wurde an Ihre E-Mail gesendet.",
+    "no_slots": "Keine verfügbaren Slots für dieses Datum.",
+    "timezone": "Zeitzone",
+    "min": "Min.",
+    "selected_time": "Ausgewählte Zeit",
+    "secure": "Sicher & verschlüsselt",
+    "host_not_found": "Diese Buchungsseite wurde nicht gefunden.",
+    "event_not_found": "Dieser Termintyp ist nicht verfügbar.",
+    "book_another": "Weiteren Termin buchen",
+    "next": "Weiter",
+    "no_times": "An diesem Tag sind keine Zeiten verfügbar.",
+    "error": "Diese Zeit ist nicht mehr verfügbar. Bitte wähle eine andere.",
+    "with_host": "{{title}} mit {{host}}"
+  },
+  "common": {
+    "learnMore": "Mehr erfahren",
+    "comingSoon": "Demnächst",
+    "dark": "Dunkel",
+    "light": "Hell",
+    "language": "Sprache",
+    "loading": "Wird geladen…",
+    "save": "Speichern",
+    "saving": "Wird gespeichert…",
+    "saved": "Gespeichert",
+    "cancel": "Abbrechen",
+    "back": "Zurück",
+    "edit": "Bearbeiten",
+    "delete": "Löschen"
+  },
+  "hero": {
+    "badge": "Jetzt mit KI-Terminplanung",
+    "headline": "Terminplanung,\nvereinfacht.",
+    "subheadline": "Teile deinen chroniq.cc-Link. Lass andere automatisch Zeit mit dir buchen.",
+    "cta_primary": "Kostenlos starten",
+    "cta_secondary": "Live-Demo ansehen",
+    "social_proof": "Vertraut von über 50.000 Teams weltweit"
+  },
+  "manage": {
+    "invalid": "Dieser Buchungslink ist ungültig oder abgelaufen.",
+    "reschedule": "Verschieben",
+    "cancel_meeting": "Termin absagen",
+    "cancelling": "Wird abgesagt…",
+    "pick_new_time": "Neue Zeit wählen",
+    "confirm_new_time": "Neue Zeit bestätigen",
+    "no_times": "An diesem Tag sind keine Zeiten verfügbar.",
+    "slot_taken": "Diese Zeit ist nicht mehr verfügbar.",
+    "cancelled_notice": "Dieser Termin wurde abgesagt.",
+    "status": {
+      "confirmed": "bestätigt",
+      "cancelled": "abgesagt"
+    }
+  },
+  "dashboard": {
+    "signin_title": "Anmelden",
+    "signin_subtitle": "Melde dich an, um deine Terminarten, Verfügbarkeit und Buchungen zu verwalten.",
+    "tabs": {
+      "event_types": "Terminarten",
+      "bookings": "Buchungen",
+      "availability": "Verfügbarkeit",
+      "integrations": "Integrationen",
+      "settings": "Einstellungen",
+      "calendar": "Kalender"
+    },
+    "event_types": {
+      "title": "Terminarten",
+      "new": "+ Neue Terminart",
+      "none": "Noch keine Terminarten. Erstelle die erste.",
+      "inactive": "inaktiv",
+      "modal_new": "Neue Terminart",
+      "modal_edit": "Terminart bearbeiten",
+      "f_title": "Titel",
+      "f_slug": "Kürzel (z. B. 30-min)",
+      "f_description": "Beschreibung",
+      "f_minutes": "Minuten",
+      "f_active": "Aktiv (buchbar)",
+      "save_error": "Speichern fehlgeschlagen — prüfe, ob das Kürzel eindeutig ist."
+    },
+    "location": {
+      "video": "Video",
+      "phone": "Telefon",
+      "in_person": "Vor Ort",
+      "custom": "Benutzerdefiniert"
+    },
+    "bookings": {
+      "title": "Buchungen",
+      "none": "Keine Buchungen vorhanden.",
+      "cancel": "Absagen",
+      "filter_upcoming": "Anstehend",
+      "filter_past": "Vergangen",
+      "filter_cancelled": "Abgesagt"
+    },
+    "availability": {
+      "title": "Verfügbarkeit",
+      "timezone": "Zeitzone",
+      "unavailable": "Nicht verfügbar",
+      "save": "Verfügbarkeit speichern"
+    },
+    "integrations": {
+      "title": "Integrationen",
+      "subtitle": "Verbinde einen Kalender, damit chroniq deine echte Verfügbarkeit prüft und Buchungen automatisch einträgt.",
+      "connected": "Verbunden",
+      "not_connected": "Nicht verbunden",
+      "connect": "Verbinden",
+      "disconnect": "Trennen",
+      "google": "Google Kalender",
+      "microsoft": "Microsoft Outlook"
+    },
+    "settings": {
+      "title": "Einstellungen",
+      "username": "Öffentlicher Benutzername (dein Buchungslink)",
+      "display_name": "Anzeigename",
+      "timezone": "Zeitzone",
+      "brand_color": "Markenfarbe",
+      "bio": "Bio",
+      "save_error": "Speichern fehlgeschlagen — der Benutzername ist evtl. vergeben oder reserviert."
+    }
+  }
+}
