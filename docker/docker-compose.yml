@@ -1,0 +1,80 @@
+# =============================================================================
+# chroniq.cc — Production Docker Compose (Raspberry Pi)
+# =============================================================================
+# Prereqs: whereq-db running on whereq-network, "chroniq" database created.
+#   docker compose -f docker/docker-compose.yml up -d --build
+# =============================================================================
+
+networks:
+  whereq-network:
+    external: true
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/api/Dockerfile
+    image: chroniq-api:latest
+    container_name: chroniq-api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@whereq-db:5432/${CHRONIQ_DB:-chroniq}
+      DATABASE_URL_SYNC: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@whereq-db:5432/${CHRONIQ_DB:-chroniq}
+      CORS_ORIGINS: ${CORS_ORIGINS:-["https://chroniq.cc"]}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-https://chroniq.cc}
+      KEYCLOAK_URL: ${KEYCLOAK_URL:-https://www.keytomarvel.com}
+      KEYCLOAK_REALM: ${KEYCLOAK_REALM:-chroniq.cc}
+      KEYCLOAK_CLIENT_ID: ${KEYCLOAK_CLIENT_ID:-chroniq-spa}
+      KEYCLOAK_ADMIN_CLIENT_ID: ${KEYCLOAK_ADMIN_CLIENT_ID:-chroniq-backend}
+      KEYCLOAK_ADMIN_CLIENT_SECRET: ${KEYCLOAK_ADMIN_CLIENT_SECRET:-}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      EMAIL_FROM: ${EMAIL_FROM:-chroniq.cc <no-reply@chroniq.cc>}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      MS_CLIENT_ID: ${MS_CLIENT_ID:-}
+      MS_CLIENT_SECRET: ${MS_CLIENT_SECRET:-}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      TOKEN_ENCRYPTION_KEY: ${TOKEN_ENCRYPTION_KEY:-}
+    networks:
+      - whereq-network
+
+  scheduler:
+    image: chroniq-api:latest
+    container_name: chroniq-scheduler
+    restart: unless-stopped
+    depends_on:
+      - api
+    command: python -m scheduler.main
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@whereq-db:5432/${CHRONIQ_DB:-chroniq}
+      DATABASE_URL_SYNC: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@whereq-db:5432/${CHRONIQ_DB:-chroniq}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-https://chroniq.cc}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      EMAIL_FROM: ${EMAIL_FROM:-chroniq.cc <no-reply@chroniq.cc>}
+    networks:
+      - whereq-network
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/frontend/Dockerfile
+      args:
+        VITE_KEYCLOAK_URL: ${KEYCLOAK_URL:-https://www.keytomarvel.com}
+        VITE_KEYCLOAK_REALM: ${KEYCLOAK_REALM:-chroniq.cc}
+        VITE_KEYCLOAK_CLIENT_ID: ${KEYCLOAK_CLIENT_ID:-chroniq-spa}
+    image: chroniq-frontend:latest
+    container_name: chroniq-frontend
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+    networks:
+      - whereq-network

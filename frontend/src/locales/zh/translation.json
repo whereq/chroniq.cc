@@ -1,0 +1,320 @@
+{
+  "nav": {
+    "product": "产品",
+    "solutions": "解决方案",
+    "resources": "资源",
+    "enterprise": "企业版",
+    "pricing": "定价",
+    "about": "关于",
+    "features": "功能特性",
+    "integrations": "集成应用",
+    "login": "登录",
+    "getStarted": "免费开始"
+  },
+  "cta": {
+    "signin": "登录",
+    "signup": "免费开始",
+    "signout": "退出登录",
+    "guest": "访客",
+    "account": "我的账户"
+  },
+  "panel": {
+    "filters": "筛选",
+    "view": "视图",
+    "timezone": "时区",
+    "jumpTo": "跳转到日期",
+    "localHolidays": "本地节日",
+    "globalHolidays": "全球纪念日",
+    "events": "我的活动",
+    "meetings": "会议",
+    "birthdays": "生日",
+    "weather": "天气",
+    "fortune": "每日运势",
+    "lunar": "中国阴历",
+    "weekStart": "每周起始日",
+    "weekNumbers": "显示周数",
+    "upcoming": "即将到来",
+    "region": "区域",
+    "search": "搜索国家…"
+  },
+  "scope": {
+    "year": "年",
+    "month": "月",
+    "week": "周",
+    "day": "日"
+  },
+  "cal": {
+    "today": "今天",
+    "week": "周",
+    "noEvents": "无事件",
+    "more": "+{{count}} 项"
+  },
+  "days": {
+    "full": [
+      "星期日",
+      "星期一",
+      "星期二",
+      "星期三",
+      "星期四",
+      "星期五",
+      "星期六"
+    ],
+    "short": [
+      "周日",
+      "周一",
+      "周二",
+      "周三",
+      "周四",
+      "周五",
+      "周六"
+    ],
+    "min": [
+      "日",
+      "一",
+      "二",
+      "三",
+      "四",
+      "五",
+      "六"
+    ]
+  },
+  "months": {
+    "full": [
+      "一月",
+      "二月",
+      "三月",
+      "四月",
+      "五月",
+      "六月",
+      "七月",
+      "八月",
+      "九月",
+      "十月",
+      "十一月",
+      "十二月"
+    ],
+    "short": [
+      "1月",
+      "2月",
+      "3月",
+      "4月",
+      "5月",
+      "6月",
+      "7月",
+      "8月",
+      "9月",
+      "10月",
+      "11月",
+      "12月"
+    ]
+  },
+  "footer": {
+    "tag": "为尊重时间的团队打造的简洁、快速的日程安排平面。",
+    "copyright": "© 2026 chroniq.cc — 一个日程日历。",
+    "statusOp": "所有系统正常运行",
+    "tagline": "日程安排，化繁为简。",
+    "product": "产品",
+    "company": "公司",
+    "resources": "资源",
+    "legal": "法律",
+    "links": {
+      "features": "功能特性",
+      "pricing": "价格方案",
+      "integrations": "集成应用",
+      "enterprise": "企业服务",
+      "security": "安全",
+      "about": "关于我们",
+      "blog": "博客",
+      "careers": "加入我们",
+      "press": "媒体",
+      "contact": "联系我们",
+      "help": "帮助中心",
+      "developers": "开发者",
+      "status": "系统状态",
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "cookies": "Cookie 政策",
+      "gdpr": "GDPR"
+    },
+    "copyright_old": "© 2026 chroniq.cc. 保留所有权利。"
+  },
+  "weather": {
+    "noData": "该区域暂无天气数据。",
+    "low": "最低",
+    "conditions": {
+      "sun": "晴",
+      "partly": "多云转晴",
+      "cloud": "多云",
+      "rain": "雨",
+      "storm": "雷暴",
+      "snow": "雪",
+      "fog": "雾"
+    }
+  },
+  "fortune": {
+    "western": "今日运势",
+    "cnHeader": "今日宜忌",
+    "yi": "宜",
+    "ji": "忌",
+    "year": "年",
+    "day": "日"
+  },
+  "resources": {
+    "title": "资源",
+    "sub": "构建、学习与依赖 chroniq.cc 的一切。",
+    "open": "打开",
+    "items": {
+      "api": {
+        "title": "API",
+        "desc": "REST 接口、Webhook，以及 JavaScript、Python、Go 的 SDK。",
+        "tag": "v3.2"
+      },
+      "docs": {
+        "title": "文档",
+        "desc": "全产品的指南、参考与示例。",
+        "tag": "428 页"
+      },
+      "blog": {
+        "title": "博客",
+        "desc": "设计笔记、发布回顾，以及关于日历的短文。",
+        "tag": "每周"
+      },
+      "help": {
+        "title": "帮助中心",
+        "desc": "操作指南、故障排查以及支持团队的解答。",
+        "tag": "24/7"
+      },
+      "terms": {
+        "title": "条款",
+        "desc": "服务条款、隐私政策、安全体系与使用准则。",
+        "tag": "v2026.4"
+      }
+    }
+  },
+  "hero": {
+    "badge": "全新 AI 智能调度",
+    "headline": "日程安排，\n从此简单。",
+    "subheadline": "分享您的 chroniq.cc 链接，让任何人都能自动预约您的时间。",
+    "cta_primary": "免费开始使用",
+    "cta_secondary": "查看演示",
+    "social_proof": "全球超过 50,000 个团队的信赖之选"
+  },
+  "booking": {
+    "select_date": "选择日期",
+    "select_time": "选择时间",
+    "your_info": "您的信息",
+    "name": "您的姓名",
+    "email": "电子邮件地址",
+    "notes": "备注（可选）",
+    "confirm": "确认预约",
+    "confirmed_title": "预约成功！",
+    "confirmed_subtitle": "日历邀请已发送至您的邮箱。",
+    "no_slots": "该日期没有可用时段。",
+    "timezone": "时区",
+    "min": "分钟",
+    "selected_time": "已选时间",
+    "secure": "安全加密",
+    "host_not_found": "未找到该预约页面。",
+    "event_not_found": "该会议类型不可用。",
+    "book_another": "预约另一场会议",
+    "next": "下一步",
+    "no_times": "当天没有可预约的时间。",
+    "error": "该时间已被占用，请选择其他时段。",
+    "with_host": "与 {{host}} 的{{title}}"
+  },
+  "common": {
+    "learnMore": "了解更多",
+    "comingSoon": "即将推出",
+    "dark": "深色",
+    "light": "浅色",
+    "language": "语言",
+    "loading": "加载中…",
+    "save": "保存",
+    "saving": "保存中…",
+    "saved": "已保存",
+    "cancel": "取消",
+    "back": "返回",
+    "edit": "编辑",
+    "delete": "删除"
+  },
+  "manage": {
+    "invalid": "该预约链接无效或已过期。",
+    "reschedule": "改期",
+    "cancel_meeting": "取消会议",
+    "cancelling": "取消中…",
+    "pick_new_time": "选择新的时间",
+    "confirm_new_time": "确认新时间",
+    "no_times": "当天没有可用时间。",
+    "slot_taken": "该时间已被占用。",
+    "cancelled_notice": "此会议已取消。",
+    "status": {
+      "confirmed": "已确认",
+      "cancelled": "已取消"
+    }
+  },
+  "dashboard": {
+    "signin_title": "登录",
+    "signin_subtitle": "登录以管理您的会议类型、可用时间和预约。",
+    "tabs": {
+      "event_types": "会议类型",
+      "bookings": "预约",
+      "availability": "可用时间",
+      "integrations": "集成",
+      "settings": "设置",
+      "calendar": "日历"
+    },
+    "event_types": {
+      "title": "会议类型",
+      "new": "+ 新建会议类型",
+      "none": "还没有会议类型，创建第一个吧。",
+      "inactive": "未启用",
+      "modal_new": "新建会议类型",
+      "modal_edit": "编辑会议类型",
+      "f_title": "标题",
+      "f_slug": "短链接（如 30-min）",
+      "f_description": "描述",
+      "f_minutes": "分钟",
+      "f_active": "启用（可预约）",
+      "save_error": "保存失败——请检查短链接是否唯一。"
+    },
+    "location": {
+      "video": "视频",
+      "phone": "电话",
+      "in_person": "线下",
+      "custom": "自定义"
+    },
+    "bookings": {
+      "title": "预约",
+      "none": "暂无预约。",
+      "cancel": "取消",
+      "filter_upcoming": "即将到来",
+      "filter_past": "已过期",
+      "filter_cancelled": "已取消"
+    },
+    "availability": {
+      "title": "可用时间",
+      "timezone": "时区",
+      "unavailable": "不可用",
+      "save": "保存可用时间"
+    },
+    "integrations": {
+      "title": "集成",
+      "subtitle": "连接日历，chroniq 将根据你的真实空闲时间安排并自动添加预约。",
+      "connected": "已连接",
+      "not_connected": "未连接",
+      "connect": "连接",
+      "disconnect": "断开连接",
+      "google": "Google 日历",
+      "microsoft": "Microsoft Outlook"
+    },
+    "settings": {
+      "title": "设置",
+      "username": "公开用户名（你的预约链接）",
+      "display_name": "显示名称",
+      "timezone": "时区",
+      "brand_color": "品牌颜色",
+      "bio": "简介",
+      "save_error": "保存失败——该用户名可能已被占用或被保留。"
+    }
+  }
+}

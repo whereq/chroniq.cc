@@ -1,0 +1,26 @@
+# Pinned runtime deps for Docker builds. Keep in sync with pyproject.toml.
+# Web framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+pydantic>=2.9.0
+pydantic-settings>=2.6.0
+email-validator>=2.2.0
+# Database
+sqlalchemy>=2.0.36
+asyncpg>=0.30.0
+psycopg2-binary>=2.9.10
+alembic>=1.14.0
+# Auth
+python-jose[cryptography]>=3.3.0
+httpx>=0.28.0
+# Scheduling
+apscheduler>=3.11.0
+# Calendar integrations (Google + Microsoft) via httpx REST — no SDKs needed.
+# Token encryption at rest
+cryptography>=43.0.0
+# Payments
+stripe>=11.0.0
+# iCalendar
+ics>=0.7.2
+# Utilities
+python-dotenv>=1.0.1

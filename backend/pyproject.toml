@@ -1,0 +1,55 @@
+[project]
+name = "chroniq"
+version = "0.1.0"
+description = "chroniq.cc — scheduling & booking platform API"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "chroniq.cc" }]
+keywords = ["scheduling", "calendar", "booking", "api"]
+
+dependencies = [
+    # Web framework
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.6.0",
+    "email-validator>=2.2.0",
+    # Database
+    "sqlalchemy>=2.0.36",
+    "asyncpg>=0.30.0",
+    "psycopg2-binary>=2.9.10",
+    "alembic>=1.14.0",
+    # Auth (Keycloak JWT verification)
+    "python-jose[cryptography]>=3.3.0",
+    "httpx>=0.28.0",
+    # Scheduling (reminder jobs)
+    "apscheduler>=3.11.0",
+    # Calendar integrations (Google + Microsoft) are called directly over REST
+    # with httpx (declared above) — no provider SDKs required.
+    # Token encryption at rest
+    "cryptography>=43.0.0",
+    # Payments
+    "stripe>=11.0.0",
+    # iCalendar generation
+    "ics>=0.7.2",
+    # Utilities
+    "python-dotenv>=1.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=6.0.0",
+    "httpx>=0.28.0",
+    "ruff>=0.8.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

@@ -28,10 +28,12 @@
 #   host alias 'github.com-whereq' (identity: ~/.ssh/wq_gh).
 #
 # Typical flow:
-#   1. Develop on dev, accumulate commits
+#   1. Develop on dev (uncommitted changes are fine — the script stages and
+#      commits them for you)
 #   2. bin/release.sh --message "Add calendar sync feature"
-#      → squashes dev commits, pushes dev, merges to main, tags v1.0.0.N
-#   3. On prod server: bin/deploy.sh
+#      → git add -A + commit, squashes dev commits, pushes dev, merges to main,
+#        tags v1.0.0.N
+#   3. On prod server: bin/deploy.sh (or bin/deploy.sh full --migrate)
 #
 # Examples:
 #   bin/release.sh -m "Add calendar sync feature"
@@ -196,13 +198,6 @@ preflight() {
             exit 1
         fi
 
-        if ! git -C "$PROJECT_ROOT" diff --quiet || \
-           ! git -C "$PROJECT_ROOT" diff --cached --quiet; then
-            error "Uncommitted changes detected. Commit or stash them first."
-            git -C "$PROJECT_ROOT" status --short
-            exit 1
-        fi
-
         # Verify the remote uses the correct SSH host alias
         local actual_remote
         actual_remote=$(git -C "$PROJECT_ROOT" remote get-url origin 2>/dev/null || true)
@@ -211,8 +206,44 @@ preflight() {
             warn "Run: git remote set-url origin ${REMOTE_URL}"
         fi
 
-        success "On branch ${DEV_BRANCH}, working tree clean"
+        success "On branch ${DEV_BRANCH}"
     fi
+}
+
+# -----------------------------------------------------------------------------
+# Step: Stage and commit any pending changes
+# -----------------------------------------------------------------------------
+do_stage_and_commit() {
+    step "Stage and commit pending changes"
+
+    if [[ "$DRY_RUN" == true ]]; then
+        dim "[dry-run] would run: git add -A && git commit -m \"${COMMIT_MSG}\""
+        record_result "skip"
+        return
+    fi
+
+    local has_changes=false
+    if ! git -C "$PROJECT_ROOT" diff --quiet; then has_changes=true; fi
+    if ! git -C "$PROJECT_ROOT" diff --cached --quiet; then has_changes=true; fi
+    if [[ -n "$(git -C "$PROJECT_ROOT" ls-files --others --exclude-standard)" ]]; then has_changes=true; fi
+
+    if [[ "$has_changes" == false ]]; then
+        warn "Working tree already clean — nothing to commit"
+        record_result "skip"
+        return
+    fi
+
+    dim "Staging all changes..."
+    git -C "$PROJECT_ROOT" status --short | sed 's/^/  /'
+    echo ""
+
+    git -C "$PROJECT_ROOT" add -A
+    git -C "$PROJECT_ROOT" commit -m "$COMMIT_MSG"
+
+    local new_sha
+    new_sha=$(git -C "$PROJECT_ROOT" log -1 --oneline)
+    success "Committed → ${new_sha}"
+    record_result "ok"
 }
 
 # -----------------------------------------------------------------------------
@@ -402,6 +433,7 @@ trap 'echo ""; error "Release interrupted."; print_summary; exit 1' ERR
 main() {
     parse_args "$@"
     preflight
+    do_stage_and_commit
     do_squash
     do_push_dev
     do_merge_to_main
