@@ -12,6 +12,10 @@
 #   docker compose -f docker/docker-compose.dev.yml logs -f api
 #   docker compose -f docker/docker-compose.dev.yml down
 # =============================================================================
+# Explicit project name so chroniq's compose ops never collide with the other
+# whereq apps that also keep their compose file under a docker/ directory
+# (which would otherwise all default to the project name "docker").
+name: chroniq
 
 networks:
   whereq-network:
