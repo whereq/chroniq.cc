@@ -8,6 +8,18 @@ frontend, deployed via Docker against the shared `whereq-db` PostgreSQL and a
 Keycloak realm hosted at keytomarvel.com. The full product plan lives in
 `docs/ROADMAP.md`.
 
+## Production server
+
+The apps run on the shared **whereq server** (the old Raspberry Pi is retired).
+Reach it with `ssh whereq@whereq` from home, or `ssh ssh.whereq.com` from
+outside. The repo lives at `/home/whereq/git/chroniq.cc`; deploys run there via
+`bin/deploy.sh`. Cloudflare Tunnel maps `chroniq.cc` → `localhost:8082`
+(`chroniq-frontend`). chroniq owns a dedicated `chroniq` Postgres role + `chroniq`
+database inside the shared `whereq-db`; secrets live in `docker/.env` (gitignored).
+Every whereq app keeps its compose file under a `docker/` dir, so each MUST set a
+top-level `name:` in its compose file (chroniq uses `name: chroniq`) — otherwise
+they all default to project `docker` and a `down` in one repo tears down the others.
+
 ## Layout
 
 ```
@@ -40,7 +52,7 @@ bin/dev.sh                                          # creates chroniq DB + start
 docker compose -f docker/docker-compose.dev.yml up -d --build
 ```
 
-Release/deploy: `bin/release.sh -m "..."` (dev→main squash+tag), `bin/deploy.sh` (on prod Pi).
+Release/deploy: `bin/release.sh -m "..."` (dev→main squash+tag), `bin/deploy.sh` (on the whereq server, see "Production server" above).
 
 ## Backend architecture
 
