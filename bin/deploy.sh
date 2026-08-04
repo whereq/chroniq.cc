@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# chroniq.cc — Production Deployment Script (run on the Raspberry Pi)
+# chroniq.cc — Production Deployment Script (run on the whereq server)
 # =============================================================================
 # Usage:
 #   bin/deploy.sh [MODE] [OPTIONS]

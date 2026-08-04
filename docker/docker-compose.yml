@@ -1,5 +1,5 @@
 # =============================================================================
-# chroniq.cc — Production Docker Compose (Raspberry Pi)
+# chroniq.cc — Production Docker Compose (whereq server)
 # =============================================================================
 # Prereqs: whereq-db running on whereq-network, "chroniq" database created.
 #   docker compose -f docker/docker-compose.yml up -d --build

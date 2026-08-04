@@ -12,7 +12,8 @@ interface Testimonial {
 
 export function TestimonialsSection() {
   const { t } = useTranslation()
-  const testimonials = t('testimonials.items', { returnObjects: true }) as Testimonial[]
+  const rawTestimonials = t('testimonials.items', { returnObjects: true })
+  const testimonials = Array.isArray(rawTestimonials) ? (rawTestimonials as Testimonial[]) : []
 
   return (
     <section className="py-20 lg:py-28 bg-gray-50 dark:bg-gray-900/50">

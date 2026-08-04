@@ -199,6 +199,137 @@
     "cta_secondary": "View live demo",
     "social_proof": "Trusted by 50,000+ teams worldwide"
   },
+  "features": {
+    "title": "Everything you need to schedule smarter",
+    "subtitle": "From one-off intro calls to round-robin team meetings, chroniq handles the logistics so you can focus on the conversation.",
+    "items": {
+      "event_types": {
+        "title": "Custom event types",
+        "desc": "Create 15-minute intros, hour-long deep dives, or paid consultations — each with its own rules."
+      },
+      "booking_pages": {
+        "title": "Personal booking pages",
+        "desc": "Share a clean link at chroniq.cc/you and let invitees pick a time that works for both of you."
+      },
+      "availability": {
+        "title": "Flexible availability",
+        "desc": "Set weekly hours, add date overrides, and buffer time between meetings automatically."
+      },
+      "team": {
+        "title": "Team scheduling",
+        "desc": "Round-robin and collective events distribute bookings across your whole team."
+      },
+      "integrations": {
+        "title": "Calendar sync",
+        "desc": "Two-way sync with Google and Microsoft keeps your real availability always up to date."
+      },
+      "analytics": {
+        "title": "Insights & analytics",
+        "desc": "See booking trends, no-show rates, and your busiest times at a glance."
+      }
+    }
+  },
+  "how_it_works": {
+    "title": "Book meetings in three simple steps",
+    "subtitle": "Set it up once, then let chroniq handle the back-and-forth for you.",
+    "steps": {
+      "create": {
+        "title": "Create your event",
+        "desc": "Choose a duration, set your availability, and add any questions for your invitees."
+      },
+      "share": {
+        "title": "Share your link",
+        "desc": "Send your personal booking link or embed it directly on your website."
+      },
+      "meet": {
+        "title": "Get booked",
+        "desc": "Invitees pick a slot, everyone gets a calendar invite, and reminders go out automatically."
+      }
+    }
+  },
+  "integrations": {
+    "title": "Works with the tools you already use",
+    "subtitle": "Connect your calendar, video, and payment tools in just a couple of clicks.",
+    "cta": "View all integrations"
+  },
+  "pricing": {
+    "title": "Simple, transparent pricing",
+    "subtitle": "Start free. Upgrade when you need more.",
+    "monthly": "Monthly",
+    "annual": "Annual",
+    "save": "Save 20%",
+    "plans": {
+      "free": {
+        "name": "Free",
+        "desc": "For individuals getting started",
+        "price": "$0",
+        "period": "/mo",
+        "cta": "Get started",
+        "features": [
+          "1 event type",
+          "Unlimited bookings",
+          "Personal booking page",
+          "Google & Microsoft calendar sync",
+          "Email notifications"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "desc": "For professionals who book all day",
+        "price": "$12",
+        "period": "/mo",
+        "badge": "Most popular",
+        "cta": "Start free trial",
+        "features": [
+          "Unlimited event types",
+          "Customizable booking pages",
+          "Automated reminders & follow-ups",
+          "Zoom, Teams & Google Meet",
+          "Remove chroniq branding",
+          "Priority support"
+        ]
+      },
+      "team": {
+        "name": "Team",
+        "desc": "For teams that schedule together",
+        "price": "$20",
+        "period": "/user/mo",
+        "cta": "Start free trial",
+        "features": [
+          "Everything in Pro",
+          "Round-robin & collective events",
+          "Team availability & routing",
+          "Admin roles & permissions",
+          "Analytics dashboard",
+          "SAML single sign-on"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Loved by busy people everywhere",
+    "subtitle": "Teams and solo professionals rely on chroniq to run their day.",
+    "items": [
+      {
+        "quote": "chroniq cut my scheduling emails to zero. Clients just pick a time and it lands on my calendar.",
+        "name": "Sarah Chen",
+        "role": "Founder",
+        "company": "Brightpath Studio"
+      },
+      {
+        "quote": "Round-robin routing across our sales team just works. Onboarding a new rep takes minutes, not days.",
+        "name": "Marcus Lee",
+        "role": "Head of Sales",
+        "company": "Northwind"
+      },
+      {
+        "quote": "The calendar sync is flawless — no more double bookings across my three different calendars.",
+        "name": "Ana Duarte",
+        "role": "Independent Consultant",
+        "company": "Duarte Advisory"
+      }
+    ]
+  },
   "booking": {
     "select_date": "Select a date",
     "select_time": "Select a time",

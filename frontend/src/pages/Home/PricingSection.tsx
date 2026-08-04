@@ -78,7 +78,8 @@ export function PricingSection() {
         <div className="mt-12 grid md:grid-cols-3 gap-6 md:gap-4 lg:gap-6 md:items-start">
           {planKeys.map((plan) => {
             const isPro = plan === 'pro'
-            const features = t(`pricing.plans.${plan}.features`, { returnObjects: true }) as string[]
+            const rawFeatures = t(`pricing.plans.${plan}.features`, { returnObjects: true })
+            const features = Array.isArray(rawFeatures) ? (rawFeatures as string[]) : []
 
             return (
               <div
