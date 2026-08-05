@@ -198,7 +198,7 @@ Port flowdesk `payments.py` + `services/keycloak_admin.py`:
 - `docker/` with `api` + `frontend` Dockerfiles (dev + prod), compose files.
 - Join external `whereq-network`; use `whereq-db` with a new `chroniq` database.
 - Alembic migrations run on API start (flowdesk pattern).
-- `bin/deploy.sh` for the Raspberry Pi prod path (`/home/whereq/github/chroniq.cc`).
+- `bin/deploy.sh` for the whereq-server prod path (`/home/whereq/git/chroniq.cc`).
 - Health check endpoint (`GET /api/v1/health`) unauthenticated for Docker.
 - CORS origins for dev (5173) + prod domain.
 
@@ -209,18 +209,19 @@ Port flowdesk `payments.py` + `services/keycloak_admin.py`:
 | Phase | Deliverable | Status |
 |---|---|---|
 | **0. Restructure** | Monorepo layout, backend skeleton boots, marketing Home routed, dev docker compose | ✅ done — FE builds, API imports, tests green |
-| **1. Auth** | Keycloak realm+clients+theme, `auth.py` ported, real login on frontend, `/me/profile` | 🟡 code done + importable realm JSON (`keycloak/chroniq.cc-realm.json` + `docs/KEYCLOAK_SETUP.md`); **user importing realm manually** |
+| **1. Auth** | Keycloak realm+clients+theme, `auth.py` ported, real login on frontend, `/me/profile` | ✅ realm imported & live on keytomarvel.com (`chroniq.cc` OIDC discovery 200; `chroniq-spa` allows `https://chroniq.cc/*`). **Not yet exercised in a browser; `chroniq-backend` secret still blank (only gates Stripe→role).** |
 | **2. Booking core** | Event types + availability CRUD, `slot_engine`, public booking flow, double-book prevention | ✅ done — real APIs + rebuilt BookingPage; slot engine unit-tested |
 | **3. Calendar sync** | Google + Microsoft OAuth, free/busy in slots, event write-back | ✅ code done — httpx REST impl + OAuth callback + parsers tested; needs OAuth creds to run live |
 | **4. Notifications** | Confirmation + reminder + cancel/reschedule emails with `.ics` | ✅ done — confirmation/reminder(24h,1h)/cancel/reschedule + `.ics`; scheduler container; invitee self-service page (log-only until SMTP set) |
 | **5. Dashboard** | Full authenticated management UI | ✅ done — event types, availability, bookings, integrations, settings sections |
 | **6. Marketing + billing** | Pricing → Stripe → tier roles, complete locales, tests | ✅ mostly done — all 8 locales at parity; Pricing CTAs wired to Stripe checkout; entitlements enforced (**limit numbers are placeholders in `chroniq/entitlements.py` — set the real matrix**) |
-| **7. Prod deploy** | Prod compose, deploy.sh, migrations, health checks live | 🟡 Dockerfiles + compose + deploy.sh written; not yet run on the Pi |
+| **7. Prod deploy** | Prod compose, deploy.sh, migrations, health checks live | ✅ live on the whereq server: `chroniq-api`/`-scheduler`/`-frontend` up, migration `0001` applied, Cloudflare Tunnel → `localhost:8082`, `www → apex` 301 redirect. Multi-mode `bin/deploy.sh` + compose `name: chroniq` guard. |
 
 ### Remaining before launch
-- **User/config:** import `keycloak/chroniq.cc-realm.json` (see `docs/KEYCLOAK_SETUP.md`); Google/Microsoft OAuth credentials; SMTP credentials (email is log-only until set); Stripe keys + price ids.
+- **Verify (do first):** exercise the core path in a browser on `https://chroniq.cc` — sign in → set username → create event type → set availability → book via the public link (private window) → invitee manage link. Follow `docs/E2E_CHECKLIST.md`.
+- **User/config:** SMTP credentials (email is log-only until set); `chroniq-backend` client secret → `KEYCLOAK_ADMIN_CLIENT_SECRET`; Stripe keys + price ids; Google/Microsoft OAuth credentials.
 - **Product decision:** finalize the tier-limit matrix in `chroniq/entitlements.py` (currently placeholders) and the Stripe price mapping.
-- **Deploy:** first prod run on the Raspberry Pi.
+- **Polish:** translate the 5 marketing i18n namespaces (`features`, `how_it_works`, `integrations`, `pricing`, `testimonials`) into the other 7 locales — currently English-only via fallback.
 
 ### Done since Phase 0
 Booking flow (real slots + double-booking guard), dashboard (5 sections), Google/Microsoft sync (REST + OAuth callback), reminders + reschedule + invitee self-service, scheduler container, Stripe checkout wiring + entitlement enforcement. **i18n: all booking/dashboard/manage UI extracted — 8 locales at full 204-key parity.** E2E smoke-test checklist at `docs/E2E_CHECKLIST.md`. Backend: 19 tests green. Frontend: typecheck + build green.

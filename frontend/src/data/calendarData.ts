@@ -140,55 +140,9 @@ export const HOLIDAYS: Holiday[] = [
   { date: '2026-04-01', region: 'global', name: { en: "April Fools' Day", zh: '愚人节', ja: 'エイプリルフール', ko: '만우절', de: 'Aprilscherz', es: 'Día de los Inocentes', it: 'Pesce d\'Aprile', fr: 'Poisson d\'Avril' } },
 ];
 
-export const EVENTS: CalEvent[] = [
-  {
-    date: '2026-05-12',
-    kind: 'meeting',
-    title: { en: 'Team Standup', zh: '团队站会', ja: 'チームスタンドアップ', ko: '팀 스탠드업', de: 'Team-Standup', es: 'Reunión de equipo', it: 'Standup del team', fr: 'Réunion d\'équipe' },
-    start: '09:00',
-    end: '09:30',
-  },
-  {
-    date: '2026-05-14',
-    kind: 'event',
-    title: { en: 'Product Demo', zh: '产品演示', ja: 'プロダクトデモ', ko: '제품 데모', de: 'Produkt-Demo', es: 'Demo de producto', it: 'Demo del prodotto', fr: 'Démo produit' },
-    start: '14:00',
-    end: '15:00',
-  },
-  {
-    date: '2026-05-17',
-    kind: 'meeting',
-    title: { en: 'Design Review', zh: '设计评审', ja: 'デザインレビュー', ko: '디자인 리뷰', de: 'Design-Review', es: 'Revisión de diseño', it: 'Revisione del design', fr: 'Revue de design' },
-    start: '11:00',
-    end: '12:00',
-  },
-  {
-    date: '2026-05-19',
-    kind: 'event',
-    title: { en: 'Launch Planning', zh: '发布规划', ja: 'ローンチ計画', ko: '출시 계획', de: 'Launch-Planung', es: 'Planificación del lanzamiento', it: 'Pianificazione del lancio', fr: 'Planification du lancement' },
-    start: '15:00',
-    end: '16:30',
-  },
-  {
-    date: '2026-05-22',
-    kind: 'meeting',
-    title: { en: 'Investor Call', zh: '投资人电话', ja: '投資家コール', ko: '투자자 콜', de: 'Investorengespräch', es: 'Llamada de inversores', it: 'Chiamata con investitori', fr: 'Appel investisseurs' },
-    start: '10:00',
-    end: '11:00',
-  },
-  {
-    date: '2026-05-28',
-    kind: 'event',
-    title: { en: 'Retrospective', zh: '回顾会议', ja: 'レトロスペクティブ', ko: '회고', de: 'Retrospektive', es: 'Retrospectiva', it: 'Retrospettiva', fr: 'Rétrospective' },
-    start: '16:00',
-    end: '17:00',
-  },
-];
+// Real meetings come from the signed-in user's /me/bookings (see
+// useLoadBookings + calendarStore.bookings). These sample arrays are
+// intentionally empty so the calendar never shows fabricated data.
+export const EVENTS: CalEvent[] = [];
 
-export const BIRTHDAYS: Birthday[] = [
-  { md: '05-14', name: 'Alice Chen' },
-  { md: '05-21', name: 'Marcus Webb' },
-  { md: '06-03', name: 'Yuki Tanaka' },
-  { md: '07-19', name: 'Sofia Rossi' },
-  { md: '09-08', name: 'James Park' },
-];
+export const BIRTHDAYS: Birthday[] = [];

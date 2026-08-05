@@ -9,7 +9,9 @@
     "features": "Features",
     "integrations": "Integrations",
     "login": "Log in",
-    "getStarted": "Get started free"
+    "getStarted": "Get started free",
+    "calendar": "Calendar",
+    "manage": "Manage"
   },
   "cta": {
     "signin": "Sign in",
@@ -447,5 +449,12 @@
       "bio": "Bio",
       "save_error": "Could not save — the username may be taken or reserved."
     }
+  },
+  "onboarding": {
+    "title": "Finish setting up your booking page",
+    "cta": "Complete setup",
+    "step_username": "choose your username",
+    "step_availability": "set your availability",
+    "step_event_type": "create an event type"
   }
 }

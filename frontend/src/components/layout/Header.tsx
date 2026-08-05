@@ -114,21 +114,28 @@ export function Header() {
           </a>
         </div>
 
-        {/* Center: nav links */}
+        {/* Center: nav links — app nav when signed in, marketing nav otherwise */}
         <nav className="header-nav hide-md" style={{ flex: 1, justifyContent: 'center' }}>
-          {navLinks.map((link) => (
-            <button
-              key={link.key}
-              className={`nav-link${link.key === 'resources' && view === 'resources' ? ' active' : ''}`}
-              onClick={() => {
-                if (link.key === 'resources') {
-                  setView(view === 'resources' ? 'calendar' : 'resources');
-                }
-              }}
-            >
-              {link.label}
-            </button>
-          ))}
+          {isAuthenticated ? (
+            <>
+              <a href="/" className="nav-link">{t('nav.calendar')}</a>
+              <a href="/dashboard" className="nav-link">{t('nav.manage')}</a>
+            </>
+          ) : (
+            navLinks.map((link) => (
+              <button
+                key={link.key}
+                className={`nav-link${link.key === 'resources' && view === 'resources' ? ' active' : ''}`}
+                onClick={() => {
+                  if (link.key === 'resources') {
+                    setView(view === 'resources' ? 'calendar' : 'resources');
+                  }
+                }}
+              >
+                {link.label}
+              </button>
+            ))
+          )}
         </nav>
 
         {/* Right: actions */}

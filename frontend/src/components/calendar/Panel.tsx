@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useCalendarStore } from '@/store/calendarStore';
-import { EVENTS, HOLIDAYS, BIRTHDAYS } from '@/data/calendarData';
+import { HOLIDAYS, BIRTHDAYS } from '@/data/calendarData';
 import { Toggle } from '@/components/common/Toggle';
 import { CountryPicker } from '@/components/common/CountryPicker';
 import { MiniCalendar } from './MiniCalendar';
@@ -10,7 +10,7 @@ import { ymd, md as getMd, getRegionColor, KIND_COLOR, TODAY, addDays } from '@/
 
 function UpcomingEvents() {
   const { t, i18n } = useTranslation();
-  const { filters } = useCalendarStore();
+  const { filters, bookings } = useCalendarStore();
 
   // Get next 30 days of events
   const upcoming: { date: Date; title: string; color: string }[] = [];
@@ -40,7 +40,7 @@ function UpcomingEvents() {
       });
     }
 
-    EVENTS.filter((e) => e.date === dateStr).forEach((e) => {
+    bookings.filter((e) => e.date === dateStr).forEach((e) => {
       if (e.kind === 'meeting' && !filters.meetings) return;
       if (e.kind === 'event' && !filters.events) return;
       upcoming.push({

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useCalendarStore } from '@/store/calendarStore';
-import { HOLIDAYS, EVENTS, BIRTHDAYS } from '@/data/calendarData';
+import { HOLIDAYS, BIRTHDAYS } from '@/data/calendarData';
 import {
   monthMatrix,
   isToday,
@@ -11,7 +11,7 @@ import {
 
 export function YearView() {
   const { t, i18n } = useTranslation();
-  const { cursor, setCursor, weekStart, filters } = useCalendarStore();
+  const { cursor, setCursor, weekStart, filters, bookings } = useCalendarStore();
   const cursorDate = new Date(cursor);
   const year = cursorDate.getFullYear();
 
@@ -52,7 +52,7 @@ export function YearView() {
                     HOLIDAYS.some((h) => h.date === dateStr && h.region === filters.region)) ||
                   (filters.globalHolidays &&
                     HOLIDAYS.some((h) => h.date === dateStr && h.region === 'global'));
-                const hasEvent = EVENTS.some(
+                const hasEvent = bookings.some(
                   (e) =>
                     e.date === dateStr &&
                     ((e.kind === 'meeting' && filters.meetings) ||

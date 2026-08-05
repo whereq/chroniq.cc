@@ -10,13 +10,18 @@ import { DashboardPage } from '@/pages/Dashboard'
 import { HomePage } from '@/pages/Home'
 import { useCalendarStore } from '@/store/calendarStore'
 import { useAuth } from '@/auth/AuthProvider'
+import { useLoadBookings } from '@/hooks/useLoadBookings'
+import { OnboardingBanner } from '@/components/calendar/OnboardingBanner'
 
 function AppShell() {
   const view = useCalendarStore((s) => s.view);
+  // Mirror the signed-in user's real bookings into the calendar store.
+  useLoadBookings();
 
   return (
     <div className="app">
       <Header />
+      <OnboardingBanner />
       <main className="main">
         {view === 'calendar' ? <CalendarPage /> : <ResourcesPage />}
       </main>
@@ -44,8 +49,9 @@ function Landing() {
 function Root() {
   const { ready, isAuthenticated } = useAuth();
   if (!ready) return null;
-  // Signed-in users land on the management dashboard; anonymous → marketing.
-  return isAuthenticated ? <DashboardPage /> : <Landing />;
+  // Signed-in users land on the calendar workspace (their real bookings);
+  // anonymous visitors get the marketing site. Management lives at /dashboard.
+  return isAuthenticated ? <AppShell /> : <Landing />;
 }
 
 function NotFound() {
