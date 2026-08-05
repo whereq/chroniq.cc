@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/Button'
+import { useAuth } from '@/auth/AuthProvider'
 
 export function CtaSection() {
   const { t } = useTranslation()
+  const { register } = useAuth()
 
   return (
     <section className="py-20 lg:py-28 relative overflow-hidden">
@@ -20,6 +22,7 @@ export function CtaSection() {
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Button
+            onClick={() => register()}
             className="bg-white text-brand-700 hover:bg-gray-50 shadow-xl shadow-black/20 text-base px-8 py-3"
           >
             {t('cta.primary')}
@@ -29,24 +32,11 @@ export function CtaSection() {
           </Button>
           <Button
             variant="ghost"
+            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
             className="text-white hover:bg-white/10 border border-white/30 text-base px-8 py-3"
           >
             {t('cta.secondary')}
           </Button>
-        </div>
-
-        {/* Stats */}
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-2xl mx-auto sm:max-w-none">
-          {[
-            { value: '50K+', label: 'Teams' },
-            { value: '10M+', label: 'Meetings booked' },
-            { value: '4.9★', label: 'Average rating' },
-          ].map((stat) => (
-            <div key={stat.label} className="flex sm:flex-col items-center sm:items-center justify-between sm:justify-start gap-3 sm:gap-0 py-3 sm:py-0 border-b sm:border-0 border-white/20 last:border-0">
-              <div className="text-3xl sm:text-4xl font-extrabold text-white">{stat.value}</div>
-              <div className="text-sm text-white/70 sm:mt-1">{stat.label}</div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
