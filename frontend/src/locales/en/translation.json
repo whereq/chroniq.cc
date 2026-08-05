@@ -452,6 +452,13 @@
     "close": "Close",
     "status_confirmed": "Confirmed",
     "status_cancelled": "Cancelled",
-    "cancel_error": "Could not cancel — please try again."
+    "cancel_error": "Could not cancel — please try again.",
+    "reschedule": "Reschedule",
+    "pick_new_time": "Pick a new time",
+    "choose_date": "Date",
+    "no_slots": "No available times on this day.",
+    "reschedule_error": "Could not reschedule — that time may no longer be available.",
+    "rescheduling": "Rescheduling…",
+    "back": "Back"
   }
 }
