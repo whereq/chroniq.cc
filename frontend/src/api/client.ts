@@ -167,6 +167,8 @@ export const meApi = {
     apiClient.get<Booking[]>('/me/bookings', { params: { filter } }).then((r) => r.data),
   cancelBooking: (id: number) =>
     apiClient.post<Booking>(`/me/bookings/${id}/cancel`).then((r) => r.data),
+  rescheduleBooking: (id: number, start: string) =>
+    apiClient.post<Booking>(`/me/bookings/${id}/reschedule`, { start }).then((r) => r.data),
 
   listConnections: () =>
     apiClient.get<CalendarConnection[]>('/me/integrations').then((r) => r.data),
