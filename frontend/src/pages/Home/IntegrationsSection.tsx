@@ -1,20 +1,12 @@
 import { useTranslation } from 'react-i18next'
 import { SectionHeading } from '@/components/common/SectionHeading'
-import { Button } from '@/components/ui/Button'
 
+// Only integrations that are actually wired today. Keep this honest — add a
+// brand here only when its integration ships.
 const integrations = [
   { name: 'Google Calendar', color: '#4285F4', initial: 'G' },
   { name: 'Microsoft Outlook', color: '#0078D4', initial: 'O' },
-  { name: 'Zoom', color: '#2D8CFF', initial: 'Z' },
-  { name: 'Microsoft Teams', color: '#5B5EA6', initial: 'T' },
-  { name: 'Slack', color: '#4A154B', initial: 'S' },
-  { name: 'Salesforce', color: '#00A1E0', initial: 'SF' },
-  { name: 'HubSpot', color: '#FF7A59', initial: 'H' },
-  { name: 'Zapier', color: '#FF4A00', initial: 'Z' },
   { name: 'Stripe', color: '#635BFF', initial: 'St' },
-  { name: 'PayPal', color: '#003087', initial: 'P' },
-  { name: 'Notion', color: '#000000', initial: 'N' },
-  { name: 'Linear', color: '#5E6AD2', initial: 'L' },
 ]
 
 export function IntegrationsSection() {
@@ -48,12 +40,7 @@ export function IntegrationsSection() {
         </div>
 
         <div className="mt-10 text-center">
-          <Button variant="outline">
-            {t('integrations.cta')}
-            <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </Button>
+          <p className="text-sm text-gray-400 dark:text-gray-500">{t('integrations.cta')}</p>
         </div>
       </div>
     </section>

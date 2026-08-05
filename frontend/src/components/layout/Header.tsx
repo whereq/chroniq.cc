@@ -83,16 +83,15 @@ function LangSelector() {
 
 export function Header() {
   const { t } = useTranslation();
-  const { view, setView, panelOpen, setPanelOpen } = useCalendarStore();
+  const { view, panelOpen, setPanelOpen } = useCalendarStore();
   const { isAuthenticated, login, logout } = useAuth();
 
+  // Marketing nav points at real landing-page sections (anchors); dead links
+  // (Solutions/Enterprise/About) were removed.
   const navLinks = [
-    { key: 'product', label: t('nav.product') },
-    { key: 'solutions', label: t('nav.solutions') },
-    { key: 'resources', label: t('nav.resources') },
-    { key: 'enterprise', label: t('nav.enterprise') },
-    { key: 'pricing', label: t('nav.pricing') },
-    { key: 'about', label: t('nav.about') },
+    { href: '#features', label: t('nav.features') },
+    { href: '#how-it-works', label: t('nav.how_it_works') },
+    { href: '#pricing', label: t('nav.pricing') },
   ];
 
   return (
@@ -123,17 +122,9 @@ export function Header() {
             </>
           ) : (
             navLinks.map((link) => (
-              <button
-                key={link.key}
-                className={`nav-link${link.key === 'resources' && view === 'resources' ? ' active' : ''}`}
-                onClick={() => {
-                  if (link.key === 'resources') {
-                    setView(view === 'resources' ? 'calendar' : 'resources');
-                  }
-                }}
-              >
+              <a key={link.href} href={link.href} className="nav-link">
                 {link.label}
-              </button>
+              </a>
             ))
           )}
         </nav>

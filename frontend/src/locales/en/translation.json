@@ -11,7 +11,8 @@
     "login": "Log in",
     "getStarted": "Get started free",
     "calendar": "Calendar",
-    "manage": "Manage"
+    "manage": "Manage",
+    "how_it_works": "How it works"
   },
   "cta": {
     "signin": "Sign in",
@@ -194,12 +195,13 @@
     }
   },
   "hero": {
-    "badge": "Now with AI scheduling",
+    "badge": "Your bookings on a real calendar",
     "headline": "Scheduling,\nsimplified.",
     "subheadline": "Share your chroniq.cc link. Let anyone book time with you—automatically.",
     "cta_primary": "Get started free",
-    "cta_secondary": "View live demo",
-    "social_proof": "Trusted by 50,000+ teams worldwide"
+    "cta_secondary": "See how it works",
+    "social_proof": "Trusted by 50,000+ teams worldwide",
+    "trust": "Free plan · No credit card required · Set up in minutes"
   },
   "features": {
     "title": "Everything you need to schedule smarter",
@@ -250,9 +252,9 @@
     }
   },
   "integrations": {
-    "title": "Works with the tools you already use",
-    "subtitle": "Connect your calendar, video, and payment tools in just a couple of clicks.",
-    "cta": "View all integrations"
+    "title": "Works with your calendar",
+    "subtitle": "Two-way sync with Google and Microsoft keeps your availability accurate, and Stripe powers paid bookings. More integrations on the way.",
+    "cta": "More coming soon"
   },
   "pricing": {
     "title": "Simple, transparent pricing",
