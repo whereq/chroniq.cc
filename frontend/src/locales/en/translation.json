@@ -438,5 +438,20 @@
     "step_username": "choose your username",
     "step_availability": "set your availability",
     "step_event_type": "create an event type"
+  },
+  "booking_detail": {
+    "title": "Booking",
+    "invitee": "Invitee",
+    "when": "When",
+    "status": "Status",
+    "notes": "Notes",
+    "join": "Join meeting",
+    "cancel": "Cancel meeting",
+    "cancelling": "Cancelling…",
+    "cancel_confirm": "Cancel this booking? The invitee will be notified.",
+    "close": "Close",
+    "status_confirmed": "Confirmed",
+    "status_cancelled": "Cancelled",
+    "cancel_error": "Could not cancel — please try again."
   }
 }

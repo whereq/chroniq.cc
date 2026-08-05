@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
 import { useCalendarStore } from '@/store/calendarStore';
 import { Panel } from '@/components/calendar/Panel';
 import { CalendarView } from '@/components/calendar/CalendarView';
+import { BookingDetailModal } from '@/components/calendar/BookingDetailModal';
 
 export function CalendarPage() {
   const { panelOpen, setPanelOpen } = useCalendarStore();
@@ -26,6 +26,9 @@ export function CalendarPage() {
 
       {/* Calendar area */}
       <CalendarView />
+
+      {/* Booking detail popover (opens when a booking is clicked) */}
+      <BookingDetailModal />
     </div>
   );
 }

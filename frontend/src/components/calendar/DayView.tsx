@@ -12,7 +12,7 @@ function pad2(n: number) {
 
 export function DayView() {
   const { t, i18n } = useTranslation();
-  const { cursor, filters, bookings } = useCalendarStore();
+  const { cursor, filters, bookings, setSelectedBookingId } = useCalendarStore();
   const cursorDate = new Date(cursor);
   const dateStr = ymd(cursorDate);
   const today = isToday(cursorDate);
@@ -131,7 +131,9 @@ export function DayView() {
                   top,
                   height: Math.max(height, 24),
                   background: KIND_COLOR[ev.kind],
+                  cursor: ev.bookingId ? 'pointer' : undefined,
                 }}
+                onClick={ev.bookingId ? () => setSelectedBookingId(ev.bookingId!) : undefined}
               >
                 <div style={{ fontWeight: 600, fontSize: 12 }}>
                   {ev.title[i18n.language] ?? ev.title['en']}

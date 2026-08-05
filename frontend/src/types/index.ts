@@ -64,6 +64,7 @@ export interface CalEvent {
   title: Record<string, string>;
   start: string; // HH:MM
   end: string;
+  bookingId?: number; // set for real bookings, enables click-through to detail
 }
 
 export interface Birthday {
@@ -92,4 +93,5 @@ export interface CalendarItem {
   start?: string;
   end?: string;
   region?: string;
+  bookingId?: number; // set for real bookings, enables click-through to detail
 }
