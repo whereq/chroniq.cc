@@ -230,12 +230,12 @@
     "delete": "Löschen"
   },
   "hero": {
-    "badge": "Jetzt mit KI-Terminplanung",
+    "badge": "Deine Buchungen in einem echten Kalender",
     "headline": "Terminplanung,\nvereinfacht.",
     "subheadline": "Teile deinen chroniq.cc-Link. Lass andere automatisch Zeit mit dir buchen.",
     "cta_primary": "Kostenlos starten",
-    "cta_secondary": "Live-Demo ansehen",
-    "social_proof": "Vertraut von über 50.000 Teams weltweit"
+    "cta_secondary": "So funktioniert's",
+    "trust": "Kostenloser Tarif · Keine Kreditkarte nötig · In Minuten startklar"
   },
   "manage": {
     "invalid": "Dieser Buchungslink ist ungültig oder abgelaufen.",

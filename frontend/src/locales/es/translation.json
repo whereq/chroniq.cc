@@ -230,12 +230,12 @@
     "delete": "Eliminar"
   },
   "hero": {
-    "badge": "Ahora con programación con IA",
+    "badge": "Tus reservas en un calendario de verdad",
     "headline": "Programación,\nsimplificada.",
     "subheadline": "Comparte tu enlace de chroniq.cc. Deja que cualquiera reserve tiempo contigo, automáticamente.",
     "cta_primary": "Empieza gratis",
-    "cta_secondary": "Ver demo en vivo",
-    "social_proof": "Con la confianza de más de 50.000 equipos en todo el mundo"
+    "cta_secondary": "Cómo funciona",
+    "trust": "Plan gratis · Sin tarjeta de crédito · Listo en minutos"
   },
   "manage": {
     "invalid": "Este enlace de reserva no es válido o ha caducado.",

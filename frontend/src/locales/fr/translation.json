@@ -192,12 +192,12 @@
     }
   },
   "hero": {
-    "badge": "Maintenant avec planification IA",
+    "badge": "Vos rendez-vous sur un vrai calendrier",
     "headline": "La planification,\nsimplifiée.",
     "subheadline": "Partagez votre lien chroniq.cc. Laissez n'importe qui réserver du temps avec vous.",
     "cta_primary": "Commencer gratuitement",
-    "cta_secondary": "Voir la démo",
-    "social_proof": "Fait confiance par plus de 50 000 équipes dans le monde"
+    "cta_secondary": "Découvrir le fonctionnement",
+    "trust": "Offre gratuite · Sans carte bancaire · Prêt en quelques minutes"
   },
   "booking": {
     "select_date": "Sélectionner une date",

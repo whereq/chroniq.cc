@@ -230,12 +230,12 @@
     "delete": "Elimina"
   },
   "hero": {
-    "badge": "Ora con pianificazione basata su IA",
+    "badge": "Le tue prenotazioni su un vero calendario",
     "headline": "Pianificazione,\nsemplificata.",
     "subheadline": "Condividi il tuo link chroniq.cc. Lascia che chiunque prenoti un momento con te, automaticamente.",
     "cta_primary": "Inizia gratis",
-    "cta_secondary": "Guarda la demo live",
-    "social_proof": "Scelto da oltre 50.000 team in tutto il mondo"
+    "cta_secondary": "Scopri come funziona",
+    "trust": "Piano gratuito · Nessuna carta di credito · Pronto in pochi minuti"
   },
   "manage": {
     "invalid": "Questo link di prenotazione non è valido o è scaduto.",

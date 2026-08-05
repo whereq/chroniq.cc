@@ -192,12 +192,12 @@
     }
   },
   "hero": {
-    "badge": "全新 AI 智能调度",
+    "badge": "在真正的日历上管理预约",
     "headline": "日程安排，\n从此简单。",
     "subheadline": "分享您的 chroniq.cc 链接，让任何人都能自动预约您的时间。",
     "cta_primary": "免费开始使用",
-    "cta_secondary": "查看演示",
-    "social_proof": "全球超过 50,000 个团队的信赖之选"
+    "cta_secondary": "了解运作方式",
+    "trust": "免费方案 · 无需信用卡 · 几分钟即可设置"
   },
   "booking": {
     "select_date": "选择日期",
