@@ -19,6 +19,7 @@ function toCalEvent(b: Booking): CalEvent {
     title: { en: b.invitee_name?.trim() || 'Booking' },
     start: localHM(start),
     end: localHM(end),
+    bookingId: b.id,
   }
 }
 

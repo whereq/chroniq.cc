@@ -19,7 +19,7 @@ function pad2(n: number) {
 
 export function WeekView() {
   const { t, i18n } = useTranslation();
-  const { cursor, setCursor, weekStart, filters, bookings } = useCalendarStore();
+  const { cursor, setCursor, weekStart, filters, bookings, setSelectedBookingId } = useCalendarStore();
   const cursorDate = new Date(cursor);
 
   const weekStart_ = startOfWeek(cursorDate, weekStart);
@@ -167,8 +167,10 @@ export function WeekView() {
                       top,
                       height: Math.max(height, 20),
                       background: KIND_COLOR[ev.kind],
+                      cursor: ev.bookingId ? 'pointer' : undefined,
                     }}
                     title={ev.title[i18n.language] ?? ev.title['en']}
+                    onClick={ev.bookingId ? () => setSelectedBookingId(ev.bookingId!) : undefined}
                   >
                     <div style={{ fontWeight: 600 }}>
                       {ev.title[i18n.language] ?? ev.title['en']}

@@ -14,6 +14,9 @@ interface CalendarState {
   /** Real bookings from /me/bookings, mapped to calendar meetings (not persisted). */
   bookings: CalEvent[];
   setBookings: (bookings: CalEvent[]) => void;
+  /** Booking currently open in the detail modal (not persisted). */
+  selectedBookingId: number | null;
+  setSelectedBookingId: (id: number | null) => void;
   setLocale: (locale: string) => void;
   setScope: (scope: CalendarScope) => void;
   setCursor: (cursor: Date) => void;
@@ -49,8 +52,10 @@ export const useCalendarStore = create<CalendarState>()(
       view: 'calendar',
       filters: DEFAULT_FILTERS,
       bookings: [],
+      selectedBookingId: null,
 
       setBookings: (bookings) => set({ bookings }),
+      setSelectedBookingId: (selectedBookingId) => set({ selectedBookingId }),
       setLocale: (locale) => set({ locale }),
       setScope: (scope) => set({ scope }),
       setCursor: (cursor) => set({ cursor: cursor.getTime() }),

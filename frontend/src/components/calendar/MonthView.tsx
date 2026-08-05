@@ -62,6 +62,7 @@ function getItemsForDate(
       color: KIND_COLOR[e.kind],
       start: e.start,
       end: e.end,
+      bookingId: e.bookingId,
     });
   });
 
@@ -82,7 +83,7 @@ function getItemsForDate(
 
 export function MonthView() {
   const { t, i18n } = useTranslation();
-  const { cursor, setCursor, weekStart, weekNumbers, filters, bookings } = useCalendarStore();
+  const { cursor, setCursor, weekStart, weekNumbers, filters, bookings, setSelectedBookingId } = useCalendarStore();
   const cursorDate = new Date(cursor);
 
   const matrix = monthMatrix(cursorDate, weekStart);
@@ -166,8 +167,9 @@ export function MonthView() {
                       <div
                         key={ii}
                         className="cal-event-chip"
-                        style={{ background: item.color }}
+                        style={{ background: item.color, cursor: item.bookingId ? 'pointer' : undefined }}
                         title={item.title}
+                        onClick={item.bookingId ? (e) => { e.stopPropagation(); setSelectedBookingId(item.bookingId!); } : undefined}
                       >
                         {item.start && (
                           <span style={{ opacity: 0.8, marginRight: 2 }}>{item.start}</span>
