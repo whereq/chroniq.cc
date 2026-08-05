@@ -200,7 +200,6 @@
     "subheadline": "Share your chroniq.cc link. Let anyone book time with you—automatically.",
     "cta_primary": "Get started free",
     "cta_secondary": "See how it works",
-    "social_proof": "Trusted by 50,000+ teams worldwide",
     "trust": "Free plan · No credit card required · Set up in minutes"
   },
   "features": {
@@ -313,26 +312,7 @@
   "testimonials": {
     "title": "Loved by busy people everywhere",
     "subtitle": "Teams and solo professionals rely on chroniq to run their day.",
-    "items": [
-      {
-        "quote": "chroniq cut my scheduling emails to zero. Clients just pick a time and it lands on my calendar.",
-        "name": "Sarah Chen",
-        "role": "Founder",
-        "company": "Brightpath Studio"
-      },
-      {
-        "quote": "Round-robin routing across our sales team just works. Onboarding a new rep takes minutes, not days.",
-        "name": "Marcus Lee",
-        "role": "Head of Sales",
-        "company": "Northwind"
-      },
-      {
-        "quote": "The calendar sync is flawless — no more double bookings across my three different calendars.",
-        "name": "Ana Duarte",
-        "role": "Independent Consultant",
-        "company": "Duarte Advisory"
-      }
-    ]
+    "items": []
   },
   "booking": {
     "select_date": "Select a date",
