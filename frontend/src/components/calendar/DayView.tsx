@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useCalendarStore } from '@/store/calendarStore';
-import { EVENTS, HOLIDAYS } from '@/data/calendarData';
+import { HOLIDAYS } from '@/data/calendarData';
 import { isToday, ymd, getRegionColor, KIND_COLOR } from '@/utils/calUtils';
 import { getLunar, solarTermFor } from '@/utils/lunarUtils';
 
@@ -12,7 +12,7 @@ function pad2(n: number) {
 
 export function DayView() {
   const { t, i18n } = useTranslation();
-  const { cursor, filters } = useCalendarStore();
+  const { cursor, filters, bookings } = useCalendarStore();
   const cursorDate = new Date(cursor);
   const dateStr = ymd(cursorDate);
   const today = isToday(cursorDate);
@@ -32,7 +32,7 @@ export function DayView() {
       : []),
   ];
 
-  const events = EVENTS.filter((e) => e.date === dateStr).filter((e) => {
+  const events = bookings.filter((e) => e.date === dateStr).filter((e) => {
     if (e.kind === 'meeting' && !filters.meetings) return false;
     if (e.kind === 'event' && !filters.events) return false;
     return true;

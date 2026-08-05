@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useCalendarStore } from '@/store/calendarStore';
-import { EVENTS, HOLIDAYS } from '@/data/calendarData';
+import { HOLIDAYS } from '@/data/calendarData';
 import {
   startOfWeek,
   addDays,
@@ -19,7 +19,7 @@ function pad2(n: number) {
 
 export function WeekView() {
   const { t, i18n } = useTranslation();
-  const { cursor, setCursor, weekStart, filters } = useCalendarStore();
+  const { cursor, setCursor, weekStart, filters, bookings } = useCalendarStore();
   const cursorDate = new Date(cursor);
 
   const weekStart_ = startOfWeek(cursorDate, weekStart);
@@ -143,7 +143,7 @@ export function WeekView() {
         {/* Day columns */}
         {days.map((day, di) => {
           const dateStr = ymd(day);
-          const events = EVENTS.filter((e) => e.date === dateStr).filter((e) => {
+          const events = bookings.filter((e) => e.date === dateStr).filter((e) => {
             if (e.kind === 'meeting' && !filters.meetings) return false;
             if (e.kind === 'event' && !filters.events) return false;
             return true;

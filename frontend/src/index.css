@@ -1464,3 +1464,32 @@ body {
 .cal-grid-body-scroll .cal-week-row {
   min-height: 80px;
 }
+
+/* ─── Onboarding banner (calendar workspace, first-run setup) ─────────────── */
+.onboarding-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text);
+}
+.onboarding-banner-text { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.onboarding-banner-text span { color: var(--text-2); }
+.onboarding-banner-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.onboarding-banner-cta:hover { filter: brightness(1.05); }

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { CalendarScope, CalendarView, CalendarFilters } from '../types';
+import type { CalendarScope, CalendarView, CalendarFilters, CalEvent } from '../types';
 
 interface CalendarState {
   locale: string;
@@ -11,6 +11,9 @@ interface CalendarState {
   panelOpen: boolean;
   view: CalendarView;
   filters: CalendarFilters;
+  /** Real bookings from /me/bookings, mapped to calendar meetings (not persisted). */
+  bookings: CalEvent[];
+  setBookings: (bookings: CalEvent[]) => void;
   setLocale: (locale: string) => void;
   setScope: (scope: CalendarScope) => void;
   setCursor: (cursor: Date) => void;
@@ -45,7 +48,9 @@ export const useCalendarStore = create<CalendarState>()(
       panelOpen: true,
       view: 'calendar',
       filters: DEFAULT_FILTERS,
+      bookings: [],
 
+      setBookings: (bookings) => set({ bookings }),
       setLocale: (locale) => set({ locale }),
       setScope: (scope) => set({ scope }),
       setCursor: (cursor) => set({ cursor: cursor.getTime() }),
