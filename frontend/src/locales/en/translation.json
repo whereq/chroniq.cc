@@ -19,7 +19,11 @@
     "signup": "Get started",
     "signout": "Sign out",
     "guest": "Guest",
-    "account": "My account"
+    "account": "My account",
+    "title": "Ready to simplify your scheduling?",
+    "subtitle": "Create your booking page in minutes — free, and no credit card required.",
+    "primary": "Get started free",
+    "secondary": "See pricing"
   },
   "panel": {
     "filters": "Filters",
