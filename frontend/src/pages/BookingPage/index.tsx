@@ -6,6 +6,7 @@ import { clsx } from 'clsx'
 import { Logo } from '@/components/logo/Logo'
 import { Button } from '@/components/ui/Button'
 import { publicApi, type PublicEventType } from '@/api/client'
+import { usePublicHolidays, browserCountry } from '@/hooks/usePublicHolidays'
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const MONTHS = [
@@ -95,6 +96,10 @@ export function BookingPage() {
   })
 
   const cells = generateCalendar(year, month)
+
+  // Holiday hints for the invitee's own country (helps avoid booking on a holiday).
+  const holidayByDate = usePublicHolidays(year, browserCountry())
+  const selectedHoliday = selectedDay ? holidayByDate.get(ymd(year, month, selectedDay)) : undefined
 
   const prevMonth = () => {
     if (month === 0) { setYear((y) => y - 1); setMonth(11) } else setMonth((m) => m - 1)
@@ -213,27 +218,45 @@ export function BookingPage() {
                     </div>
 
                     <div className="grid grid-cols-7 gap-1 mb-4">
-                      {cells.map((cell, i) => (
-                        <div key={i} className="aspect-square flex items-center justify-center">
-                          {cell && (
-                            <button
-                              onClick={() => { setSelectedDay(cell.day); setSelectedSlot(null) }}
-                              disabled={cell.past}
-                              className={clsx(
-                                'w-8 h-8 sm:w-9 sm:h-9 rounded-full text-xs sm:text-sm font-medium transition-all touch-manipulation',
-                                cell.day === selectedDay
-                                  ? 'bg-brand-600 text-white shadow-lg shadow-brand-500/30'
-                                  : cell.past
-                                  ? 'text-gray-300 dark:text-gray-700 cursor-not-allowed'
-                                  : 'text-gray-900 dark:text-gray-100 hover:bg-brand-50 dark:hover:bg-brand-900/20 hover:text-brand-600',
-                              )}
-                            >
-                              {cell.day}
-                            </button>
-                          )}
-                        </div>
-                      ))}
+                      {cells.map((cell, i) => {
+                        const holiday = cell ? holidayByDate.get(ymd(year, month, cell.day)) : undefined
+                        return (
+                          <div key={i} className="aspect-square flex items-center justify-center">
+                            {cell && (
+                              <button
+                                onClick={() => { setSelectedDay(cell.day); setSelectedSlot(null) }}
+                                disabled={cell.past}
+                                title={holiday || undefined}
+                                className={clsx(
+                                  'relative w-8 h-8 sm:w-9 sm:h-9 rounded-full text-xs sm:text-sm font-medium transition-all touch-manipulation',
+                                  cell.day === selectedDay
+                                    ? 'bg-brand-600 text-white shadow-lg shadow-brand-500/30'
+                                    : cell.past
+                                    ? 'text-gray-300 dark:text-gray-700 cursor-not-allowed'
+                                    : 'text-gray-900 dark:text-gray-100 hover:bg-brand-50 dark:hover:bg-brand-900/20 hover:text-brand-600',
+                                )}
+                              >
+                                {cell.day}
+                                {holiday && (
+                                  <span
+                                    className={clsx(
+                                      'absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full',
+                                      cell.day === selectedDay ? 'bg-white' : 'bg-amber-400',
+                                    )}
+                                  />
+                                )}
+                              </button>
+                            )}
+                          </div>
+                        )
+                      })}
                     </div>
+
+                    {selectedHoliday && (
+                      <p className="mb-3 text-xs font-medium text-amber-600 dark:text-amber-400">
+                        🎉 {selectedHoliday}
+                      </p>
+                    )}
 
                     {/* Timezone selector */}
                     <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">{t('booking.timezone', 'Timezone')}</label>
