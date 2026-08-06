@@ -38,7 +38,10 @@ function Landing() {
   return (
     <div className="app">
       <Header />
-      <HomePage />
+      {/* Scrollable middle so the pinned footer (privacy/terms) stays visible. */}
+      <div className="main main-scroll">
+        <HomePage />
+      </div>
       <Footer />
     </div>
   );

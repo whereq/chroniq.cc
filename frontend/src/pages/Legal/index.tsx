@@ -9,7 +9,7 @@ function LegalShell({ title, children }: { title: string; children: ReactNode })
   return (
     <div className="app">
       <Header />
-      <main className="main">
+      <main className="main main-scroll">
         <div className="mx-auto max-w-3xl px-5 sm:px-6 py-12 sm:py-16">
           <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white">{title}</h1>
           <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">Last updated: {LAST_UPDATED}</p>
