@@ -1580,3 +1580,13 @@ body {
 .footer-links { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .footer-links a { color: var(--text-2); text-decoration: none; font-size: 13px; }
 .footer-links a:hover { color: var(--accent); }
+
+/* Scrollable middle region (marketing + legal pages): pinned header/footer,
+   the content between them scrolls vertically. Overrides .main's overflow:hidden
+   used by the calendar workspace (which scrolls internally instead). */
+.main-scroll {
+  display: block;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
