@@ -55,8 +55,16 @@ def send_email(
         )
         return False
 
-    with smtplib.SMTP(settings.smtp_host, settings.smtp_port) as server:
-        if settings.smtp_use_tls:
+    # Port 465 speaks TLS from the first byte (implicit SSL → SMTP_SSL). Ports
+    # like 587/25 start plaintext and upgrade via STARTTLS. Using plain SMTP on
+    # 465 hangs/fails, so pick the right transport by port.
+    if settings.smtp_port == 465:
+        server_cm = smtplib.SMTP_SSL(settings.smtp_host, settings.smtp_port, timeout=30)
+    else:
+        server_cm = smtplib.SMTP(settings.smtp_host, settings.smtp_port, timeout=30)
+
+    with server_cm as server:
+        if settings.smtp_port != 465 and settings.smtp_use_tls:
             server.starttls()
         if settings.smtp_username:
             server.login(settings.smtp_username, settings.smtp_password)
