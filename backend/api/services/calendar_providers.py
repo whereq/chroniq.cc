@@ -34,14 +34,16 @@ from api.services.slot_engine import BusyBlock
 
 logger = logging.getLogger(__name__)
 
-# Least-privilege: only the two *sensitive* calendar scopes chroniq actually
-# needs — reading free/busy and managing the events it creates. `openid`/`email`
-# are non-sensitive and only used to learn which account was connected (via the
-# id_token), so no broad calendar-read scope is required.
+# Free/busy-only mode: request ONLY non-sensitive scopes so the app needs no
+# Google sensitive-scope verification (no demo video / review). This enables the
+# double-booking guard (reading the user's busy times) but NOT writing booking
+# events to their calendar. To re-enable event write-back later, add
+# "https://www.googleapis.com/auth/calendar.events" back here (it's a *sensitive*
+# scope and will then require Google verification), and re-add it on the OAuth
+# consent screen's Data Access page.
 GOOGLE_SCOPES = [
     "openid",
     "email",
-    "https://www.googleapis.com/auth/calendar.events",
     "https://www.googleapis.com/auth/calendar.freebusy",
 ]
 
