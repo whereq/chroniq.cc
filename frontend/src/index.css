@@ -1573,3 +1573,10 @@ body {
 .reschedule-slot:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
 .reschedule-slot:disabled { opacity: 0.5; cursor: default; }
 .reschedule-empty { grid-column: 1 / -1; color: var(--muted); font-size: 13px; }
+
+/* ─── Legal pages + footer links ─────────────────────────────────────────── */
+.legal-body a { color: var(--accent); text-decoration: none; }
+.legal-body a:hover { text-decoration: underline; }
+.footer-links { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.footer-links a { color: var(--text-2); text-decoration: none; font-size: 13px; }
+.footer-links a:hover { color: var(--accent); }

@@ -10,7 +10,11 @@ export function Footer() {
           <span className="dot" title={t('footer.statusOp')} />
           <span>{t('footer.tag')}</span>
         </div>
-        <span className="footer-copy">{t('footer.copyright')}</span>
+        <div className="footer-links">
+          <a href="/privacy">{t('footer.privacy')}</a>
+          <a href="/terms">{t('footer.terms')}</a>
+          <span className="footer-copy">{t('footer.copyright')}</span>
+        </div>
       </div>
     </footer>
   );

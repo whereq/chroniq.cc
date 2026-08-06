@@ -139,7 +139,9 @@
       "cookies": "Cookie policy",
       "gdpr": "GDPR"
     },
-    "copyright_old": "© 2026 chroniq.cc. All rights reserved."
+    "copyright_old": "© 2026 chroniq.cc. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
   },
   "weather": {
     "noData": "No weather data for this region.",
