@@ -95,6 +95,7 @@ export function Header() {
     { href: '#features', label: t('nav.features') },
     { href: '#how-it-works', label: t('nav.how_it_works') },
     { href: '#pricing', label: t('nav.pricing') },
+    { href: '/about', label: t('nav.about') },
   ];
 
   return (

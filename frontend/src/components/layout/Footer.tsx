@@ -11,6 +11,7 @@ export function Footer() {
           <span>{t('footer.tag')}</span>
         </div>
         <div className="footer-links">
+          <a href="/about">{t('nav.about')}</a>
           <a href="/privacy">{t('footer.privacy')}</a>
           <a href="/terms">{t('footer.terms')}</a>
           <span className="footer-copy">{t('footer.copyright')}</span>
