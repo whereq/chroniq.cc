@@ -9,6 +9,7 @@ import { ManageBookingPage } from '@/pages/ManageBooking'
 import { DashboardPage } from '@/pages/Dashboard'
 import { HomePage } from '@/pages/Home'
 import { PrivacyPage, TermsPage } from '@/pages/Legal'
+import { AboutPage } from '@/pages/About'
 import { useCalendarStore } from '@/store/calendarStore'
 import { useAuth } from '@/auth/AuthProvider'
 import { useLoadBookings } from '@/hooks/useLoadBookings'
@@ -92,7 +93,8 @@ export default function App() {
           {/* Calendar workspace */}
           <Route path="/app" element={<AppShell />} />
 
-          {/* Legal */}
+          {/* About + Legal */}
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
 
