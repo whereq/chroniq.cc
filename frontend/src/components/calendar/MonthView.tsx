@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useCalendarStore } from '@/store/calendarStore';
-import { HOLIDAYS, BIRTHDAYS } from '@/data/calendarData';
+import { BIRTHDAYS } from '@/data/calendarData';
 import {
   monthMatrix,
   isToday,
@@ -11,13 +11,14 @@ import {
   KIND_COLOR,
 } from '@/utils/calUtils';
 import { getLunar, solarTermFor } from '@/utils/lunarUtils';
-import type { CalendarItem, CalendarFilters, CalEvent } from '@/types';
+import type { CalendarItem, CalendarFilters, CalEvent, Holiday } from '@/types';
 
 function getItemsForDate(
   date: Date,
   filters: CalendarFilters,
   locale: string,
-  meetings: CalEvent[]
+  meetings: CalEvent[],
+  holidays: Holiday[]
 ): CalendarItem[] {
   const items: CalendarItem[] = [];
   const dateStr = ymd(date);
@@ -25,7 +26,7 @@ function getItemsForDate(
 
   // Holidays
   if (filters.localHolidays) {
-    HOLIDAYS.filter(
+    holidays.filter(
       (h) => h.date === dateStr && h.region === filters.region
     ).forEach((h) => {
       items.push({
@@ -39,7 +40,7 @@ function getItemsForDate(
   }
 
   if (filters.globalHolidays) {
-    HOLIDAYS.filter(
+    holidays.filter(
       (h) => h.date === dateStr && h.region === 'global'
     ).forEach((h) => {
       items.push({
@@ -83,7 +84,7 @@ function getItemsForDate(
 
 export function MonthView() {
   const { t, i18n } = useTranslation();
-  const { cursor, setCursor, weekStart, weekNumbers, filters, bookings, setSelectedBookingId } = useCalendarStore();
+  const { cursor, setCursor, weekStart, weekNumbers, filters, bookings, holidays, setSelectedBookingId } = useCalendarStore();
   const cursorDate = new Date(cursor);
 
   const matrix = monthMatrix(cursorDate, weekStart);
@@ -140,7 +141,7 @@ export function MonthView() {
                 const inMonth = day.getMonth() === cursorDate.getMonth();
                 const today = isToday(day);
                 const selected = isSameDay(day, cursorDate);
-                const items = getItemsForDate(day, filters, i18n.language, bookings);
+                const items = getItemsForDate(day, filters, i18n.language, bookings, holidays);
                 const lunar = filters.lunar ? getLunar(day) : null;
                 const term = filters.lunar ? solarTermFor(day) : null;
                 const maxVisible = 3;
