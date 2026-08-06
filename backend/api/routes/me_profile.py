@@ -66,7 +66,9 @@ async def update_profile(
             raise HTTPException(status.HTTP_409_CONFLICT, "Username already taken")
 
     for field, value in payload.model_dump(exclude_unset=True).items():
-        if value is not None:
+        if field == "avatar_url":
+            profile.avatar_url = value or None  # "" (remove) or None → clear
+        elif value is not None:
             setattr(profile, field, value)
 
     await db.commit()

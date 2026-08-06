@@ -5,6 +5,7 @@ import { initReactI18next } from 'react-i18next'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import App from './App.tsx'
 import { AuthProvider } from './auth/AuthProvider'
+import { AvatarProvider } from './contexts/AvatarContext'
 import { ErrorBoundary } from './components/common/ErrorBoundary'
 import './index.css'
 
@@ -47,7 +48,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
         <AuthProvider>
-          <App />
+          <AvatarProvider>
+            <App />
+          </AvatarProvider>
         </AuthProvider>
       </QueryClientProvider>
     </ErrorBoundary>

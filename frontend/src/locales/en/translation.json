@@ -429,7 +429,8 @@
       "timezone": "Timezone",
       "brand_color": "Brand color",
       "bio": "Bio",
-      "save_error": "Could not save — the username may be taken or reserved."
+      "save_error": "Could not save — the username may be taken or reserved.",
+      "avatar": "Avatar"
     }
   },
   "onboarding": {
@@ -460,5 +461,18 @@
     "reschedule_error": "Could not reschedule — that time may no longer be available.",
     "rescheduling": "Rescheduling…",
     "back": "Back"
+  },
+  "avatar": {
+    "upload_photo": "Upload photo",
+    "change_photo": "Change photo",
+    "remove": "Remove",
+    "apply": "Apply",
+    "cancel": "Cancel",
+    "crop_hint": "Drag to reposition · scroll to zoom",
+    "hint": "JPG · PNG · GIF · max 16 KB",
+    "pick": "chroniq avatars",
+    "use_signin": "Use sign-in photo",
+    "archetypes": "Archetypes",
+    "portraits": "Portraits"
   }
 }
