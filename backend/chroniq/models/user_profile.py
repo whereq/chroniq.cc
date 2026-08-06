@@ -2,7 +2,7 @@
 
 from datetime import datetime
 
-from sqlalchemy import DateTime, String, func
+from sqlalchemy import DateTime, String, Text, func
 from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -19,7 +19,9 @@ class UserProfile(Base):
     username: Mapped[str] = mapped_column(String(64), unique=True, index=True)
     display_name: Mapped[str] = mapped_column(String(120), default="")
     timezone: Mapped[str] = mapped_column(String(64), default="UTC")
-    avatar_url: Mapped[str | None] = mapped_column(String(512), nullable=True)
+    # Holds a native-avatar key (cq:<key>), an uploaded image data URL
+    # (base64 JPEG, ~16 KB), or an http(s) URL — hence Text, not String(512).
+    avatar_url: Mapped[str | None] = mapped_column(Text, nullable=True)
     brand_color: Mapped[str] = mapped_column(String(16), default="#6366f1")
     bio: Mapped[str | None] = mapped_column(String(500), nullable=True)
 

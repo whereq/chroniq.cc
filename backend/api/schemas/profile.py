@@ -9,7 +9,8 @@ class ProfileUpdate(BaseModel):
     username: str | None = Field(default=None, min_length=3, max_length=64, pattern=r"^[a-z0-9][a-z0-9-]*$")
     display_name: str | None = Field(default=None, max_length=120)
     timezone: str | None = Field(default=None, max_length=64)
-    avatar_url: str | None = Field(default=None, max_length=512)
+    # Native key (cq:<key>), data URL (base64 JPEG, ~16 KB → ~25 K chars), or URL.
+    avatar_url: str | None = Field(default=None, max_length=65536)
     brand_color: str | None = Field(default=None, max_length=16)
     bio: str | None = Field(default=None, max_length=500)
 

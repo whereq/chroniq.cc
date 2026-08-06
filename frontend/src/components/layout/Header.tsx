@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { PiSignInBold, PiSignOutBold, PiUserCircleBold, PiUserCircle } from 'react-icons/pi';
+import { PiSignInBold, PiSignOutBold } from 'react-icons/pi';
 import { Logo } from '@/components/logo/Logo';
+import { UserAvatar } from '@/components/common/UserAvatar';
 import { useThemeStore } from '@/store/themeStore';
 import { useCalendarStore } from '@/store/calendarStore';
 import { useAuth } from '@/auth/AuthProvider';
+import { useAvatar } from '@/contexts/useAvatarContext';
 import { Sun, Moon, Globe, Menu, ChevronDown } from '@/components/icons/Icons';
 
 const LOCALES = [
@@ -85,6 +87,7 @@ export function Header() {
   const { t } = useTranslation();
   const { view, panelOpen, setPanelOpen } = useCalendarStore();
   const { isAuthenticated, login, logout } = useAuth();
+  const { effectiveUrl } = useAvatar();
 
   // Marketing nav points at real landing-page sections (anchors); dead links
   // (Solutions/Enterprise/About) were removed.
@@ -138,10 +141,11 @@ export function Header() {
               className="auth-avatar"
               title={isAuthenticated ? t('cta.account') : t('cta.guest')}
             >
-              {isAuthenticated
-                ? <PiUserCircleBold size={20} style={{ color: 'var(--accent)' }} />
-                : <PiUserCircle size={20} style={{ color: 'var(--muted)' }} />
-              }
+              <UserAvatar
+                avatar={isAuthenticated ? effectiveUrl : null}
+                isAuthenticated={isAuthenticated}
+                size={24}
+              />
             </span>
             {isAuthenticated ? (
               <button
