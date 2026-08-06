@@ -9,7 +9,7 @@ interface ClimateBaseline {
   city: string;
 }
 
-const CLIMATE: Record<string, ClimateBaseline> = {
+export const CLIMATE: Record<string, ClimateBaseline> = {
   US: { meanTemp: 12, amplitude: 14, precipProb: 0.3, hemisphere: 'N', unit: '°F', city: 'New York' },
   CN: { meanTemp: 13, amplitude: 18, precipProb: 0.35, hemisphere: 'N', unit: '°C', city: 'Beijing' },
   FR: { meanTemp: 12, amplitude: 10, precipProb: 0.4, hemisphere: 'N', unit: '°C', city: 'Paris' },
@@ -86,6 +86,34 @@ export const WEATHER_EMOJI: Record<string, string> = {
   snow: '❄️',
   fog: '🌫️',
 };
+
+// Lat/lon for each region's representative city (matches CLIMATE cities),
+// used to fetch a real forecast from open-meteo.
+export const REGION_COORDS: Record<string, { lat: number; lon: number }> = {
+  US: { lat: 40.71, lon: -74.01 }, CN: { lat: 39.90, lon: 116.40 }, FR: { lat: 48.85, lon: 2.35 },
+  DE: { lat: 52.52, lon: 13.40 }, JP: { lat: 35.68, lon: 139.69 }, KR: { lat: 37.57, lon: 126.98 },
+  ES: { lat: 40.42, lon: -3.70 }, IT: { lat: 41.90, lon: 12.50 }, GB: { lat: 51.51, lon: -0.13 },
+  CA: { lat: 43.65, lon: -79.38 }, AU: { lat: -33.87, lon: 151.21 }, NZ: { lat: -36.85, lon: 174.76 },
+  BR: { lat: -23.55, lon: -46.63 }, AR: { lat: -34.61, lon: -58.38 }, ZA: { lat: -33.92, lon: 18.42 },
+  IN: { lat: 19.08, lon: 72.88 }, SG: { lat: 1.35, lon: 103.82 }, TH: { lat: 13.76, lon: 100.50 },
+  ID: { lat: -6.21, lon: 106.85 }, MY: { lat: 3.14, lon: 101.69 }, PH: { lat: 14.60, lon: 120.98 },
+  VN: { lat: 21.03, lon: 105.85 }, TW: { lat: 25.03, lon: 121.57 }, PK: { lat: 24.86, lon: 67.01 },
+  SA: { lat: 24.71, lon: 46.68 }, EG: { lat: 30.04, lon: 31.24 }, NG: { lat: 6.52, lon: 3.38 },
+  GH: { lat: 5.60, lon: -0.19 }, MX: { lat: 19.43, lon: -99.13 }, PL: { lat: 52.23, lon: 21.01 },
+  SE: { lat: 59.33, lon: 18.07 }, NL: { lat: 52.37, lon: 4.90 }, PT: { lat: 38.72, lon: -9.14 },
+  RU: { lat: 55.76, lon: 37.62 }, UA: { lat: 50.45, lon: 30.52 }, TR: { lat: 41.01, lon: 28.98 },
+};
+
+/** Map a WMO weather code (open-meteo) to our condition buckets. */
+export function wmoToCondition(code: number): WeatherCondition['condition'] {
+  if (code === 0) return 'sun';
+  if (code === 1 || code === 2) return 'partly';
+  if (code === 45 || code === 48) return 'fog';
+  if ((code >= 71 && code <= 77) || code === 85 || code === 86) return 'snow';
+  if (code >= 95) return 'storm';
+  if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return 'rain';
+  return 'cloud';
+}
 
 export function getWeatherForecast(
   region: string,
