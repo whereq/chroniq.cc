@@ -17,6 +17,8 @@ busy list) so bookings never hard-fail on an integration hiccup.
 
 from __future__ import annotations
 
+import base64
+import json
 import logging
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -32,7 +34,29 @@ from api.services.slot_engine import BusyBlock
 
 logger = logging.getLogger(__name__)
 
-GOOGLE_SCOPES = ["https://www.googleapis.com/auth/calendar"]
+# Least-privilege: only the two *sensitive* calendar scopes chroniq actually
+# needs — reading free/busy and managing the events it creates. `openid`/`email`
+# are non-sensitive and only used to learn which account was connected (via the
+# id_token), so no broad calendar-read scope is required.
+GOOGLE_SCOPES = [
+    "openid",
+    "email",
+    "https://www.googleapis.com/auth/calendar.events",
+    "https://www.googleapis.com/auth/calendar.freebusy",
+]
+
+
+def _email_from_id_token(id_token: str | None) -> str | None:
+    """Read the `email` claim from a Google OpenID id_token (no verification
+    needed — it came straight from Google's token endpoint over TLS)."""
+    if not id_token:
+        return None
+    try:
+        payload = id_token.split(".")[1]
+        payload += "=" * (-len(payload) % 4)  # pad base64url
+        return json.loads(base64.urlsafe_b64decode(payload)).get("email")
+    except Exception:  # pragma: no cover
+        return None
 MS_SCOPES = ["Calendars.ReadWrite", "offline_access"]
 
 GOOGLE_TOKEN_URL = "https://oauth2.googleapis.com/token"
@@ -138,21 +162,9 @@ class GoogleCalendarProvider(CalendarProvider):
             tok = resp.json()
         expiry = datetime.now(timezone.utc) + _timedelta(tok.get("expires_in", 3600))
         access_token = tok["access_token"]
-
-        # Best-effort: the primary calendar's id is the account's email address
-        # (works with the calendar scope; no extra identity scope needed).
-        account_email: str | None = None
-        try:
-            async with httpx.AsyncClient(timeout=10.0) as client:
-                r = await client.get(
-                    f"{GOOGLE_API}/calendars/primary",
-                    headers={"Authorization": f"Bearer {access_token}"},
-                )
-                if r.status_code == 200:
-                    account_email = r.json().get("id")
-        except Exception:  # pragma: no cover - email is a nicety, never fatal
-            pass
-
+        # Which account was connected — from the OpenID id_token (openid/email),
+        # so no broad calendar-read scope is needed.
+        account_email = _email_from_id_token(tok.get("id_token"))
         return TokenBundle(access_token, tok.get("refresh_token"), expiry, account_email)
 
     async def _valid_access_token(self, conn: CalendarConnection) -> str:
