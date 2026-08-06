@@ -1590,3 +1590,16 @@ body {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
+
+/* ─── Brand gradients (marketing) ────────────────────────────────────────── */
+/* CTA band background: indigo → violet. */
+.gradient-brand {
+  background-image: linear-gradient(135deg, #4f46e5 0%, #6366f1 45%, #8b5cf6 100%);
+}
+/* Gradient text (hero headline accent line). */
+.gradient-text {
+  background-image: linear-gradient(120deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

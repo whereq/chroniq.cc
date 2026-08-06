@@ -22,8 +22,9 @@ export function CtaSection() {
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Button
+            variant="inverse"
             onClick={() => register()}
-            className="bg-white text-brand-700 hover:bg-gray-50 shadow-xl shadow-black/20 text-base px-8 py-3"
+            className="shadow-xl shadow-black/20 text-base px-8 py-3"
           >
             {t('cta.primary')}
             <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

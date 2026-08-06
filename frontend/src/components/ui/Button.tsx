@@ -1,7 +1,7 @@
 import { clsx } from 'clsx'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'outline'
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outline' | 'inverse'
   size?: 'sm' | 'md' | 'lg'
   children: React.ReactNode
 }
@@ -26,6 +26,9 @@ export function Button({
             variant === 'ghost',
           'border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300':
             variant === 'outline',
+          // Light button for dark/brand backgrounds (e.g. the CTA band).
+          'bg-white text-brand-700 hover:bg-gray-100':
+            variant === 'inverse',
         },
         {
           'text-sm px-3 py-1.5': size === 'sm',
