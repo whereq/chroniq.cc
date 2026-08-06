@@ -2,7 +2,7 @@
 
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class ProfileUpdate(BaseModel):
@@ -19,6 +19,13 @@ class ProfileOut(BaseModel):
 
     keycloak_id: str
     username: str
+
+    # keycloak_id is a UUID column (as_uuid=True) on the model; coerce to str so
+    # response validation doesn't 500.
+    @field_validator("keycloak_id", mode="before")
+    @classmethod
+    def _uuid_to_str(cls, v: object) -> str:
+        return str(v)
     display_name: str
     timezone: str
     avatar_url: str | None
