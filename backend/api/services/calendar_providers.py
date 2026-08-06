@@ -137,7 +137,23 @@ class GoogleCalendarProvider(CalendarProvider):
             resp.raise_for_status()
             tok = resp.json()
         expiry = datetime.now(timezone.utc) + _timedelta(tok.get("expires_in", 3600))
-        return TokenBundle(tok["access_token"], tok.get("refresh_token"), expiry, None)
+        access_token = tok["access_token"]
+
+        # Best-effort: the primary calendar's id is the account's email address
+        # (works with the calendar scope; no extra identity scope needed).
+        account_email: str | None = None
+        try:
+            async with httpx.AsyncClient(timeout=10.0) as client:
+                r = await client.get(
+                    f"{GOOGLE_API}/calendars/primary",
+                    headers={"Authorization": f"Bearer {access_token}"},
+                )
+                if r.status_code == 200:
+                    account_email = r.json().get("id")
+        except Exception:  # pragma: no cover - email is a nicety, never fatal
+            pass
+
+        return TokenBundle(access_token, tok.get("refresh_token"), expiry, account_email)
 
     async def _valid_access_token(self, conn: CalendarConnection) -> str:
         expiry = conn.token_expiry
