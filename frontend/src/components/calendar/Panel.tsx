@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useCalendarStore } from '@/store/calendarStore';
-import { HOLIDAYS, BIRTHDAYS } from '@/data/calendarData';
+import { BIRTHDAYS } from '@/data/calendarData';
 import { Toggle } from '@/components/common/Toggle';
 import { CountryPicker } from '@/components/common/CountryPicker';
 import { MiniCalendar } from './MiniCalendar';
@@ -10,7 +10,7 @@ import { ymd, md as getMd, getRegionColor, KIND_COLOR, TODAY, addDays } from '@/
 
 function UpcomingEvents() {
   const { t, i18n } = useTranslation();
-  const { filters, bookings } = useCalendarStore();
+  const { filters, bookings, holidays } = useCalendarStore();
 
   // Get next 30 days of events
   const upcoming: { date: Date; title: string; color: string }[] = [];
@@ -21,7 +21,7 @@ function UpcomingEvents() {
     const mdStr = getMd(d);
 
     if (filters.localHolidays) {
-      HOLIDAYS.filter((h) => h.date === dateStr && h.region === filters.region).forEach((h) => {
+      holidays.filter((h) => h.date === dateStr && h.region === filters.region).forEach((h) => {
         upcoming.push({
           date: d,
           title: h.name[i18n.language] ?? h.name['en'] ?? '',
@@ -31,7 +31,7 @@ function UpcomingEvents() {
     }
 
     if (filters.globalHolidays) {
-      HOLIDAYS.filter((h) => h.date === dateStr && h.region === 'global').forEach((h) => {
+      holidays.filter((h) => h.date === dateStr && h.region === 'global').forEach((h) => {
         upcoming.push({
           date: d,
           title: h.name[i18n.language] ?? h.name['en'] ?? '',

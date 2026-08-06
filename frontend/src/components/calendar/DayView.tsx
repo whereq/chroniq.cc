@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { useCalendarStore } from '@/store/calendarStore';
-import { HOLIDAYS } from '@/data/calendarData';
 import { isToday, ymd, getRegionColor, KIND_COLOR } from '@/utils/calUtils';
 import { getLunar, solarTermFor } from '@/utils/lunarUtils';
 
@@ -12,7 +11,7 @@ function pad2(n: number) {
 
 export function DayView() {
   const { t, i18n } = useTranslation();
-  const { cursor, filters, bookings, setSelectedBookingId } = useCalendarStore();
+  const { cursor, filters, bookings, holidays, setSelectedBookingId } = useCalendarStore();
   const cursorDate = new Date(cursor);
   const dateStr = ymd(cursorDate);
   const today = isToday(cursorDate);
@@ -23,12 +22,12 @@ export function DayView() {
   const lunar = filters.lunar ? getLunar(cursorDate) : null;
   const term = filters.lunar ? solarTermFor(cursorDate) : null;
 
-  const holidays = [
+  const dayHolidays = [
     ...(filters.localHolidays
-      ? HOLIDAYS.filter((h) => h.date === dateStr && h.region === filters.region)
+      ? holidays.filter((h) => h.date === dateStr && h.region === filters.region)
       : []),
     ...(filters.globalHolidays
-      ? HOLIDAYS.filter((h) => h.date === dateStr && h.region === 'global')
+      ? holidays.filter((h) => h.date === dateStr && h.region === 'global')
       : []),
   ];
 
@@ -82,7 +81,7 @@ export function DayView() {
       </div>
 
       {/* All-day items */}
-      {holidays.length > 0 && (
+      {dayHolidays.length > 0 && (
         <div
           style={{
             padding: '6px 16px',
@@ -93,7 +92,7 @@ export function DayView() {
             flexShrink: 0,
           }}
         >
-          {holidays.map((h, i) => (
+          {dayHolidays.map((h, i) => (
             <div
               key={i}
               className="cal-event-chip"

@@ -11,12 +11,14 @@ import { HomePage } from '@/pages/Home'
 import { useCalendarStore } from '@/store/calendarStore'
 import { useAuth } from '@/auth/AuthProvider'
 import { useLoadBookings } from '@/hooks/useLoadBookings'
+import { useLoadHolidays } from '@/hooks/useLoadHolidays'
 import { OnboardingBanner } from '@/components/calendar/OnboardingBanner'
 
 function AppShell() {
   const view = useCalendarStore((s) => s.view);
-  // Mirror the signed-in user's real bookings into the calendar store.
+  // Mirror the signed-in user's real bookings + real public holidays into the store.
   useLoadBookings();
+  useLoadHolidays();
 
   return (
     <div className="app">
