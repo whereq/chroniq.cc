@@ -138,11 +138,8 @@ export function PricingSection() {
                 </ul>
 
                 <Button
-                  variant={isPro ? 'secondary' : 'primary'}
-                  className={clsx(
-                    'w-full justify-center',
-                    isPro && 'bg-white text-brand-700 hover:bg-brand-50'
-                  )}
+                  variant={isPro ? 'inverse' : 'primary'}
+                  className="w-full justify-center"
                   disabled={busy === plan}
                   onClick={() => handlePlan(plan)}
                 >

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /app
+Disallow: /bookings/
+
+Sitemap: https://chroniq.cc/sitemap.xml
