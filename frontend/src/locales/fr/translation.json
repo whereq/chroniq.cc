@@ -229,7 +229,8 @@
     "next": "Suivant",
     "no_times": "Aucun créneau disponible ce jour-là.",
     "error": "Ce créneau n'est plus disponible. Veuillez en choisir un autre.",
-    "with_host": "{{title}} avec {{host}}"
+    "with_host": "{{title}} avec {{host}}",
+    "powered_by": "Propulsé par chroniq.cc"
   },
   "common": {
     "learnMore": "En savoir plus",

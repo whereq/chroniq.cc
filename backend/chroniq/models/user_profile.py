@@ -2,7 +2,7 @@
 
 from datetime import datetime
 
-from sqlalchemy import DateTime, String, Text, func
+from sqlalchemy import Boolean, DateTime, String, Text, func
 from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -24,6 +24,9 @@ class UserProfile(Base):
     avatar_url: Mapped[str | None] = mapped_column(Text, nullable=True)
     brand_color: Mapped[str] = mapped_column(String(16), default="#6366f1")
     bio: Mapped[str | None] = mapped_column(String(500), nullable=True)
+    # Synced from the host's tier entitlement so the (anonymous) public booking
+    # page can hide the "Powered by chroniq.cc" badge for paid hosts.
+    remove_branding: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False, server_default="false")
 
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(

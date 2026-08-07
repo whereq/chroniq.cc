@@ -221,7 +221,8 @@
     "next": "Avanti",
     "no_times": "Nessun orario disponibile in questo giorno.",
     "error": "Questo orario non è più disponibile. Scegline un altro.",
-    "with_host": "{{title}} con {{host}}"
+    "with_host": "{{title}} con {{host}}",
+    "powered_by": "Con tecnologia chroniq.cc"
   },
   "common": {
     "learnMore": "Scopri di più",

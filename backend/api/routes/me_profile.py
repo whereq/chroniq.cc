@@ -7,6 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from api.schemas.profile import ProfileOut, ProfileUpdate
 from chroniq.auth import CurrentUser, CurrentUserId
 from chroniq.database import get_db
+from chroniq.entitlements import entitlements_for
 from chroniq.models.user_profile import UserProfile
 
 router = APIRouter(prefix="/me", tags=["profile"])
@@ -38,6 +39,14 @@ async def get_or_create_profile(db: AsyncSession, user: dict) -> UserProfile:
             display_name=user.get("name") or user.get("preferred_username") or "",
         )
         db.add(profile)
+        await db.commit()
+        await db.refresh(profile)
+
+    # Keep remove_branding in sync with the caller's tier, so the anonymous
+    # public booking page reflects paid/free without needing the host's token.
+    desired = entitlements_for((user.get("realm_access") or {}).get("roles", [])).remove_branding
+    if profile.remove_branding != desired:
+        profile.remove_branding = desired
         await db.commit()
         await db.refresh(profile)
     return profile

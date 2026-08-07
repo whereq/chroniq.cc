@@ -70,6 +70,7 @@ export interface PublicHost {
   brand_color: string
   bio: string | null
   timezone: string
+  remove_branding: boolean
 }
 
 export interface PublicHostPage {

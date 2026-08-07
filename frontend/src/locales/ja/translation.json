@@ -221,7 +221,8 @@
     "next": "次へ",
     "no_times": "この日に予約可能な時間はありません。",
     "error": "その時間はすでに埋まっています。別の時間を選んでください。",
-    "with_host": "{{host}}との{{title}}"
+    "with_host": "{{host}}との{{title}}",
+    "powered_by": "Powered by chroniq.cc"
   },
   "common": {
     "learnMore": "詳細を見る",

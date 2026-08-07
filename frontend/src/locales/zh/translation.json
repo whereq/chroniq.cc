@@ -229,7 +229,8 @@
     "next": "下一步",
     "no_times": "当天没有可预约的时间。",
     "error": "该时间已被占用，请选择其他时段。",
-    "with_host": "与 {{host}} 的{{title}}"
+    "with_host": "与 {{host}} 的{{title}}",
+    "powered_by": "由 chroniq.cc 提供支持"
   },
   "common": {
     "learnMore": "了解更多",

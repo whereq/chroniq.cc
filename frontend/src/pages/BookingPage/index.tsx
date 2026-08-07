@@ -342,6 +342,16 @@ export function BookingPage() {
           )}
         </div>
       </div>
+      {!host.remove_branding && (
+        <a
+          href="https://chroniq.cc"
+          target="_blank"
+          rel="noreferrer"
+          className="block py-4 text-center text-xs text-gray-400 hover:text-brand-600 transition-colors"
+        >
+          {t('booking.powered_by', 'Powered by chroniq.cc')}
+        </a>
+      )}
     </div>
   )
 }

@@ -341,7 +341,8 @@
     "next": "Next",
     "no_times": "No available times on this day.",
     "error": "That time is no longer available. Please pick another slot.",
-    "with_host": "{{title}} with {{host}}"
+    "with_host": "{{title}} with {{host}}",
+    "powered_by": "Powered by chroniq.cc"
   },
   "common": {
     "learnMore": "Learn more",
