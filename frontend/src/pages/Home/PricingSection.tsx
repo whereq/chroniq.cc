@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { SectionHeading } from '@/components/common/SectionHeading'
-import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { clsx } from 'clsx'
 import { useAuth } from '@/auth/AuthProvider'
@@ -21,7 +20,6 @@ export function PricingSection() {
   const { t } = useTranslation()
   const { isAuthenticated, login, register } = useAuth()
   const navigate = useNavigate()
-  const [annual, setAnnual] = useState(false)
   const [busy, setBusy] = useState<string | null>(null)
 
   const handlePlan = async (plan: (typeof planKeys)[number]) => {
@@ -51,29 +49,6 @@ export function PricingSection() {
           title={t('pricing.title')}
           subtitle={t('pricing.subtitle')}
         />
-
-        {/* Billing toggle */}
-        <div className="flex items-center justify-center gap-3 mt-8">
-          <span className={clsx('text-sm font-medium', !annual ? 'text-gray-900 dark:text-white' : 'text-gray-500')}>
-            {t('pricing.monthly')}
-          </span>
-          <button
-            onClick={() => setAnnual(!annual)}
-            className={clsx(
-              'relative w-12 h-6 rounded-full transition-colors duration-200',
-              annual ? 'bg-brand-600' : 'bg-gray-200 dark:bg-gray-700'
-            )}
-          >
-            <div className={clsx(
-              'absolute top-1 w-4 h-4 rounded-full bg-white shadow transition-transform duration-200',
-              annual ? 'translate-x-7' : 'translate-x-1'
-            )} />
-          </button>
-          <span className={clsx('text-sm font-medium flex items-center gap-1.5', annual ? 'text-gray-900 dark:text-white' : 'text-gray-500')}>
-            {t('pricing.annual')}
-            <Badge variant="success" className="text-xs">{t('pricing.save')}</Badge>
-          </span>
-        </div>
 
         <div className="mt-12 grid md:grid-cols-3 gap-6 md:gap-4 lg:gap-6 md:items-start">
           {planKeys.map((plan) => {
@@ -111,9 +86,7 @@ export function PricingSection() {
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
                     <span className={clsx('text-4xl font-extrabold', isPro ? 'text-white' : 'text-gray-900 dark:text-white')}>
-                      {annual && plan !== 'free'
-                        ? t(`pricing.plans.${plan}.price`).replace(/\d+/, (n) => String(Math.floor(Number(n) * 0.8)))
-                        : t(`pricing.plans.${plan}.price`)}
+                      {t(`pricing.plans.${plan}.price`)}
                     </span>
                     <span className={clsx('text-sm', isPro ? 'text-brand-200' : 'text-gray-500 dark:text-gray-400')}>
                       {t(`pricing.plans.${plan}.period`)}
