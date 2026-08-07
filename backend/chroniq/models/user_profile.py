@@ -27,6 +27,9 @@ class UserProfile(Base):
     # Synced from the host's tier entitlement so the (anonymous) public booking
     # page can hide the "Powered by chroniq.cc" badge for paid hosts.
     remove_branding: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False, server_default="false")
+    # Stripe customer id (cus_…), stored on first successful checkout so the user
+    # can self-serve manage/cancel via the Stripe Billing Portal.
+    stripe_customer_id: Mapped[str | None] = mapped_column(String(255), nullable=True)
 
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(

@@ -44,6 +44,16 @@ export function PlanSection() {
     }
   }
 
+  const manage = async () => {
+    try {
+      setBusy(true)
+      const { url } = await meApi.portal()
+      window.location.href = url
+    } catch {
+      setBusy(false)
+    }
+  }
+
   return (
     <div className="max-w-lg">
       <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
@@ -90,9 +100,14 @@ export function PlanSection() {
           </Button>
         </div>
       ) : (
-        <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-          {t('dashboard.plan.paid_note', "You're on a paid plan — thank you! To change or cancel your subscription, contact support.")}
-        </p>
+        <div className="mt-5">
+          <Button variant="secondary" className="w-full justify-center" disabled={busy} onClick={manage}>
+            {busy ? '…' : t('dashboard.plan.manage_cta', 'Manage subscription')}
+          </Button>
+          <p className="text-xs text-gray-400 dark:text-gray-500 mt-2 text-center">
+            {t('dashboard.plan.manage_note', 'Update your card or cancel anytime — changes take effect immediately.')}
+          </p>
+        </div>
       )}
     </div>
   )
