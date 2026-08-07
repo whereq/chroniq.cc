@@ -271,7 +271,8 @@
       "availability": "Verfügbarkeit",
       "integrations": "Integrationen",
       "settings": "Einstellungen",
-      "calendar": "Kalender"
+      "calendar": "Kalender",
+      "plan": "Tarif"
     },
     "event_types": {
       "title": "Terminarten",

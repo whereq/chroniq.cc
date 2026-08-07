@@ -271,7 +271,8 @@
       "availability": "空き時間",
       "integrations": "連携",
       "settings": "設定",
-      "calendar": "カレンダー"
+      "calendar": "カレンダー",
+      "plan": "プラン"
     },
     "event_types": {
       "title": "イベントタイプ",

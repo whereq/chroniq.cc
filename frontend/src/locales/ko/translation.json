@@ -271,7 +271,8 @@
       "availability": "예약 가능 시간",
       "integrations": "연동",
       "settings": "설정",
-      "calendar": "캘린더"
+      "calendar": "캘린더",
+      "plan": "요금제"
     },
     "event_types": {
       "title": "이벤트 유형",

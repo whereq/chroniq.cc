@@ -383,7 +383,8 @@
       "availability": "Availability",
       "integrations": "Integrations",
       "settings": "Settings",
-      "calendar": "Calendar"
+      "calendar": "Calendar",
+      "plan": "Plan"
     },
     "event_types": {
       "title": "Event Types",
