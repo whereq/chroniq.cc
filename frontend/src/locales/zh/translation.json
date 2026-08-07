@@ -9,14 +9,21 @@
     "features": "功能特性",
     "integrations": "集成应用",
     "login": "登录",
-    "getStarted": "免费开始"
+    "getStarted": "免费开始",
+    "calendar": "日历",
+    "manage": "管理",
+    "how_it_works": "使用方法"
   },
   "cta": {
     "signin": "登录",
     "signup": "免费开始",
     "signout": "退出登录",
     "guest": "访客",
-    "account": "我的账户"
+    "account": "我的账户",
+    "title": "准备好简化你的日程安排了吗？",
+    "subtitle": "几分钟即可创建你的预约页面——免费，无需信用卡。",
+    "primary": "免费开始",
+    "secondary": "查看价格"
   },
   "panel": {
     "filters": "筛选",
@@ -136,7 +143,9 @@
       "cookies": "Cookie 政策",
       "gdpr": "GDPR"
     },
-    "copyright_old": "© 2026 chroniq.cc. 保留所有权利。"
+    "copyright_old": "© 2026 chroniq.cc. 保留所有权利。",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
   },
   "weather": {
     "noData": "该区域暂无天气数据。",
@@ -314,7 +323,162 @@
       "timezone": "时区",
       "brand_color": "品牌颜色",
       "bio": "简介",
-      "save_error": "保存失败——该用户名可能已被占用或被保留。"
+      "save_error": "保存失败——该用户名可能已被占用或被保留。",
+      "avatar": "头像"
     }
+  },
+  "features": {
+    "title": "更聪明地安排日程所需的一切",
+    "subtitle": "从一次性的介绍通话到轮询式团队会议，chroniq 处理各种琐事，让你专注于对话本身。",
+    "items": {
+      "event_types": {
+        "title": "自定义事件类型",
+        "desc": "创建 15 分钟的介绍、一小时的深入交流或付费咨询——每种都有各自的规则。"
+      },
+      "booking_pages": {
+        "title": "个人预约页面",
+        "desc": "分享 chroniq.cc/you 这样简洁的链接，让受邀者选择你们双方都合适的时间。"
+      },
+      "availability": {
+        "title": "灵活的可用时间",
+        "desc": "设置每周工作时间、添加特定日期的调整，并自动在会议之间预留缓冲时间。"
+      },
+      "team": {
+        "title": "团队日程安排",
+        "desc": "轮询和集体事件将预约分配给整个团队。"
+      },
+      "integrations": {
+        "title": "日历同步",
+        "desc": "与 Google 和 Microsoft 双向同步，让你的真实可用时间始终保持最新。"
+      },
+      "analytics": {
+        "title": "洞察与分析",
+        "desc": "一目了然地查看预约趋势、爽约率和你最繁忙的时段。"
+      }
+    }
+  },
+  "how_it_works": {
+    "title": "三个简单步骤即可预约会议",
+    "subtitle": "一次设置，之后让 chroniq 替你处理来回沟通。",
+    "steps": {
+      "create": {
+        "title": "创建你的事件",
+        "desc": "选择时长、设置可用时间，并为受邀者添加所需问题。"
+      },
+      "share": {
+        "title": "分享你的链接",
+        "desc": "发送你的个人预约链接，或将其直接嵌入你的网站。"
+      },
+      "meet": {
+        "title": "收获预约",
+        "desc": "受邀者选择时段，所有人都会收到日历邀请，提醒也会自动发送。"
+      }
+    }
+  },
+  "integrations": {
+    "title": "与你的日历协作",
+    "subtitle": "与 Google 和 Microsoft 双向同步，让你的可用时间保持准确；Stripe 支持付费预约。更多集成即将推出。",
+    "cta": "更多即将推出"
+  },
+  "pricing": {
+    "title": "简单透明的定价",
+    "subtitle": "免费开始，需要更多时再升级。",
+    "monthly": "按月",
+    "annual": "按年",
+    "save": "省 20%",
+    "plans": {
+      "free": {
+        "name": "免费版",
+        "desc": "适合刚起步的个人",
+        "price": "$0",
+        "period": "/月",
+        "cta": "开始使用",
+        "features": [
+          "1 种事件类型",
+          "无限预约",
+          "个人预约页面",
+          "Google 和 Microsoft 日历同步",
+          "邮件通知"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "desc": "适合整天都在安排预约的专业人士",
+        "price": "$12",
+        "period": "/月",
+        "badge": "最受欢迎",
+        "cta": "开始免费试用",
+        "features": [
+          "无限事件类型",
+          "可定制预约页面",
+          "自动提醒与跟进",
+          "Zoom、Teams 和 Google Meet",
+          "移除 chroniq 品牌标识",
+          "优先支持"
+        ]
+      },
+      "team": {
+        "name": "团队版",
+        "desc": "适合共同安排日程的团队",
+        "price": "$20",
+        "period": "/用户/月",
+        "cta": "开始免费试用",
+        "features": [
+          "Pro 的全部功能",
+          "轮询与集体事件",
+          "团队可用时间与分配",
+          "管理员角色与权限",
+          "分析仪表板",
+          "SAML 单点登录"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "title": "深受各行各业忙碌人士喜爱",
+    "subtitle": "团队和个人专业人士都依靠 chroniq 来安排他们的一天。",
+    "items": []
+  },
+  "onboarding": {
+    "title": "完成你的预约页面设置",
+    "cta": "完成设置",
+    "step_username": "选择你的用户名",
+    "step_availability": "设置可用时间",
+    "step_event_type": "创建事件类型"
+  },
+  "booking_detail": {
+    "title": "预约",
+    "invitee": "受邀者",
+    "when": "时间",
+    "status": "状态",
+    "notes": "备注",
+    "join": "加入会议",
+    "cancel": "取消会议",
+    "cancelling": "正在取消…",
+    "cancel_confirm": "取消此预约？将通知受邀者。",
+    "close": "关闭",
+    "status_confirmed": "已确认",
+    "status_cancelled": "已取消",
+    "cancel_error": "无法取消——请重试。",
+    "reschedule": "改期",
+    "pick_new_time": "选择新时间",
+    "choose_date": "日期",
+    "no_slots": "这一天没有可用时间。",
+    "reschedule_error": "无法改期——该时间可能已不可用。",
+    "rescheduling": "正在改期…",
+    "back": "返回"
+  },
+  "avatar": {
+    "upload_photo": "上传照片",
+    "change_photo": "更换照片",
+    "remove": "移除",
+    "apply": "应用",
+    "cancel": "取消",
+    "crop_hint": "拖动以调整位置 · 滚动以缩放",
+    "hint": "JPG · PNG · GIF · 最大 16 KB",
+    "pick": "chroniq 头像",
+    "use_signin": "使用登录头像",
+    "archetypes": "风格形象",
+    "portraits": "人物肖像"
   }
 }
