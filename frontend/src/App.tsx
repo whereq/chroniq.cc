@@ -1,15 +1,18 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from '@/contexts/ThemeProvider'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { CalendarPage } from '@/pages/CalendarPage'
-import { ResourcesPage } from '@/pages/Resources'
-import { BookingPage } from '@/pages/BookingPage'
-import { ManageBookingPage } from '@/pages/ManageBooking'
-import { DashboardPage } from '@/pages/Dashboard'
-import { HomePage } from '@/pages/Home'
-import { PrivacyPage, TermsPage } from '@/pages/Legal'
-import { AboutPage } from '@/pages/About'
+import { HomePage } from '@/pages/Home' // eager: the anonymous landing (first paint)
+// Heavy / secondary routes are code-split so the marketing landing loads lean.
+const CalendarPage = lazy(() => import('@/pages/CalendarPage').then((m) => ({ default: m.CalendarPage })))
+const ResourcesPage = lazy(() => import('@/pages/Resources').then((m) => ({ default: m.ResourcesPage })))
+const BookingPage = lazy(() => import('@/pages/BookingPage').then((m) => ({ default: m.BookingPage })))
+const ManageBookingPage = lazy(() => import('@/pages/ManageBooking').then((m) => ({ default: m.ManageBookingPage })))
+const DashboardPage = lazy(() => import('@/pages/Dashboard').then((m) => ({ default: m.DashboardPage })))
+const PrivacyPage = lazy(() => import('@/pages/Legal').then((m) => ({ default: m.PrivacyPage })))
+const TermsPage = lazy(() => import('@/pages/Legal').then((m) => ({ default: m.TermsPage })))
+const AboutPage = lazy(() => import('@/pages/About').then((m) => ({ default: m.AboutPage })))
 import { useCalendarStore } from '@/store/calendarStore'
 import { useAuth } from '@/auth/AuthProvider'
 import { useLoadBookings } from '@/hooks/useLoadBookings'
@@ -79,10 +82,19 @@ function NotFound() {
   );
 }
 
+function RouteFallback() {
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--muted)' }}>
+      <span style={{ fontSize: 14 }}>Loading…</span>
+    </div>
+  );
+}
+
 export default function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
+        <Suspense fallback={<RouteFallback />}>
         <Routes>
           {/* Root — marketing (anonymous) or dashboard (authed) */}
           <Route path="/" element={<Root />} />
@@ -107,6 +119,7 @@ export default function App() {
           {/* 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </Suspense>
       </BrowserRouter>
     </ThemeProvider>
   )

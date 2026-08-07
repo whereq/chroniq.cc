@@ -29,9 +29,9 @@ export function DashboardPage() {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-950">
+      <div className="app">
         <Header />
-        <main className="flex-1 flex items-center justify-center p-8">
+        <main className="main flex items-center justify-center p-8 bg-white dark:bg-gray-950">
           <div className="text-center max-w-md">
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{t('dashboard.signin_title')}</h1>
             <p className="text-gray-500 dark:text-gray-400 mb-6">{t('dashboard.signin_subtitle')}</p>
@@ -44,9 +44,10 @@ export function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-950">
+    <div className="app">
       <Header />
-      <div className="flex-1 flex max-w-6xl mx-auto w-full">
+      <main className="main main-scroll bg-gray-50 dark:bg-gray-950">
+      <div className="flex max-w-6xl mx-auto w-full">
         {/* Sidebar */}
         <aside className="w-52 shrink-0 border-r border-gray-200 dark:border-gray-800 py-6 hidden sm:block">
           <nav className="space-y-1 px-3">
@@ -72,8 +73,8 @@ export function DashboardPage() {
           </nav>
         </aside>
 
-        {/* Mobile tab bar */}
-        <div className="sm:hidden fixed bottom-0 inset-x-0 z-40 flex border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+        {/* Mobile tab bar (sits just above the pinned footer) */}
+        <div className="sm:hidden fixed bottom-10 inset-x-0 z-40 flex border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
           {TABS.map((tb) => (
             <button key={tb.id} onClick={() => setTab(tb.id)} className={`flex-1 py-2 text-lg ${tab === tb.id ? 'text-brand-600' : 'text-gray-400'}`}>
               {tb.icon}
@@ -81,14 +82,15 @@ export function DashboardPage() {
           ))}
         </div>
 
-        <main className="flex-1 p-6 pb-24 sm:pb-6">
+        <div className="flex-1 p-6 pb-24 sm:pb-6">
           {tab === 'event-types' && <EventTypesSection />}
           {tab === 'bookings' && <BookingsSection />}
           {tab === 'availability' && <AvailabilitySection />}
           {tab === 'integrations' && <IntegrationsSection />}
           {tab === 'settings' && <SettingsSection />}
-        </main>
+        </div>
       </div>
+      </main>
       <Footer />
     </div>
   )
