@@ -293,7 +293,7 @@
           "Unlimited event types",
           "Customizable booking pages",
           "Automated reminders & follow-ups",
-          "Zoom, Teams & Google Meet",
+          "Zoom, Teams & Google Meet (coming soon)",
           "Remove chroniq branding",
           "Priority support"
         ]
@@ -306,11 +306,11 @@
         "cta": "Start free trial",
         "features": [
           "Everything in Pro",
-          "Round-robin & collective events",
-          "Team availability & routing",
-          "Admin roles & permissions",
-          "Analytics dashboard",
-          "SAML single sign-on"
+          "Round-robin & collective events (coming soon)",
+          "Team availability & routing (coming soon)",
+          "Admin roles & permissions (coming soon)",
+          "Analytics dashboard (coming soon)",
+          "SAML single sign-on (coming soon)"
         ]
       }
     }
