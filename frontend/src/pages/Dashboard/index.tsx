@@ -9,14 +9,16 @@ import { BookingsSection } from './sections/BookingsSection'
 import { AvailabilitySection } from './sections/AvailabilitySection'
 import { IntegrationsSection } from './sections/IntegrationsSection'
 import { SettingsSection } from './sections/SettingsSection'
+import { PlanSection } from './sections/PlanSection'
 
-type Tab = 'event-types' | 'bookings' | 'availability' | 'integrations' | 'settings'
+type Tab = 'event-types' | 'bookings' | 'availability' | 'integrations' | 'plan' | 'settings'
 
 const TABS: { id: Tab; labelKey: string; icon: string }[] = [
   { id: 'event-types', labelKey: 'dashboard.tabs.event_types', icon: '🗓️' },
   { id: 'bookings', labelKey: 'dashboard.tabs.bookings', icon: '📋' },
   { id: 'availability', labelKey: 'dashboard.tabs.availability', icon: '⏰' },
   { id: 'integrations', labelKey: 'dashboard.tabs.integrations', icon: '🔌' },
+  { id: 'plan', labelKey: 'dashboard.tabs.plan', icon: '⭐' },
   { id: 'settings', labelKey: 'dashboard.tabs.settings', icon: '⚙️' },
 ]
 
@@ -87,6 +89,7 @@ export function DashboardPage() {
           {tab === 'bookings' && <BookingsSection />}
           {tab === 'availability' && <AvailabilitySection />}
           {tab === 'integrations' && <IntegrationsSection />}
+          {tab === 'plan' && <PlanSection />}
           {tab === 'settings' && <SettingsSection />}
         </div>
       </div>

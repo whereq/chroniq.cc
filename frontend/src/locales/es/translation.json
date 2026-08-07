@@ -271,7 +271,8 @@
       "availability": "Disponibilidad",
       "integrations": "Integraciones",
       "settings": "Ajustes",
-      "calendar": "Calendario"
+      "calendar": "Calendario",
+      "plan": "Plan"
     },
     "event_types": {
       "title": "Tipos de evento",

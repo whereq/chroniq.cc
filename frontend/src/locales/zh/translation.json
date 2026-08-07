@@ -271,7 +271,8 @@
       "availability": "可用时间",
       "integrations": "集成",
       "settings": "设置",
-      "calendar": "日历"
+      "calendar": "日历",
+      "plan": "套餐"
     },
     "event_types": {
       "title": "会议类型",

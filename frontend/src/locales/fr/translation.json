@@ -271,7 +271,8 @@
       "availability": "Disponibilités",
       "integrations": "Intégrations",
       "settings": "Paramètres",
-      "calendar": "Calendrier"
+      "calendar": "Calendrier",
+      "plan": "Forfait"
     },
     "event_types": {
       "title": "Types d'événements",
