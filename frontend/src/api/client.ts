@@ -180,6 +180,7 @@ export const meApi = {
   getEntitlements: () => apiClient.get<Entitlements>('/me/entitlements').then((r) => r.data),
   checkout: (plan: 'tier-1' | 'tier-2') =>
     apiClient.post<{ url: string }>('/me/payments/checkout', { plan }).then((r) => r.data),
+  portal: () => apiClient.post<{ url: string }>('/me/payments/portal').then((r) => r.data),
 }
 
 export interface Entitlements {
