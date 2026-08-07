@@ -13,9 +13,10 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from api.services import calendar_providers, token_crypto
-from chroniq.auth import CurrentUserId
+from chroniq.auth import CurrentUser, CurrentUserId
 from chroniq.config import get_settings
 from chroniq.database import get_db
+from chroniq.entitlements import entitlements_for
 from chroniq.models.calendar_connection import CalendarConnection
 
 logger = logging.getLogger(__name__)
@@ -50,9 +51,27 @@ async def list_connections(uid: CurrentUserId, db: AsyncSession = Depends(get_db
 
 
 @router.post("/{provider}/connect", response_model=AuthorizeUrl)
-async def connect(provider: str, uid: CurrentUserId):
+async def connect(provider: str, user: CurrentUser, db: AsyncSession = Depends(get_db)):
     if provider not in _SUPPORTED:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Unknown provider")
+
+    uid = user["sub"]
+    existing = (
+        await db.execute(
+            select(CalendarConnection).where(CalendarConnection.keycloak_id == uid)
+        )
+    ).scalars().all()
+
+    # Enforce the plan's calendar-connection limit — but always allow reconnecting
+    # a provider the user already has (that just refreshes the existing row).
+    already = any(c.provider == provider for c in existing)
+    limit = entitlements_for((user.get("realm_access") or {}).get("roles", [])).max_calendar_connections
+    if not already and limit is not None and len(existing) >= limit:
+        raise HTTPException(
+            status.HTTP_402_PAYMENT_REQUIRED,
+            f"Your plan allows {limit} calendar connection(s). Upgrade to connect more.",
+        )
+
     # `state` carries the user id so the callback can attribute the tokens.
     # In Phase 3 this should be a signed/one-time value, not the raw id.
     url = calendar_providers.get_provider(provider).build_authorize_url(state=str(uid))
