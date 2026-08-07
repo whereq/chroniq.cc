@@ -40,14 +40,17 @@ export function AboutPage() {
 
             <H2>Calendar integration &amp; your data</H2>
             <p>
-              chroniq.cc can connect to your Google or Microsoft calendar so that (1) your
-              real <strong>free/busy</strong> times are subtracted from what invitees can
-              book, and (2) confirmed bookings are written to your calendar as events. We
-              request only the minimum calendar permissions needed for this, store any
-              access tokens encrypted, and never use your calendar data for advertising or
-              to train generalized AI models. You can disconnect at any time. See our{' '}
-              <a href="/privacy">Privacy Policy</a> for the full details, including the
-              Google API Services User Data Policy (Limited Use) disclosure.
+              chroniq.cc can connect to your Google or Microsoft calendar to read your
+              real <strong>free/busy</strong> times, so invitees can only book when you're
+              genuinely available — no double-booking. This uses a limited availability
+              (free/busy) permission that exposes only busy time ranges, not your event
+              details. Optionally, with calendar-event access, chroniq can also write
+              confirmed bookings to your calendar as events. We request only the minimum
+              permissions needed, store any access tokens encrypted, and never use your
+              calendar data for advertising or to train generalized AI models. You can
+              disconnect at any time. See our <a href="/privacy">Privacy Policy</a> for the
+              full details, including the Google API Services User Data Policy (Limited Use)
+              disclosure.
             </p>
 
             <H2>Get in touch</H2>
