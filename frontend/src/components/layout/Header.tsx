@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useQuery } from '@tanstack/react-query';
 import { PiSignInBold, PiSignOutBold } from 'react-icons/pi';
 import { Logo } from '@/components/logo/Logo';
 import { UserAvatar } from '@/components/common/UserAvatar';
+import { meApi } from '@/api/client';
 import { useThemeStore } from '@/store/themeStore';
 import { useCalendarStore } from '@/store/calendarStore';
 import { useAuth } from '@/auth/AuthProvider';
@@ -89,6 +91,15 @@ export function Header() {
   const { isAuthenticated, login, logout } = useAuth();
   const { effectiveUrl } = useAvatar();
 
+  // Show an "Upgrade" chip only for signed-in Free users (nudge toward Pro).
+  const { data: entitlements } = useQuery({
+    queryKey: ['entitlements'],
+    queryFn: meApi.getEntitlements,
+    enabled: isAuthenticated,
+    staleTime: 60_000,
+  });
+  const isFree = isAuthenticated && entitlements?.tier === 'free';
+
   // Marketing nav points at real landing-page sections (anchors); dead links
   // (Solutions/Enterprise/About) were removed.
   const navLinks = [
@@ -135,6 +146,16 @@ export function Header() {
 
         {/* Right: actions */}
         <div className="header-actions">
+          {isFree && (
+            <a
+              href="/dashboard?tab=plan"
+              className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-400 text-amber-900 hover:bg-amber-300 transition-colors whitespace-nowrap"
+              title={t('nav.upgrade', 'Upgrade to Pro')}
+            >
+              <span aria-hidden>⭐</span>
+              {t('nav.upgrade', 'Upgrade')}
+            </a>
+          )}
           <LangSelector />
           <ThemeToggle />
           <div className="auth-cluster">

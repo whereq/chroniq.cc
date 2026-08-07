@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
@@ -25,7 +26,10 @@ const TABS: { id: Tab; labelKey: string; icon: string }[] = [
 export function DashboardPage() {
   const { t } = useTranslation()
   const { ready, isAuthenticated, login } = useAuth()
-  const [tab, setTab] = useState<Tab>('event-types')
+  const [searchParams] = useSearchParams()
+  // Allow deep-linking to a tab (e.g. the header "Upgrade" chip → ?tab=plan).
+  const initialTab = TABS.find((tb) => tb.id === searchParams.get('tab'))?.id ?? 'event-types'
+  const [tab, setTab] = useState<Tab>(initialTab)
 
   if (!ready) return null
 
