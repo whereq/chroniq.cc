@@ -391,7 +391,7 @@
       "free": {
         "name": "免费版",
         "desc": "适合刚起步的个人",
-        "price": "$0",
+        "price": "CA$0",
         "period": "/月",
         "cta": "开始使用",
         "features": [
@@ -405,7 +405,7 @@
       "pro": {
         "name": "Pro",
         "desc": "适合整天都在安排预约的专业人士",
-        "price": "$12",
+        "price": "CA$9.99",
         "period": "/月",
         "badge": "最受欢迎",
         "cta": "开始免费试用",
@@ -421,8 +421,8 @@
       "team": {
         "name": "团队版",
         "desc": "适合共同安排日程的团队",
-        "price": "$20",
-        "period": "/用户/月",
+        "price": "CA$39.99",
+        "period": "/月",
         "cta": "开始免费试用",
         "features": [
           "Pro 的全部功能",

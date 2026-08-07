@@ -271,7 +271,7 @@
       "free": {
         "name": "Free",
         "desc": "For individuals getting started",
-        "price": "$0",
+        "price": "CA$0",
         "period": "/mo",
         "cta": "Get started",
         "features": [
@@ -285,7 +285,7 @@
       "pro": {
         "name": "Pro",
         "desc": "For professionals who book all day",
-        "price": "$12",
+        "price": "CA$9.99",
         "period": "/mo",
         "badge": "Most popular",
         "cta": "Start free trial",
@@ -301,8 +301,8 @@
       "team": {
         "name": "Team",
         "desc": "For teams that schedule together",
-        "price": "$20",
-        "period": "/user/mo",
+        "price": "CA$39.99",
+        "period": "/mo",
         "cta": "Start free trial",
         "features": [
           "Everything in Pro",

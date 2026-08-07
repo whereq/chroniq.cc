@@ -391,7 +391,7 @@
       "free": {
         "name": "Kostenlos",
         "desc": "Für Einsteiger",
-        "price": "$0",
+        "price": "CA$0",
         "period": "/Mon.",
         "cta": "Loslegen",
         "features": [
@@ -405,7 +405,7 @@
       "pro": {
         "name": "Pro",
         "desc": "Für Profis mit vielen Terminen",
-        "price": "$12",
+        "price": "CA$9.99",
         "period": "/Mon.",
         "badge": "Am beliebtesten",
         "cta": "Kostenlos testen",
@@ -421,8 +421,8 @@
       "team": {
         "name": "Team",
         "desc": "Für Teams, die gemeinsam planen",
-        "price": "$20",
-        "period": "/Nutzer/Mon.",
+        "price": "CA$39.99",
+        "period": "/Mon.",
         "cta": "Kostenlos testen",
         "features": [
           "Alles aus Pro",

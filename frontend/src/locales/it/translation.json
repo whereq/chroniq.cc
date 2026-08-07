@@ -391,7 +391,7 @@
       "free": {
         "name": "Gratis",
         "desc": "Per chi inizia",
-        "price": "$0",
+        "price": "CA$0",
         "period": "/mese",
         "cta": "Inizia",
         "features": [
@@ -405,7 +405,7 @@
       "pro": {
         "name": "Pro",
         "desc": "Per professionisti che prenotano tutto il giorno",
-        "price": "$12",
+        "price": "CA$9.99",
         "period": "/mese",
         "badge": "Più popolare",
         "cta": "Prova gratis",
@@ -421,8 +421,8 @@
       "team": {
         "name": "Team",
         "desc": "Per team che pianificano insieme",
-        "price": "$20",
-        "period": "/utente/mese",
+        "price": "CA$39.99",
+        "period": "/mese",
         "cta": "Prova gratis",
         "features": [
           "Tutto di Pro",

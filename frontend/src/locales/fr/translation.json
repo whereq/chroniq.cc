@@ -391,7 +391,7 @@
       "free": {
         "name": "Gratuit",
         "desc": "Pour débuter",
-        "price": "$0",
+        "price": "CA$0",
         "period": "/mois",
         "cta": "Commencer",
         "features": [
@@ -405,7 +405,7 @@
       "pro": {
         "name": "Pro",
         "desc": "Pour les pros qui enchaînent les rendez-vous",
-        "price": "$12",
+        "price": "CA$9.99",
         "period": "/mois",
         "badge": "Le plus populaire",
         "cta": "Essai gratuit",
@@ -421,8 +421,8 @@
       "team": {
         "name": "Équipe",
         "desc": "Pour les équipes qui planifient ensemble",
-        "price": "$20",
-        "period": "/utilisateur/mois",
+        "price": "CA$39.99",
+        "period": "/mois",
         "cta": "Essai gratuit",
         "features": [
           "Tout Pro",
