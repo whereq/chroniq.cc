@@ -46,6 +46,8 @@ services:
       MS_REDIRECT_URI: ${MS_REDIRECT_URI:-https://chroniq.cc/api/v1/me/integrations/microsoft/callback}
       STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
       STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
+      STRIPE_PRICE_TIER_1: ${STRIPE_PRICE_TIER_1:-}
+      STRIPE_PRICE_TIER_2: ${STRIPE_PRICE_TIER_2:-}
       TOKEN_ENCRYPTION_KEY: ${TOKEN_ENCRYPTION_KEY:-}
     networks:
       - whereq-network
