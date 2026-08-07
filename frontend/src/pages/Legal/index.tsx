@@ -54,12 +54,16 @@ export function PrivacyPage() {
 
       <H2>Google user data</H2>
       <P>
-        If you connect a Google account, chroniq requests access to your Google Calendar in order to:
+        If you connect a Google account, chroniq requests access to your Google Calendar to read
+        your <strong>free/busy</strong> availability, so your booking page only offers times you're
+        actually free (preventing double-booking). This uses a limited availability (free/busy)
+        permission that returns only busy time ranges — never the details of your events.
       </P>
-      <UL>
-        <li>read your <strong>free/busy</strong> times so your booking page only offers times you're actually available; and</li>
-        <li><strong>create, update, and delete calendar events</strong> for bookings made through chroniq.</li>
-      </UL>
+      <P>
+        If you additionally grant calendar-event access, chroniq can also <strong>create, update,
+        and delete calendar events</strong> for bookings made through chroniq (writing confirmed
+        meetings to your calendar). This is optional and requested separately.
+      </P>
       <P>
         We store the resulting OAuth tokens encrypted at rest and use them only to provide these
         scheduling features on your behalf. We do <strong>not</strong> use Google user data for
