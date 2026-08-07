@@ -9,14 +9,21 @@
     "features": "機能",
     "integrations": "連携",
     "login": "ログイン",
-    "getStarted": "始める"
+    "getStarted": "始める",
+    "calendar": "カレンダー",
+    "manage": "管理",
+    "how_it_works": "使い方"
   },
   "cta": {
     "signin": "ログイン",
     "signup": "始める",
     "signout": "サインアウト",
     "guest": "ゲスト",
-    "account": "マイアカウント"
+    "account": "マイアカウント",
+    "title": "スケジュール管理をシンプルにしませんか？",
+    "subtitle": "数分で予約ページを作成 — 無料、クレジットカード不要。",
+    "primary": "無料で始める",
+    "secondary": "料金を見る"
   },
   "panel": {
     "filters": "フィルター",
@@ -136,7 +143,9 @@
       "terms": "利用規約",
       "cookies": "Cookieポリシー",
       "gdpr": "GDPR"
-    }
+    },
+    "privacy": "プライバシー",
+    "terms": "利用規約"
   },
   "weather": {
     "noData": "この地域の天気データはありません。",
@@ -314,7 +323,162 @@
       "timezone": "タイムゾーン",
       "brand_color": "ブランドカラー",
       "bio": "自己紹介",
-      "save_error": "保存できませんでした。そのユーザー名は使用中か予約済みの可能性があります。"
+      "save_error": "保存できませんでした。そのユーザー名は使用中か予約済みの可能性があります。",
+      "avatar": "アバター"
     }
+  },
+  "features": {
+    "title": "スマートにスケジュールするために必要なすべて",
+    "subtitle": "単発の紹介コールからラウンドロビン式のチーム会議まで、chroniq が段取りを引き受けるので、あなたは会話に集中できます。",
+    "items": {
+      "event_types": {
+        "title": "カスタムイベントタイプ",
+        "desc": "15分の紹介、1時間の詳細な打ち合わせ、有料相談など、それぞれ独自のルールで作成できます。"
+      },
+      "booking_pages": {
+        "title": "専用予約ページ",
+        "desc": "chroniq.cc/you のようなシンプルなリンクを共有し、双方に都合の良い時間を相手に選んでもらえます。"
+      },
+      "availability": {
+        "title": "柔軟な予約可能時間",
+        "desc": "週ごとの時間を設定し、特定日の調整を追加、会議の間のバッファ時間を自動で確保します。"
+      },
+      "team": {
+        "title": "チームスケジューリング",
+        "desc": "ラウンドロビンとコレクティブイベントで、チーム全体に予約を振り分けます。"
+      },
+      "integrations": {
+        "title": "カレンダー同期",
+        "desc": "Google と Microsoft との双方向同期で、実際の空き状況を常に最新に保ちます。"
+      },
+      "analytics": {
+        "title": "インサイトと分析",
+        "desc": "予約の傾向、ノーショー率、最も忙しい時間帯を一目で確認できます。"
+      }
+    }
+  },
+  "how_it_works": {
+    "title": "3つの簡単なステップで会議を予約",
+    "subtitle": "一度設定すれば、あとは chroniq がやり取りを代行します。",
+    "steps": {
+      "create": {
+        "title": "イベントを作成",
+        "desc": "所要時間を選び、空き時間を設定し、招待者への質問を追加します。"
+      },
+      "share": {
+        "title": "リンクを共有",
+        "desc": "専用の予約リンクを送るか、ウェブサイトに直接埋め込みます。"
+      },
+      "meet": {
+        "title": "予約を受ける",
+        "desc": "招待者が時間枠を選ぶと全員にカレンダー招待が届き、リマインダーも自動送信されます。"
+      }
+    }
+  },
+  "integrations": {
+    "title": "あなたのカレンダーと連携",
+    "subtitle": "Google と Microsoft との双方向同期で空き状況を正確に保ち、Stripe で有料予約に対応。さらなる連携も準備中です。",
+    "cta": "近日追加予定"
+  },
+  "pricing": {
+    "title": "シンプルで透明な料金",
+    "subtitle": "無料で始めて、必要になったらアップグレード。",
+    "monthly": "月払い",
+    "annual": "年払い",
+    "save": "20%お得",
+    "plans": {
+      "free": {
+        "name": "フリー",
+        "desc": "始めたばかりの個人向け",
+        "price": "$0",
+        "period": "/月",
+        "cta": "始める",
+        "features": [
+          "イベントタイプ1つ",
+          "予約無制限",
+          "専用予約ページ",
+          "Google・Microsoft カレンダー同期",
+          "メール通知"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "desc": "一日中予約が入るプロ向け",
+        "price": "$12",
+        "period": "/月",
+        "badge": "一番人気",
+        "cta": "無料トライアルを開始",
+        "features": [
+          "イベントタイプ無制限",
+          "カスタマイズ可能な予約ページ",
+          "自動リマインダーとフォローアップ",
+          "Zoom・Teams・Google Meet",
+          "chroniq のブランド表示を削除",
+          "優先サポート"
+        ]
+      },
+      "team": {
+        "name": "チーム",
+        "desc": "一緒にスケジュールするチーム向け",
+        "price": "$20",
+        "period": "/ユーザー/月",
+        "cta": "無料トライアルを開始",
+        "features": [
+          "Pro のすべて",
+          "ラウンドロビンとコレクティブイベント",
+          "チームの空き状況とルーティング",
+          "管理者ロールと権限",
+          "分析ダッシュボード",
+          "SAML シングルサインオン"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "title": "世界中の忙しい人々に愛されています",
+    "subtitle": "チームも個人のプロも、一日の予定を chroniq に任せています。",
+    "items": []
+  },
+  "onboarding": {
+    "title": "予約ページの設定を完了しましょう",
+    "cta": "設定を完了",
+    "step_username": "ユーザー名を選ぶ",
+    "step_availability": "空き時間を設定",
+    "step_event_type": "イベントタイプを作成"
+  },
+  "booking_detail": {
+    "title": "予約",
+    "invitee": "招待者",
+    "when": "日時",
+    "status": "ステータス",
+    "notes": "メモ",
+    "join": "会議に参加",
+    "cancel": "会議をキャンセル",
+    "cancelling": "キャンセル中…",
+    "cancel_confirm": "この予約をキャンセルしますか？招待者に通知されます。",
+    "close": "閉じる",
+    "status_confirmed": "確定済み",
+    "status_cancelled": "キャンセル済み",
+    "cancel_error": "キャンセルできませんでした。もう一度お試しください。",
+    "reschedule": "予約を変更",
+    "pick_new_time": "新しい時間を選ぶ",
+    "choose_date": "日付",
+    "no_slots": "この日は空き時間がありません。",
+    "reschedule_error": "変更できませんでした。その時間はすでに埋まっている可能性があります。",
+    "rescheduling": "変更中…",
+    "back": "戻る"
+  },
+  "avatar": {
+    "upload_photo": "写真をアップロード",
+    "change_photo": "写真を変更",
+    "remove": "削除",
+    "apply": "適用",
+    "cancel": "キャンセル",
+    "crop_hint": "ドラッグで位置調整・スクロールで拡大縮小",
+    "hint": "JPG · PNG · GIF · 最大 16 KB",
+    "pick": "chroniq アバター",
+    "use_signin": "ログイン写真を使う",
+    "archetypes": "アーキタイプ",
+    "portraits": "ポートレート"
   }
 }

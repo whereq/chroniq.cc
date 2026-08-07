@@ -9,14 +9,21 @@
     "features": "Funktionen",
     "integrations": "Integrationen",
     "login": "Anmelden",
-    "getStarted": "Loslegen"
+    "getStarted": "Loslegen",
+    "calendar": "Kalender",
+    "manage": "Verwalten",
+    "how_it_works": "So funktioniert's"
   },
   "cta": {
     "signin": "Anmelden",
     "signup": "Loslegen",
     "signout": "Abmelden",
     "guest": "Gast",
-    "account": "Mein Konto"
+    "account": "Mein Konto",
+    "title": "Bereit, deine Terminplanung zu vereinfachen?",
+    "subtitle": "Erstelle deine Buchungsseite in Minuten — kostenlos, keine Kreditkarte nötig.",
+    "primary": "Kostenlos starten",
+    "secondary": "Preise ansehen"
   },
   "panel": {
     "filters": "Filter",
@@ -136,7 +143,9 @@
       "terms": "Nutzungsbedingungen",
       "cookies": "Cookie-Richtlinie",
       "gdpr": "DSGVO"
-    }
+    },
+    "privacy": "Datenschutz",
+    "terms": "AGB"
   },
   "weather": {
     "noData": "Keine Wetterdaten für diese Region.",
@@ -314,7 +323,162 @@
       "timezone": "Zeitzone",
       "brand_color": "Markenfarbe",
       "bio": "Bio",
-      "save_error": "Speichern fehlgeschlagen — der Benutzername ist evtl. vergeben oder reserviert."
+      "save_error": "Speichern fehlgeschlagen — der Benutzername ist evtl. vergeben oder reserviert.",
+      "avatar": "Avatar"
     }
+  },
+  "features": {
+    "title": "Alles, was du für smartere Terminplanung brauchst",
+    "subtitle": "Vom einmaligen Kennenlern-Call bis zum Round-Robin-Teammeeting: chroniq übernimmt die Organisation, damit du dich auf das Gespräch konzentrieren kannst.",
+    "items": {
+      "event_types": {
+        "title": "Eigene Terminarten",
+        "desc": "Erstelle 15-minütige Intros, einstündige Deep-Dives oder bezahlte Beratungen – jede mit eigenen Regeln."
+      },
+      "booking_pages": {
+        "title": "Persönliche Buchungsseiten",
+        "desc": "Teile einen schlichten Link wie chroniq.cc/you und lass Eingeladene eine für beide passende Zeit wählen."
+      },
+      "availability": {
+        "title": "Flexible Verfügbarkeit",
+        "desc": "Lege Wochenzeiten fest, füge Ausnahmen für einzelne Tage hinzu und plane automatisch Pufferzeiten zwischen Terminen."
+      },
+      "team": {
+        "title": "Team-Planung",
+        "desc": "Round-Robin- und Sammeltermine verteilen Buchungen auf dein gesamtes Team."
+      },
+      "integrations": {
+        "title": "Kalendersynchronisierung",
+        "desc": "Bidirektionale Synchronisierung mit Google und Microsoft hält deine echte Verfügbarkeit immer aktuell."
+      },
+      "analytics": {
+        "title": "Einblicke & Analysen",
+        "desc": "Sieh Buchungstrends, No-Show-Raten und deine geschäftigsten Zeiten auf einen Blick."
+      }
+    }
+  },
+  "how_it_works": {
+    "title": "Termine in drei einfachen Schritten buchen",
+    "subtitle": "Einmal einrichten, dann übernimmt chroniq das Hin und Her für dich.",
+    "steps": {
+      "create": {
+        "title": "Termin erstellen",
+        "desc": "Wähle eine Dauer, lege deine Verfügbarkeit fest und füge Fragen für deine Eingeladenen hinzu."
+      },
+      "share": {
+        "title": "Link teilen",
+        "desc": "Verschicke deinen persönlichen Buchungslink oder binde ihn direkt auf deiner Website ein."
+      },
+      "meet": {
+        "title": "Gebucht werden",
+        "desc": "Eingeladene wählen einen Slot, alle erhalten eine Kalendereinladung und Erinnerungen werden automatisch verschickt."
+      }
+    }
+  },
+  "integrations": {
+    "title": "Funktioniert mit deinem Kalender",
+    "subtitle": "Bidirektionale Synchronisierung mit Google und Microsoft hält deine Verfügbarkeit korrekt, und Stripe ermöglicht bezahlte Buchungen. Weitere Integrationen folgen.",
+    "cta": "Bald mehr"
+  },
+  "pricing": {
+    "title": "Einfache, transparente Preise",
+    "subtitle": "Kostenlos starten. Upgrade, wenn du mehr brauchst.",
+    "monthly": "Monatlich",
+    "annual": "Jährlich",
+    "save": "20% sparen",
+    "plans": {
+      "free": {
+        "name": "Kostenlos",
+        "desc": "Für Einsteiger",
+        "price": "$0",
+        "period": "/Mon.",
+        "cta": "Loslegen",
+        "features": [
+          "1 Terminart",
+          "Unbegrenzte Buchungen",
+          "Persönliche Buchungsseite",
+          "Google- & Microsoft-Kalendersync",
+          "E-Mail-Benachrichtigungen"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "desc": "Für Profis mit vielen Terminen",
+        "price": "$12",
+        "period": "/Mon.",
+        "badge": "Am beliebtesten",
+        "cta": "Kostenlos testen",
+        "features": [
+          "Unbegrenzte Terminarten",
+          "Anpassbare Buchungsseiten",
+          "Automatische Erinnerungen & Follow-ups",
+          "Zoom, Teams & Google Meet",
+          "chroniq-Branding entfernen",
+          "Priorisierter Support"
+        ]
+      },
+      "team": {
+        "name": "Team",
+        "desc": "Für Teams, die gemeinsam planen",
+        "price": "$20",
+        "period": "/Nutzer/Mon.",
+        "cta": "Kostenlos testen",
+        "features": [
+          "Alles aus Pro",
+          "Round-Robin- & Sammeltermine",
+          "Team-Verfügbarkeit & Routing",
+          "Admin-Rollen & Berechtigungen",
+          "Analyse-Dashboard",
+          "SAML Single Sign-on"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Beliebt bei vielbeschäftigten Menschen überall",
+    "subtitle": "Teams und Einzelprofis verlassen sich auf chroniq für ihren Tag.",
+    "items": []
+  },
+  "onboarding": {
+    "title": "Richte deine Buchungsseite fertig ein",
+    "cta": "Einrichtung abschließen",
+    "step_username": "Benutzernamen wählen",
+    "step_availability": "Verfügbarkeit festlegen",
+    "step_event_type": "Terminart erstellen"
+  },
+  "booking_detail": {
+    "title": "Buchung",
+    "invitee": "Eingeladene:r",
+    "when": "Wann",
+    "status": "Status",
+    "notes": "Notizen",
+    "join": "Meeting beitreten",
+    "cancel": "Meeting absagen",
+    "cancelling": "Wird abgesagt…",
+    "cancel_confirm": "Diese Buchung absagen? Der/die Eingeladene wird benachrichtigt.",
+    "close": "Schließen",
+    "status_confirmed": "Bestätigt",
+    "status_cancelled": "Abgesagt",
+    "cancel_error": "Absage fehlgeschlagen – bitte erneut versuchen.",
+    "reschedule": "Verschieben",
+    "pick_new_time": "Neue Zeit wählen",
+    "choose_date": "Datum",
+    "no_slots": "An diesem Tag keine freien Zeiten.",
+    "reschedule_error": "Verschieben fehlgeschlagen – diese Zeit ist evtl. nicht mehr verfügbar.",
+    "rescheduling": "Wird verschoben…",
+    "back": "Zurück"
+  },
+  "avatar": {
+    "upload_photo": "Foto hochladen",
+    "change_photo": "Foto ändern",
+    "remove": "Entfernen",
+    "apply": "Übernehmen",
+    "cancel": "Abbrechen",
+    "crop_hint": "Ziehen zum Verschieben · Scrollen zum Zoomen",
+    "hint": "JPG · PNG · GIF · max. 16 KB",
+    "pick": "chroniq-Avatare",
+    "use_signin": "Anmeldefoto verwenden",
+    "archetypes": "Archetypen",
+    "portraits": "Porträts"
   }
 }

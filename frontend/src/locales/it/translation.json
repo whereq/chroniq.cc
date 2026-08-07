@@ -9,14 +9,21 @@
     "features": "Funzionalità",
     "integrations": "Integrazioni",
     "login": "Accedi",
-    "getStarted": "Inizia"
+    "getStarted": "Inizia",
+    "calendar": "Calendario",
+    "manage": "Gestisci",
+    "how_it_works": "Come funziona"
   },
   "cta": {
     "signin": "Accedi",
     "signup": "Inizia",
     "signout": "Disconnetti",
     "guest": "Ospite",
-    "account": "Il mio account"
+    "account": "Il mio account",
+    "title": "Pronto a semplificare la tua pianificazione?",
+    "subtitle": "Crea la tua pagina di prenotazione in pochi minuti — gratis e senza carta di credito.",
+    "primary": "Inizia gratis",
+    "secondary": "Vedi i prezzi"
   },
   "panel": {
     "filters": "Filtri",
@@ -136,7 +143,9 @@
       "terms": "Termini di servizio",
       "cookies": "Informativa sui cookie",
       "gdpr": "GDPR"
-    }
+    },
+    "privacy": "Privacy",
+    "terms": "Termini"
   },
   "weather": {
     "noData": "Nessun dato meteo per questa regione.",
@@ -314,7 +323,162 @@
       "timezone": "Fuso orario",
       "brand_color": "Colore del brand",
       "bio": "Bio",
-      "save_error": "Impossibile salvare — il nome utente potrebbe essere già in uso o riservato."
+      "save_error": "Impossibile salvare — il nome utente potrebbe essere già in uso o riservato.",
+      "avatar": "Avatar"
     }
+  },
+  "features": {
+    "title": "Tutto ciò che serve per pianificare in modo più intelligente",
+    "subtitle": "Dalle chiamate conoscitive occasionali alle riunioni di team a rotazione, chroniq gestisce la logistica così puoi concentrarti sulla conversazione.",
+    "items": {
+      "event_types": {
+        "title": "Tipi di evento personalizzati",
+        "desc": "Crea presentazioni di 15 minuti, sessioni di un'ora o consulenze a pagamento, ognuna con le proprie regole."
+      },
+      "booking_pages": {
+        "title": "Pagine di prenotazione personali",
+        "desc": "Condividi un link semplice come chroniq.cc/tu e lascia che gli invitati scelgano un orario comodo per entrambi."
+      },
+      "availability": {
+        "title": "Disponibilità flessibile",
+        "desc": "Imposta gli orari settimanali, aggiungi eccezioni per data e inserisci automaticamente margini tra le riunioni."
+      },
+      "team": {
+        "title": "Pianificazione del team",
+        "desc": "Eventi a rotazione e collettivi distribuiscono le prenotazioni a tutto il team."
+      },
+      "integrations": {
+        "title": "Sincronizzazione del calendario",
+        "desc": "La sincronizzazione bidirezionale con Google e Microsoft mantiene sempre aggiornata la tua reale disponibilità."
+      },
+      "analytics": {
+        "title": "Insight e analisi",
+        "desc": "Vedi a colpo d'occhio le tendenze delle prenotazioni, i tassi di mancata presentazione e i tuoi orari più intensi."
+      }
+    }
+  },
+  "how_it_works": {
+    "title": "Prenota riunioni in tre semplici passaggi",
+    "subtitle": "Configuralo una volta e lascia che chroniq gestisca il botta e risposta.",
+    "steps": {
+      "create": {
+        "title": "Crea il tuo evento",
+        "desc": "Scegli una durata, imposta la disponibilità e aggiungi domande per gli invitati."
+      },
+      "share": {
+        "title": "Condividi il link",
+        "desc": "Invia il tuo link di prenotazione personale o incorporalo direttamente nel tuo sito."
+      },
+      "meet": {
+        "title": "Ricevi prenotazioni",
+        "desc": "Gli invitati scelgono un orario, tutti ricevono un invito nel calendario e i promemoria vengono inviati automaticamente."
+      }
+    }
+  },
+  "integrations": {
+    "title": "Funziona con il tuo calendario",
+    "subtitle": "La sincronizzazione bidirezionale con Google e Microsoft mantiene accurata la tua disponibilità e Stripe gestisce le prenotazioni a pagamento. Altre integrazioni in arrivo.",
+    "cta": "Altre in arrivo"
+  },
+  "pricing": {
+    "title": "Prezzi semplici e trasparenti",
+    "subtitle": "Inizia gratis. Passa a un piano superiore quando ti serve.",
+    "monthly": "Mensile",
+    "annual": "Annuale",
+    "save": "Risparmia 20%",
+    "plans": {
+      "free": {
+        "name": "Gratis",
+        "desc": "Per chi inizia",
+        "price": "$0",
+        "period": "/mese",
+        "cta": "Inizia",
+        "features": [
+          "1 tipo di evento",
+          "Prenotazioni illimitate",
+          "Pagina di prenotazione personale",
+          "Sincronizzazione con Google e Microsoft",
+          "Notifiche email"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "desc": "Per professionisti che prenotano tutto il giorno",
+        "price": "$12",
+        "period": "/mese",
+        "badge": "Più popolare",
+        "cta": "Prova gratis",
+        "features": [
+          "Tipi di evento illimitati",
+          "Pagine di prenotazione personalizzabili",
+          "Promemoria e follow-up automatici",
+          "Zoom, Teams e Google Meet",
+          "Rimuovi il branding chroniq",
+          "Supporto prioritario"
+        ]
+      },
+      "team": {
+        "name": "Team",
+        "desc": "Per team che pianificano insieme",
+        "price": "$20",
+        "period": "/utente/mese",
+        "cta": "Prova gratis",
+        "features": [
+          "Tutto di Pro",
+          "Eventi a rotazione e collettivi",
+          "Disponibilità e instradamento del team",
+          "Ruoli e permessi admin",
+          "Dashboard di analisi",
+          "Single sign-on SAML"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Amato da chi è sempre di corsa",
+    "subtitle": "Team e professionisti indipendenti si affidano a chroniq per gestire la giornata.",
+    "items": []
+  },
+  "onboarding": {
+    "title": "Completa la configurazione della tua pagina di prenotazione",
+    "cta": "Completa la configurazione",
+    "step_username": "scegli il nome utente",
+    "step_availability": "imposta la disponibilità",
+    "step_event_type": "crea un tipo di evento"
+  },
+  "booking_detail": {
+    "title": "Prenotazione",
+    "invitee": "Invitato",
+    "when": "Quando",
+    "status": "Stato",
+    "notes": "Note",
+    "join": "Partecipa alla riunione",
+    "cancel": "Annulla riunione",
+    "cancelling": "Annullamento…",
+    "cancel_confirm": "Annullare questa prenotazione? L'invitato verrà avvisato.",
+    "close": "Chiudi",
+    "status_confirmed": "Confermata",
+    "status_cancelled": "Annullata",
+    "cancel_error": "Impossibile annullare — riprova.",
+    "reschedule": "Riprogramma",
+    "pick_new_time": "Scegli un nuovo orario",
+    "choose_date": "Data",
+    "no_slots": "Nessun orario disponibile in questo giorno.",
+    "reschedule_error": "Impossibile riprogrammare — quell'orario potrebbe non essere più disponibile.",
+    "rescheduling": "Riprogrammazione…",
+    "back": "Indietro"
+  },
+  "avatar": {
+    "upload_photo": "Carica foto",
+    "change_photo": "Cambia foto",
+    "remove": "Rimuovi",
+    "apply": "Applica",
+    "cancel": "Annulla",
+    "crop_hint": "Trascina per riposizionare · scorri per lo zoom",
+    "hint": "JPG · PNG · GIF · max 16 KB",
+    "pick": "Avatar di chroniq",
+    "use_signin": "Usa la foto di accesso",
+    "archetypes": "Archetipi",
+    "portraits": "Ritratti"
   }
 }
