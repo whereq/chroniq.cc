@@ -24,6 +24,7 @@ class PublicHost(BaseModel):
     brand_color: str
     bio: str | None
     timezone: str
+    remove_branding: bool = False
 
 
 class PublicHostPage(BaseModel):

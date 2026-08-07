@@ -221,7 +221,8 @@
     "next": "다음",
     "no_times": "이 날짜에는 예약 가능한 시간이 없습니다.",
     "error": "해당 시간은 더 이상 예약할 수 없습니다. 다른 시간을 선택하세요.",
-    "with_host": "{{host}}님과의 {{title}}"
+    "with_host": "{{host}}님과의 {{title}}",
+    "powered_by": "Powered by chroniq.cc"
   },
   "common": {
     "learnMore": "자세히 알아보기",

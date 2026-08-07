@@ -100,6 +100,7 @@ async def host_page(username: str, db: AsyncSession = Depends(get_db)):
             brand_color=profile.brand_color,
             bio=profile.bio,
             timezone=profile.timezone,
+            remove_branding=profile.remove_branding,
         ),
         event_types=[
             PublicEventType(

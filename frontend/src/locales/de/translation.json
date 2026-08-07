@@ -221,7 +221,8 @@
     "next": "Weiter",
     "no_times": "An diesem Tag sind keine Zeiten verfügbar.",
     "error": "Diese Zeit ist nicht mehr verfügbar. Bitte wähle eine andere.",
-    "with_host": "{{title}} mit {{host}}"
+    "with_host": "{{title}} mit {{host}}",
+    "powered_by": "Bereitgestellt von chroniq.cc"
   },
   "common": {
     "learnMore": "Mehr erfahren",
