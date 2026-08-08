@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from '@tanstack/react-query';
-import { PiSignInBold, PiSignOutBold } from 'react-icons/pi';
+import { PiSignInBold, PiSignOutBold, PiCrownFill } from 'react-icons/pi';
 import { Logo } from '@/components/logo/Logo';
 import { UserAvatar } from '@/components/common/UserAvatar';
 import { meApi } from '@/api/client';
@@ -149,10 +149,10 @@ export function Header() {
           {isFree && (
             <a
               href="/dashboard?tab=plan"
-              className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-400 text-amber-900 hover:bg-amber-300 transition-colors whitespace-nowrap"
+              className="upgrade-chip"
               title={t('nav.upgrade', 'Upgrade to Pro')}
             >
-              <span aria-hidden>⭐</span>
+              <PiCrownFill size={13} aria-hidden />
               {t('nav.upgrade', 'Upgrade')}
             </a>
           )}
