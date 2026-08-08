@@ -1507,8 +1507,9 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 6px 14px;
-  border-radius: 8px;
+  border-radius: var(--r-xs);
   background: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 75%, black);
   color: var(--accent-ink);
   font-weight: 600;
   font-size: 12px;
