@@ -1,8 +1,21 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
-import { PiSunFill, PiPaperPlaneRightFill, PiX } from 'react-icons/pi'
+import { PiPaperPlaneRightFill, PiX } from 'react-icons/pi'
 import { useAuth } from '@/auth/AuthProvider'
 import { useSolChat } from './useSolChat'
+import solAvatar from '@/assets/sol.png'
+
+/**
+ * Strip <think>…</think> reasoning from the visible text (matches NOVA). Handles
+ * the mid-stream case where the opening tag has arrived but the closing one has
+ * not yet — everything from an unclosed <think> onward stays hidden.
+ */
+function parseThinking(content: string): string {
+  let visible = content.replace(/<think>[\s\S]*?<\/think>/gi, '')
+  const openIdx = visible.indexOf('<think>')
+  if (openIdx !== -1) visible = visible.slice(0, openIdx)
+  return visible.replace(/^\s+/, '')
+}
 
 /**
  * SOL — chroniq's AI calendar assistant. A floating squared launcher (bottom-right,
@@ -57,7 +70,7 @@ export function Sol() {
     <>
       {!open && (
         <button className="sol-launcher" onClick={() => setOpen(true)} title={t('sol.open', 'Ask SOL')}>
-          <PiSunFill size={16} aria-hidden />
+          <img src={solAvatar} className="sol-launcher-avatar" alt="" aria-hidden />
           <span>{t('sol.name', 'SOL')}</span>
         </button>
       )}
@@ -66,7 +79,7 @@ export function Sol() {
         <aside className="sol-panel" role="dialog" aria-label="SOL assistant">
           <header className="sol-header">
             <div className="sol-title">
-              <PiSunFill size={15} aria-hidden />
+              <img src={solAvatar} className="sol-avatar-sm" alt="" aria-hidden />
               <span>{t('sol.name', 'SOL')}</span>
               <span className="sol-sub">{t('sol.tagline', 'calendar assistant')}</span>
             </div>
@@ -90,12 +103,17 @@ export function Sol() {
             )}
 
             {messages.map((m, i) => {
+              const isAssistant = m.role === 'assistant'
               const isLast = i === messages.length - 1
-              const showWorking = m.role === 'assistant' && !m.content && working && isLast
-              const showTyping = m.role === 'assistant' && !m.content && streaming && !working && isLast
+              const visible = isAssistant ? parseThinking(m.content) : m.content
+              const showWorking = isAssistant && !visible && working && isLast
+              const showTyping = isAssistant && !visible && streaming && !working && isLast
+              const body = visible || (showWorking ? t('sol.working', 'Checking your calendar…') : showTyping ? '…' : '')
+              if (!body && isAssistant && !isLast) return null
               return (
-                <div key={i} className={`sol-msg sol-${m.role}`}>
-                  {m.content || (showWorking ? t('sol.working', 'Checking your calendar…') : showTyping ? '…' : '')}
+                <div key={i} className={`sol-row sol-row-${m.role}`}>
+                  {isAssistant && <img src={solAvatar} className="sol-avatar" alt="SOL" />}
+                  <div className={`sol-msg sol-${m.role}`}>{body}</div>
                 </div>
               )
             })}

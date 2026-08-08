@@ -1675,8 +1675,13 @@ body {
   border-bottom: 1px solid var(--border);
 }
 .sol-title { display: flex; align-items: center; gap: 6px; font-weight: 700; color: var(--text); }
-.sol-title svg { color: var(--accent); }
 .sol-sub { font-weight: 500; font-size: 11px; color: var(--text-2); margin-left: 2px; }
+/* Avatars are the intentional-circle exception to the Metro xs-radius rule. */
+.sol-avatar-sm { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.sol-launcher-avatar { width: 18px; height: 18px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.sol-avatar { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; flex-shrink: 0; margin-top: 2px; }
+.sol-row { display: flex; align-items: flex-start; gap: 8px; }
+.sol-row-user { justify-content: flex-end; }
 
 .sol-messages {
   flex: 1;
