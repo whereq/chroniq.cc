@@ -1,9 +1,14 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import { PiPaperPlaneRightFill, PiX } from 'react-icons/pi'
 import { useAuth } from '@/auth/AuthProvider'
 import { useSolChat } from './useSolChat'
-import solAvatar from '@/assets/sol.png'
+
+// SOL avatar lives with the rest of chroniq's avatar assets (swappable, no rebuild
+// of imports needed). Drop a new image at public/avatars/sol.png to change it.
+const SOL_AVATAR = '/avatars/sol.png'
 
 /**
  * Strip <think>…</think> reasoning from the visible text (matches NOVA). Handles
@@ -70,7 +75,7 @@ export function Sol() {
     <>
       {!open && (
         <button className="sol-launcher" onClick={() => setOpen(true)} title={t('sol.open', 'Ask SOL')}>
-          <img src={solAvatar} className="sol-launcher-avatar" alt="" aria-hidden />
+          <img src={SOL_AVATAR} className="sol-launcher-avatar" alt="" aria-hidden />
           <span>{t('sol.name', 'SOL')}</span>
         </button>
       )}
@@ -79,7 +84,7 @@ export function Sol() {
         <aside className="sol-panel" role="dialog" aria-label="SOL assistant">
           <header className="sol-header">
             <div className="sol-title">
-              <img src={solAvatar} className="sol-avatar-sm" alt="" aria-hidden />
+              <img src={SOL_AVATAR} className="sol-avatar-sm" alt="" aria-hidden />
               <span>{t('sol.name', 'SOL')}</span>
               <span className="sol-sub">{t('sol.tagline', 'calendar assistant')}</span>
             </div>
@@ -112,8 +117,16 @@ export function Sol() {
               if (!body && isAssistant && !isLast) return null
               return (
                 <div key={i} className={`sol-row sol-row-${m.role}`}>
-                  {isAssistant && <img src={solAvatar} className="sol-avatar" alt="SOL" />}
-                  <div className={`sol-msg sol-${m.role}`}>{body}</div>
+                  {isAssistant && <img src={SOL_AVATAR} className="sol-avatar" alt="SOL" />}
+                  <div className={`sol-msg sol-${m.role}`}>
+                    {isAssistant ? (
+                      <div className="sol-markdown">
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>
+                      </div>
+                    ) : (
+                      body
+                    )}
+                  </div>
                 </div>
               )
             })}
