@@ -1703,6 +1703,32 @@ body {
 .sol-user { align-self: flex-end; background: var(--accent); color: var(--accent-ink); }
 .sol-assistant { align-self: flex-start; background: var(--surface-2); border: 1px solid var(--border); color: var(--text); }
 
+/* Markdown rendered inside assistant bubbles — tight spacing for a narrow panel. */
+.sol-markdown > :first-child { margin-top: 0; }
+.sol-markdown > :last-child { margin-bottom: 0; }
+.sol-markdown p { margin: 0 0 8px; }
+.sol-markdown ul, .sol-markdown ol { margin: 0 0 8px; padding-left: 20px; }
+.sol-markdown li { margin: 2px 0; }
+.sol-markdown li > p { margin: 0; }
+.sol-markdown h1, .sol-markdown h2, .sol-markdown h3, .sol-markdown h4 {
+  font-size: 13px; font-weight: 700; margin: 12px 0 4px; color: var(--text);
+}
+.sol-markdown strong { font-weight: 700; }
+.sol-markdown a { color: var(--accent); text-decoration: underline; word-break: break-all; }
+.sol-markdown code {
+  font-family: var(--font-mono, monospace); font-size: 12px;
+  background: var(--surface-3); padding: 1px 4px; border-radius: var(--r-xs);
+}
+.sol-markdown pre {
+  background: var(--surface-3); padding: 8px 10px; border-radius: var(--r-xs);
+  overflow-x: auto; margin: 0 0 8px;
+}
+.sol-markdown pre code { background: none; padding: 0; }
+.sol-markdown blockquote {
+  margin: 0 0 8px; padding-left: 10px; border-left: 2px solid var(--border-strong); color: var(--text-2);
+}
+.sol-markdown hr { border: none; border-top: 1px solid var(--border); margin: 10px 0; }
+
 .sol-empty { margin: auto 0; text-align: center; color: var(--text-2); }
 .sol-empty-hi { font-size: 14px; margin-bottom: 14px; color: var(--text); }
 .sol-examples { display: flex; flex-direction: column; gap: 8px; }
