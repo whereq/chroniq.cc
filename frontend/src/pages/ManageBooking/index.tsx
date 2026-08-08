@@ -80,7 +80,7 @@ export function ManageBookingPage() {
               <p className="text-sm text-gray-500 mb-1">{fmt(booking.start_utc)} ({tz})</p>
               <span
                 className={clsx(
-                  'inline-block text-xs px-2 py-0.5 rounded-full mb-4',
+                  'inline-block text-xs px-2 py-0.5 rounded mb-4',
                   booking.status === 'confirmed'
                     ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'
                     : 'bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-300',

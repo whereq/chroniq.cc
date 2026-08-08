@@ -4,6 +4,17 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      // Metro UI: every box corner is xs (2px). Only `full` (circles: avatars,
+      // status dots, date cells) and `none` keep their defaults.
+      borderRadius: {
+        DEFAULT: '2px',
+        sm: '2px',
+        md: '2px',
+        lg: '2px',
+        xl: '2px',
+        '2xl': '2px',
+        '3xl': '2px',
+      },
       colors: {
         brand: {
           50:  '#eef2ff',

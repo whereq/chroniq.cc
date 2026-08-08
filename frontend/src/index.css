@@ -140,7 +140,7 @@ body {
 
 .nav-link {
   padding: 5px 10px;
-  border-radius: var(--r-sm);
+  border-radius: var(--r-xs);
   font-size: 13px;
   font-weight: 500;
   color: var(--text-2);
@@ -176,7 +176,7 @@ body {
   justify-content: center;
   gap: 6px;
   padding: 6px 14px;
-  border-radius: var(--r-sm);
+  border-radius: var(--r-xs);
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -216,7 +216,7 @@ body {
 
 .btn-icon {
   padding: 6px;
-  border-radius: var(--r-sm);
+  border-radius: var(--r-xs);
   background: transparent;
   border: none;
   color: var(--text-2);
@@ -309,7 +309,7 @@ body {
   right: 0;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--r-md);
+  border-radius: var(--r-xs);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   z-index: 200;
   min-width: 160px;
@@ -322,7 +322,7 @@ body {
   gap: 8px;
   width: 100%;
   padding: 7px 10px;
-  border-radius: var(--r-sm);
+  border-radius: var(--r-xs);
   background: none;
   border: none;
   color: var(--text-2);
@@ -453,14 +453,14 @@ body {
   display: flex;
   background: var(--surface-2);
   border: 1px solid var(--border);
-  border-radius: var(--r-md);
+  border-radius: var(--r-xs);
   padding: 2px;
   gap: 2px;
 }
 
 .scope-tab {
   padding: 4px 12px;
-  border-radius: var(--r-sm);
+  border-radius: var(--r-xs);
   font-size: 12px;
   font-weight: 500;
   color: var(--muted);
@@ -486,7 +486,7 @@ body {
   overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--r-md);
+  border-radius: var(--r-xs);
   display: flex;
   flex-direction: column;
 }
@@ -612,7 +612,7 @@ body {
   overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--r-md);
+  border-radius: var(--r-xs);
 }
 
 .week-head {
@@ -702,7 +702,7 @@ body {
   position: absolute;
   left: 2px;
   right: 2px;
-  border-radius: var(--r-sm);
+  border-radius: var(--r-xs);
   padding: 2px 4px;
   font-size: 10px;
   font-weight: 500;
@@ -740,7 +740,7 @@ body {
 .year-month-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--r-md);
+  border-radius: var(--r-xs);
   padding: 10px;
 }
 
@@ -865,7 +865,7 @@ body {
 .panel-mini-cal {
   background: var(--surface-2);
   border: 1px solid var(--border);
-  border-radius: var(--r-md);
+  border-radius: var(--r-xs);
   padding: 8px;
   margin-bottom: 12px;
 }
@@ -887,7 +887,7 @@ body {
 .weather-card {
   background: var(--surface-2);
   border: 1px solid var(--border);
-  border-radius: var(--r-md);
+  border-radius: var(--r-xs);
   padding: 10px;
   margin-bottom: 8px;
 }
@@ -927,7 +927,7 @@ body {
   align-items: center;
   gap: 6px;
   padding: 6px 8px;
-  border-radius: var(--r-sm);
+  border-radius: var(--r-xs);
   background: var(--surface-2);
   border: 1px solid var(--border);
   cursor: pointer;
@@ -948,7 +948,7 @@ body {
   z-index: 300;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--r-md);
+  border-radius: var(--r-xs);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
   padding: 14px;
   width: 280px;
@@ -1020,7 +1020,7 @@ body {
   gap: 6px;
   width: 100%;
   padding: 6px 8px;
-  border-radius: var(--r-sm);
+  border-radius: var(--r-xs);
   background: var(--surface-2);
   border: 1px solid var(--border);
   cursor: pointer;
@@ -1059,7 +1059,7 @@ body {
   right: 0;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--r-md);
+  border-radius: var(--r-xs);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   z-index: 250;
   max-height: 240px;
@@ -1078,7 +1078,7 @@ body {
   width: 100%;
   background: var(--surface-2);
   border: 1px solid var(--border);
-  border-radius: var(--r-sm);
+  border-radius: var(--r-xs);
   padding: 4px 8px;
   font-size: 12px;
   color: var(--text);
@@ -1133,7 +1133,7 @@ body {
   align-items: flex-start;
   gap: 6px;
   padding: 5px 4px;
-  border-radius: var(--r-sm);
+  border-radius: var(--r-xs);
   cursor: pointer;
   transition: background 0.1s;
 }
@@ -1177,7 +1177,7 @@ body {
   padding: 5px 8px;
   background: var(--surface-2);
   border: 1px solid var(--border);
-  border-radius: var(--r-sm);
+  border-radius: var(--r-xs);
   color: var(--text);
   font-size: 12px;
   outline: none;
@@ -1193,7 +1193,7 @@ body {
   padding: 5px 8px;
   background: var(--surface-2);
   border: 1px solid var(--border);
-  border-radius: var(--r-sm);
+  border-radius: var(--r-xs);
   color: var(--text);
   font-size: 12px;
   outline: none;
@@ -1240,7 +1240,7 @@ body {
 .resource-tile {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--r-md);
+  border-radius: var(--r-xs);
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -1395,7 +1395,7 @@ body {
   overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--r-md);
+  border-radius: var(--r-xs);
 }
 
 .day-view-head {
@@ -1458,7 +1458,7 @@ body {
   position: absolute;
   left: 4px;
   right: 4px;
-  border-radius: var(--r-sm);
+  border-radius: var(--r-xs);
   padding: 3px 6px;
   font-size: 11px;
   font-weight: 500;
@@ -1528,7 +1528,7 @@ body {
 .booking-modal {
   width: 100%; max-width: 420px;
   background: var(--surface); color: var(--text);
-  border: 1px solid var(--border); border-radius: 14px;
+  border: 1px solid var(--border); border-radius: var(--r-xs);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   overflow: hidden;
 }
@@ -1552,7 +1552,7 @@ body {
 .booking-modal-body a { color: var(--accent); text-decoration: none; }
 .booking-modal-body a:hover { text-decoration: underline; }
 .booking-status {
-  display: inline-block; padding: 2px 8px; border-radius: 999px;
+  display: inline-block; padding: 2px 8px; border-radius: var(--r-xs);
   font-size: 11px; font-weight: 600;
 }
 .booking-status--confirmed { background: color-mix(in srgb, #10b981 20%, transparent); color: #10b981; }
@@ -1563,27 +1563,27 @@ body {
   padding: 14px 18px; border-top: 1px solid var(--border);
 }
 .booking-modal-cancel {
-  padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 600;
+  padding: 8px 14px; border-radius: var(--r-xs); font-size: 13px; font-weight: 600;
   border: 1px solid color-mix(in srgb, #ef4444 40%, var(--border));
   background: transparent; color: #ef4444; cursor: pointer;
 }
 .booking-modal-cancel:hover:not(:disabled) { background: color-mix(in srgb, #ef4444 12%, transparent); }
 .booking-modal-cancel:disabled { opacity: 0.6; cursor: default; }
 .booking-modal-close-btn {
-  padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 600;
+  padding: 8px 14px; border-radius: var(--r-xs); font-size: 13px; font-weight: 600;
   border: 1px solid var(--border); background: var(--surface-2); color: var(--text); cursor: pointer;
 }
 .booking-modal-close-btn:hover { background: var(--surface-3); }
 
 /* reschedule picker (inside booking modal) */
 .booking-modal-reschedule {
-  padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 600;
+  padding: 8px 14px; border-radius: var(--r-xs); font-size: 13px; font-weight: 600;
   border: 1px solid var(--border); background: var(--surface-2); color: var(--text); cursor: pointer;
 }
 .booking-modal-reschedule:hover { background: var(--surface-3); }
 .reschedule-label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--muted); }
 .reschedule-date {
-  padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border);
+  padding: 8px 10px; border-radius: var(--r-xs); border: 1px solid var(--border);
   background: var(--surface-2); color: var(--text); font-size: 13px;
 }
 .reschedule-slots {
@@ -1591,7 +1591,7 @@ body {
   max-height: 220px; overflow-y: auto;
 }
 .reschedule-slot {
-  padding: 8px 6px; border-radius: 8px; font-size: 12px; font-weight: 600;
+  padding: 8px 6px; border-radius: var(--r-xs); font-size: 12px; font-weight: 600;
   border: 1px solid var(--border); background: transparent; color: var(--text); cursor: pointer;
 }
 .reschedule-slot:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }

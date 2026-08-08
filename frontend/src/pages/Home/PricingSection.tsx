@@ -68,7 +68,7 @@ export function PricingSection() {
               >
                 {isPro && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="bg-amber-400 text-amber-900 text-xs font-bold px-3 py-1 rounded-full shadow">
+                    <span className="bg-amber-400 text-amber-900 text-xs font-bold px-3 py-1 rounded shadow">
                       {t('pricing.plans.pro.badge')}
                     </span>
                   </div>

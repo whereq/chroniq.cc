@@ -68,7 +68,7 @@ export function PlanSection() {
             <p className="text-2xl font-extrabold text-gray-900 dark:text-white">{planName}</p>
           </div>
           {!isFree && (
-            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+            <span className="text-xs font-semibold px-2.5 py-1 rounded bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
               {t('dashboard.plan.active', 'Active')}
             </span>
           )}
