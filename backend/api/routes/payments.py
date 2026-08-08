@@ -4,6 +4,7 @@ Checkout grants a ch-tier-* realm role; canceling the subscription revokes it
 (auto-downgrade). The Billing Portal lets the user self-serve manage/cancel.
 """
 
+import json
 import logging
 from typing import Literal
 
@@ -118,21 +119,29 @@ async def stripe_webhook(request: Request, db: AsyncSession = Depends(get_db)):
     payload = await request.body()
     sig = request.headers.get("stripe-signature", "")
     try:
-        event = stripe.Webhook.construct_event(payload, sig, s.stripe_webhook_secret)
+        stripe.Webhook.construct_event(payload, sig, s.stripe_webhook_secret)
     except Exception as exc:
         logger.warning("Stripe webhook verification failed: %s", exc)
         raise HTTPException(status.HTTP_400_BAD_REQUEST, "Invalid signature")
 
-    etype = event["type"]
-    obj = event["data"]["object"]
+    # Signature verified above; read fields from the raw JSON as a plain dict —
+    # the SDK's StripeObject doesn't expose dict.get() in this version.
+    event = json.loads(payload)
+    etype = event.get("type")
+    obj = event.get("data", {}).get("object", {})
 
     if etype == "checkout.session.completed":
         # Subscription started → grant the tier role + record the customer id.
         stripe.api_key = s.stripe_secret_key
         user_id = obj.get("client_reference_id")
         customer_id = obj.get("customer")
-        line_items = stripe.checkout.Session.list_line_items(obj["id"], limit=1)
-        price_id = line_items["data"][0]["price"]["id"] if line_items["data"] else None
+        price_id = None
+        try:
+            items = stripe.checkout.Session.list_line_items(obj["id"], limit=1)
+            rows = items["data"]
+            price_id = rows[0]["price"]["id"] if rows else None
+        except Exception as exc:
+            logger.warning("Failed to read line items for %s: %s", obj.get("id"), exc)
         role = _price_to_role().get(price_id)
         if user_id and role:
             await keycloak_admin.assign_realm_role(user_id, role)
