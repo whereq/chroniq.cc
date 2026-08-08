@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from api.routes import (
     availability,
+    chat,
     event_types,
     integrations,
     me_bookings,
@@ -63,3 +64,4 @@ app.include_router(me_entitlements.router, prefix=_API)
 app.include_router(public_booking.router, prefix=_API)
 app.include_router(integrations.router, prefix=_API)
 app.include_router(payments.router, prefix=_API)
+app.include_router(chat.router, prefix=_API)
