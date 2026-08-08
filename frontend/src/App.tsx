@@ -18,6 +18,7 @@ import { useAuth } from '@/auth/AuthProvider'
 import { useLoadBookings } from '@/hooks/useLoadBookings'
 import { useLoadHolidays } from '@/hooks/useLoadHolidays'
 import { OnboardingBanner } from '@/components/calendar/OnboardingBanner'
+import { Sol } from '@/components/sol/Sol'
 
 function AppShell() {
   const view = useCalendarStore((s) => s.view);
@@ -33,6 +34,7 @@ function AppShell() {
         {view === 'calendar' ? <CalendarPage /> : <ResourcesPage />}
       </main>
       <Footer />
+      <Sol />
     </div>
   );
 }

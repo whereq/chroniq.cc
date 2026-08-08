@@ -11,6 +11,7 @@ import { AvailabilitySection } from './sections/AvailabilitySection'
 import { IntegrationsSection } from './sections/IntegrationsSection'
 import { SettingsSection } from './sections/SettingsSection'
 import { PlanSection } from './sections/PlanSection'
+import { Sol } from '@/components/sol/Sol'
 
 type Tab = 'event-types' | 'bookings' | 'availability' | 'integrations' | 'plan' | 'settings'
 
@@ -99,6 +100,7 @@ export function DashboardPage() {
       </div>
       </main>
       <Footer />
+      <Sol />
     </div>
   )
 }

@@ -1627,3 +1627,112 @@ body {
   background-clip: text;
   color: transparent;
 }
+
+/* ─── SOL — AI calendar assistant ────────────────────────────────────────── */
+.sol-launcher {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 300;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 13px;
+  border-radius: var(--r-xs);
+  background: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 72%, black);
+  color: var(--accent-ink);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+  transition: filter 0.15s, transform 0.1s;
+}
+.sol-launcher:hover { filter: brightness(1.06); }
+.sol-launcher:active { transform: translateY(1px); }
+
+.sol-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 384px;
+  max-width: 100vw;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-left: 1px solid var(--border-strong);
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.32);
+}
+@media (max-width: 520px) { .sol-panel { width: 100vw; } }
+
+.sol-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+.sol-title { display: flex; align-items: center; gap: 6px; font-weight: 700; color: var(--text); }
+.sol-title svg { color: var(--accent); }
+.sol-sub { font-weight: 500; font-size: 11px; color: var(--text-2); margin-left: 2px; }
+
+.sol-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sol-msg {
+  max-width: 88%;
+  padding: 8px 11px;
+  border-radius: var(--r-xs);
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.sol-user { align-self: flex-end; background: var(--accent); color: var(--accent-ink); }
+.sol-assistant { align-self: flex-start; background: var(--surface-2); border: 1px solid var(--border); color: var(--text); }
+
+.sol-empty { margin: auto 0; text-align: center; color: var(--text-2); }
+.sol-empty-hi { font-size: 14px; margin-bottom: 14px; color: var(--text); }
+.sol-examples { display: flex; flex-direction: column; gap: 8px; }
+.sol-chip {
+  padding: 8px 10px;
+  border-radius: var(--r-xs);
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.sol-chip:hover { background: var(--surface-3); }
+.sol-chip:disabled { opacity: 0.5; cursor: default; }
+
+.sol-error { align-self: flex-start; font-size: 13px; color: #ef4444; }
+.sol-error a { color: var(--accent); font-weight: 600; }
+
+.sol-input {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-top: 1px solid var(--border);
+}
+.sol-input input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: var(--r-xs);
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+}
+.sol-input input:focus { border-color: var(--accent); }

@@ -63,6 +63,19 @@ class Settings(BaseSettings):
     ms_tenant: str = "common"
     ms_redirect_uri: str = "http://localhost:8000/api/v1/me/integrations/microsoft/callback"
 
+    # ---- SOL AI assistant (LLM, platform mode) ----------------------------
+    # Provider-agnostic via LiteLLM. Set at least one *_api_key; optionally pin
+    # platform_llm_provider (one of: openai, anthropic, google, deepseek, qwen,
+    # minimax). chroniq reuses the shared whereq LLM keys (Anthropic default).
+    openai_api_key: str = ""
+    anthropic_api_key: str = ""
+    google_ai_api_key: str = ""
+    deepseek_api_key: str = ""
+    qwen_api_key: str = ""
+    minimax_api_key: str = ""
+    minimax_group_id: str = ""
+    platform_llm_provider: str = ""
+
     # ---- Token encryption -------------------------------------------------
     # Fernet key (base64, 32 bytes) for encrypting stored OAuth tokens at rest.
     # Empty = tokens stored as-is (dev only; set this in production).
