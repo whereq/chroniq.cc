@@ -32,7 +32,7 @@ services:
       DATABASE_URL_SYNC: postgresql://${POSTGRES_USER:-flowdesk}:${POSTGRES_PASSWORD:-flowdesk}@whereq-db:5432/${CHRONIQ_DB:-chroniq}
       CORS_ORIGINS: '["http://localhost:5173", "http://localhost:3000"]'
       PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:5173}
-      KEYCLOAK_URL: ${KEYCLOAK_URL:-https://www.keytomarvel.com}
+      KEYCLOAK_URL: ${KEYCLOAK_URL:-https://keytomarvel.com}
       KEYCLOAK_REALM: ${KEYCLOAK_REALM:-chroniq.cc}
       KEYCLOAK_CLIENT_ID: ${KEYCLOAK_CLIENT_ID:-chroniq-spa}
       KEYCLOAK_ADMIN_CLIENT_ID: ${KEYCLOAK_ADMIN_CLIENT_ID:-chroniq-backend}
@@ -90,7 +90,7 @@ services:
       dockerfile: docker/frontend/Dockerfile.dev
     container_name: chroniq-frontend-dev
     environment:
-      VITE_KEYCLOAK_URL: ${KEYCLOAK_URL:-https://www.keytomarvel.com}
+      VITE_KEYCLOAK_URL: ${KEYCLOAK_URL:-https://keytomarvel.com}
       VITE_KEYCLOAK_REALM: ${KEYCLOAK_REALM:-chroniq.cc}
       VITE_KEYCLOAK_CLIENT_ID: ${KEYCLOAK_CLIENT_ID:-chroniq-spa}
     volumes:

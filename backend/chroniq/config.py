@@ -25,7 +25,7 @@ class Settings(BaseSettings):
     public_base_url: str = "http://localhost:5173"
 
     # ---- Keycloak / JWT (public SPA client) -------------------------------
-    keycloak_url: str = "https://www.keytomarvel.com"
+    keycloak_url: str = "https://keytomarvel.com"
     keycloak_realm: str = "chroniq.cc"
     keycloak_client_id: str = "chroniq-spa"
 
